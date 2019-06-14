@@ -1,0 +1,9 @@
+*.pdb
+*.gro
+*.zip
+*.tpr
+*.edr
+*.log
+*.trr
+*.swp
+log.*
