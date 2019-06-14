@@ -9,6 +9,7 @@ dependencies:
   - biobb_model==1.1.9
   - biobb_md==1.1.7
   - biobb_chemistry==1.0.8
+  - plotly
   - nglview
   - simpletraj
   - conda
