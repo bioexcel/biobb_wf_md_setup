@@ -1,6 +1,6 @@
 # Protein MD Setup tutorial using BioExcel Building Blocks (biobb)
 
-Based on the official [Gromacs tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html)
+Based on the official [Gromacs tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).
 
 This tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular example used is the **Lysozyme** protein (PDB code 1AKI).
 
@@ -34,7 +34,7 @@ conda install -c bioconda biobb_MD_setup //// NOTE: this is not yet available //
 7. Adding Ions
 8. Energetically Minimize the System
 9. Equilibrate the System (NVT)
-11. 10. Equilibrate the System (NPT)
+11. Equilibrate the System (NPT)
 12. Free Molecular Dynamics Simulation
 13. Post-processing and Visualizing Resulting 3D Trajectory
 14. Output Files
