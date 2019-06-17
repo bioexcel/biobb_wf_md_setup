@@ -64,7 +64,7 @@ Pipeline steps:
 \*\ **## Input parameters**\ Input parameters\ **needed: -**\ pdbCode**:
 PDB code of the protein structure (e.g. 1AKI)
 
-.. code:: ipython3
+.. parsed-literal::
 
     import nglview
     import ipywidgets
@@ -78,7 +78,7 @@ Alternatively, a**\ *\ PDB file\ *\ **can be used as starting structure.
 `Pdb <https://biobb-io.readthedocs.io/en/latest/api.html#module-api.pdb>`__
 from **biobb_io.api.pdb** \**\*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Downloading desired PDB file 
     # Import module
@@ -97,7 +97,7 @@ from **biobb_io.api.pdb** \**\*
 ### Visualizing 3D structure Visualizing the downloaded/given **PDB
 structure** using **NGL**:
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show protein
     view = nglview.show_file(downloaded_pdb)
@@ -105,25 +105,25 @@ structure** using **NGL**:
     view._remote_call('setSize', target='Widget', args=['','600px'])
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     view.render_image()
     view.download_image(filename='image1.png')
 
-.. code:: ipython3
+.. parsed-literal::
 
     from IPython import display
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='image1.png'></img>")
+    display.HTML("<img src='_static/image1.png'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='image1.png'></img>
+    <img src='_static/image1.png'></img>
 
 
 
@@ -140,7 +140,7 @@ residues\ **and possible**\ atomic clashes**.
 `FixSideChain <https://biobb-model.readthedocs.io/en/latest/model.html#module-model.fix_side_chain>`__
 from **biobb_model.model.fix_side_chain** \**\*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Check & Fix PDB
     # Import module
@@ -161,7 +161,7 @@ particular example, the checking step didn’t find any issue to be
 solved, so there is no difference between the original structure and the
 fixed one.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show protein
     view = nglview.show_file(fixed_pdb)
@@ -170,21 +170,21 @@ fixed one.
     view.camera='orthographic'
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     view.render_image()
     view.download_image(filename='image2.png')
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='image2.png'></img>")
+    display.HTML("<img src='_static/image2.png'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='image2.png'></img>
+    <img src='_static/image2.png'></img>
 
 
 
@@ -205,7 +205,7 @@ top file* (top file) - *GROMACS position restraint file/s* (itp file/s)
 *Building Blocks\ *\ **used:
 -**\ *\ *\ `Pdb2gmx <https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.pdb2gmx>`__\ *\ *\ **from**\ *\ biobb_md.gromacs.pdb2gmx*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Create system topology
     # Import module
@@ -227,7 +227,7 @@ Visualizing the generated **GRO structure** using **NGL**. Note that
 **hydrogen atoms** were added to the structure by the **pdb2gmx GROMACS
 tool** when generating the **topology**.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show protein
     view = nglview.show_file(output_pdb2gmx_gro)
@@ -236,21 +236,21 @@ tool** when generating the **topology**.
     view.camera='orthographic'
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     view.render_image()
     view.download_image(filename='image3.png')
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='image3.png'></img>")
+    display.HTML("<img src='_static/image3.png'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='image3.png'></img>
+    <img src='_static/image3.png'></img>
 
 
 
@@ -266,7 +266,7 @@ box**.
 `Editconf <https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.editconf>`__
 from **biobb_md.gromacs.editconf** \**\*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Editconf: Create solvent box
     # Import module
@@ -296,7 +296,7 @@ equilibrated 3-point solvent model.
 `Solvate <https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.solvate>`__
 from **biobb_md.gromacs.solvate** \**\*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Solvate: Fill the box with water molecules
     from biobb_md.gromacs.solvate import Solvate
@@ -319,7 +319,7 @@ using **NGL**. Note the **cubic box** filled with **water molecules**
 surrounding the **protein structure**, which is **centered** right in
 the middle of the cube.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show protein
     view = nglview.show_file(output_solvate_gro)
@@ -330,21 +330,21 @@ the middle of the cube.
     view.camera='orthographic'
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     view.render_image()
     view.download_image(filename='image4.png')
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='image4.png'></img>")
+    display.HTML("<img src='_static/image4.png'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='image4.png'></img>
+    <img src='_static/image4.png'></img>
 
 
 
@@ -364,7 +364,7 @@ properties will be used to generate the portable binary run file for
 **ion generation**, although **any legitimate combination of
 parameters** could be used in this step.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Grompp: Creating portable binary run file for ion generation
     from biobb_md.gromacs.grompp import Grompp
@@ -386,7 +386,7 @@ parameters** could be used in this step.
 ### Step 2: Adding ions to neutralize the system Replace **solvent
 molecules** with **ions** to **neutralize** the system.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Genion: Adding ions to neutralize the system
     from biobb_md.gromacs.genion import Genion
@@ -411,7 +411,7 @@ Visualizing 3D structure
 Visualizing the **neutralized protein system** with the newly added
 **ions** using **NGL**
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show protein
     view = nglview.show_file(output_genion_gro)
@@ -423,21 +423,21 @@ Visualizing the **neutralized protein system** with the newly added
     view.camera='orthographic'
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     view.render_image()
     view.download_image(filename='image5.png')
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='image5.png'></img>")
+    display.HTML("<img src='_static/image5.png'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='image5.png'></img>
+    <img src='_static/image5.png'></img>
 
 
 
@@ -475,7 +475,7 @@ force** is placed at **500 KJ/mol*nm^2**, and the **maximum number of
 steps** to perform (if the maximum force is not reached) to **5,000
 steps**.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Grompp: Creating portable binary run file for mdrun
     from biobb_md.gromacs.grompp import Grompp
@@ -499,7 +499,7 @@ steps**.
 ### Step 2: Running Energy Minimization Running **energy minimization**
 using the **tpr file** generated in the previous step.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Mdrun: Running minimization
     from biobb_md.gromacs.mdrun import Mdrun
@@ -521,7 +521,7 @@ using the **tpr file** generated in the previous step.
 minimization** results. Plotting **potential energy** by time during the
 minimization process.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXEnergy: Getting system energy by time  
     from biobb_analysis.gromacs.gmx_energy import GMXEnergy
@@ -537,7 +537,7 @@ minimization process.
               output_xvg_path=output_min_ene_xvg, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     import plotly
     import plotly.graph_objs as go
@@ -683,7 +683,7 @@ of **300K**.
 example <http://www.mdtutorials.com/gmx/lysozyme/06_equil.html>`__\ *the
 simulated time was 100ps.*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Grompp: Creating portable binary run file for NVT Equilibration
     from biobb_md.gromacs.grompp import Grompp
@@ -708,7 +708,7 @@ simulated time was 100ps.*
 
 ### Step 2: Running NVT equilibration
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Mdrun: Running Equilibration NVT
     from biobb_md.gromacs.mdrun import Mdrun
@@ -732,7 +732,7 @@ simulated time was 100ps.*
 Equilibration** results. Plotting **system temperature** by time during
 the NVT equilibration process.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXEnergy: Getting system temperature by time during NVT Equilibration  
     from biobb_analysis.gromacs.gmx_energy import GMXEnergy
@@ -748,7 +748,7 @@ the NVT equilibration process.
               output_xvg_path=output_nvt_temp_xvg, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     import plotly
     import plotly.graph_objs as go
@@ -893,7 +893,7 @@ Parrinello-Rahman **pressure coupling** algorithm.
 example <http://www.mdtutorials.com/gmx/lysozyme/07_equil2.html>`__\ *the
 simulated time was 100ps.*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Grompp: Creating portable binary run file for NPT System Equilibration
     from biobb_md.gromacs.grompp import Grompp
@@ -917,7 +917,7 @@ simulated time was 100ps.*
 
 ### Step 2: Running NPT equilibration
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Mdrun: Running NPT System Equilibration
     from biobb_md.gromacs.mdrun import Mdrun
@@ -941,7 +941,7 @@ simulated time was 100ps.*
 Equilibration** results. Plotting **system pressure and density** by
 time during the **NPT equilibration** process.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXEnergy: Getting system pressure and density by time during NPT Equilibration  
     from biobb_analysis.gromacs.gmx_energy import GMXEnergy
@@ -957,7 +957,7 @@ time during the **NPT equilibration** process.
               output_xvg_path=output_npt_pd_xvg, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     import plotly
     from plotly import tools
@@ -1113,7 +1113,7 @@ integrator algorithm, a **time step** of **2fs**, and a total of
 example <http://www.mdtutorials.com/gmx/lysozyme/08_MD.html>`__\ *the
 simulated time was 1ns (1000ps).*
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Grompp: Creating portable binary run file for mdrun
     from biobb_md.gromacs.grompp import Grompp
@@ -1137,7 +1137,7 @@ simulated time was 1ns (1000ps).*
 
 ### Step 2: Running short free MD simulation
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Mdrun: Running free dynamics
     from biobb_md.gromacs.mdrun import Mdrun
@@ -1165,7 +1165,7 @@ structure** (input structure of the pipeline) and against the
 **minimized and equilibrated structure** (output structure of the NPT
 equilibration step).
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXRms: Computing Root Mean Square deviation to analyse structural stability 
     #         RMSd against minimized and equilibrated snapshot (backbone atoms)   
@@ -1185,7 +1185,7 @@ equilibration step).
              output_xvg_path=output_rms_first, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXRms: Computing Root Mean Square deviation to analyse structural stability 
     #         RMSd against experimental structure (backbone atoms)   
@@ -1205,7 +1205,7 @@ equilibration step).
              output_xvg_path=output_rms_exp, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     import plotly
     import plotly.graph_objs as go
@@ -1328,7 +1328,7 @@ equilibration step).
             </div>
 
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXRgyr: Computing Radius of Gyration to measure the protein compactness during the free MD simulation 
     
@@ -1346,7 +1346,7 @@ equilibration step).
              output_xvg_path=output_rgyr, 
               properties=prop).launch()
 
-.. code:: ipython3
+.. parsed-literal::
 
     import plotly
     import plotly.graph_objs as go
@@ -1463,7 +1463,7 @@ from **biobb_analysis.gromacs.gmx_trjconv_str** \**\*
 ### Step 1: *Imaging* the resulting trajectory. Stripping out **water
 molecules and ions** and **correcting periodicity issues**
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXImage: "Imaging" the resulting trajectory
     #           Removing water molecules and ions from the resulting structure
@@ -1487,7 +1487,7 @@ molecules and ions** and **correcting periodicity issues**
 ### Step 2: Generating the output *dry* structure. **Removing water
 molecules and ions** from the resulting structure
 
-.. code:: ipython3
+.. parsed-literal::
 
     # GMXTrjConvStr: Converting and/or manipulating a structure
     #                Removing water molecules and ions from the resulting structure
@@ -1512,13 +1512,13 @@ molecules and ions** from the resulting structure
 1 <#ppStep1>`__) with the **dry structure** (output of the
 `Post-processing step 2 <#ppStep2>`__) as a topology.
 
-.. code:: ipython3
+.. parsed-literal::
 
     # Show trajectory
     view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(output_imaged_traj, output_dry_gro), gui=True)
     view
 
-.. code:: ipython3
+.. parsed-literal::
 
     from time import sleep
     # range number of frames for the animated gif trajectory
@@ -1531,34 +1531,34 @@ molecules and ions** from the resulting structure
         # make sure to let NGL spending enough time to render before going to next frame
         sleep(2.0)
 
-.. code:: ipython3
+.. parsed-literal::
 
     import moviepy.editor as mpy
 
-.. code:: ipython3
+.. parsed-literal::
 
     # go to folder where the images are stored
     template = './trj_image{}.png'
     # get all (sorted) image files
     imagefiles = [template.format(str(i)) for i in range(0, 10, 1)]
 
-.. code:: ipython3
+.. parsed-literal::
 
     # make a gif file
     frame_per_second = 8
     im = mpy.ImageSequenceClip(imagefiles, fps=frame_per_second)
     im.write_gif('trajectory.gif', fps=frame_per_second)
 
-.. code:: ipython3
+.. parsed-literal::
 
-    display.HTML("<img src='trajectory.gif'></img>")
+    display.HTML("<img src='_static/trajectory.gif'></img>")
 
 
 
 
 .. raw:: html
 
-    <img src='trajectory.gif'></img>
+    <img src='_static/trajectory.gif'></img>
 
 
 
