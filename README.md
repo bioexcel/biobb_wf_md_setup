@@ -3,9 +3,15 @@
 
 # Protein MD Setup tutorial using BioExcel Building Blocks (biobb)
 
-Based on the official [Gromacs tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).
+**Based on the official [Gromacs tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**
+
+***
 
 This tutorial aims to illustrate the process of **setting up a simulation** system containing a **protein**, step by step, using the **BioExcel Building Blocks library (biobb)**. The particular example used is the **Lysozyme** protein (PDB code 1AKI).
+
+***
+
+## Settings
 
 ### Biobb modules used
 
@@ -26,26 +32,18 @@ This tutorial aims to illustrate the process of **setting up a simulation** syst
 conda install -c bioconda biobb_MD_setup //// NOTE: this is not yet available ////
 ```
 
-### Pipeline steps
+***
 
-1. Input Parameters
-2. Fetching PDB Structure
-3. Fix Protein Structure
-4. Create Protein System Topology
-5. Create Solvent Box
-6. Fill the Box with Water Molecules
-7. Adding Ions
-8. Energetically Minimize the System
-9. Equilibrate the System (NVT)
-11. Equilibrate the System (NPT)
-12. Free Molecular Dynamics Simulation
-13. Post-processing and Visualizing Resulting 3D Trajectory
-14. Output Files
+## Tutorial
 
-### Version
+Click here to [view tutorial in Read the Docs](https://biobb-wf-md-setup.readthedocs.io/en/latest/tutorial.html)
+
+***
+
+## Version
 June 2019 Release
 
-### Copyright & Licensing
+## Copyright & Licensing
 This software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) & [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).
 
 * (c) 2015-2019 [Barcelona Supercomputing Center](https://www.bsc.es/)
