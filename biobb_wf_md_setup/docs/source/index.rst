@@ -17,7 +17,8 @@ Contents
    :maxdepth: 1
 
    Introduction & installation <readme>
-   Tutorial <tutorials>
+   Tutorial <tutorial>
+   Tutorial HTML <tutorial_html>
 
 Indices and tables
 ==================
