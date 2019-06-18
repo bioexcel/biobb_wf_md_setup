@@ -3,7 +3,7 @@
 
 # Protein MD Setup tutorial using BioExcel Building Blocks (biobb)
 
-**Based on the official [Gromacs tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**
+**Based on the official [GROMACS tutorial](http://www.mdtutorials.com/gmx/lysozyme/index.html).**
 
 ***
 
@@ -37,6 +37,8 @@ conda install -c bioconda biobb_MD_setup //// NOTE: this is not yet available //
 ## Tutorial
 
 Click here to [view tutorial in Read the Docs](https://biobb-wf-md-setup.readthedocs.io/en/latest/tutorial.html)
+
+Click here to [excute tutorial in Binder](https://gke.mybinder.org/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup%2Fnotebooks%2Fbiobb_MDsetup_tutorial.ipynb)
 
 ***
 
