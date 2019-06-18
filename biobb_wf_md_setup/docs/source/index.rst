@@ -19,13 +19,6 @@ Contents
    Introduction & installation <readme>
    Tutorial <tutorial>
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 `Github repository <https://github.com/bioexcel/biobb_wf_md_setup>`_.
 ===================================================================
 
