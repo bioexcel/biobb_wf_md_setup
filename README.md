@@ -38,7 +38,7 @@ conda install -c bioconda biobb_MD_setup //// NOTE: this is not yet available //
 
 Click here to [view tutorial in Read the Docs](https://biobb-wf-md-setup.readthedocs.io/en/latest/tutorial.html)
 
-Click here to [excute tutorial in Binder](https://gke.mybinder.org/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup%2Fnotebooks%2Fbiobb_MDsetup_tutorial.ipynb)
+Click here to [execute tutorial in Binder](https://gke.mybinder.org/v2/gh/bioexcel/biobb_wf_md_setup/master?filepath=biobb_wf_md_setup%2Fnotebooks%2Fbiobb_MDsetup_tutorial.ipynb)
 
 ***
 
