@@ -18,7 +18,6 @@ Contents
 
    Introduction & installation <readme>
    Tutorial <tutorial>
-   Tutorial HTML <tutorial_html>
 
 Indices and tables
 ==================
