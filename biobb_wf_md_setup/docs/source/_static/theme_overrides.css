@@ -8,3 +8,5 @@
 .wy-table-responsive {
     overflow: visible !important;
 }
+
+.highlight pre { white-space: pre-wrap!important; }
