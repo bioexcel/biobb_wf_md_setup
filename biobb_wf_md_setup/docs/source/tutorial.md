@@ -936,7 +936,7 @@ prop = {
 }
 
 # Create and launch bb
-GMXRms(input_structure_path=output_gppmin_tpr,
+GMXRgyr(input_structure_path=output_gppmin_tpr,
          input_traj_path=output_md_trr,
          output_xvg_path=output_rgyr, 
           properties=prop).launch()
