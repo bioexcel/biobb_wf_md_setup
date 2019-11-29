@@ -29,7 +29,6 @@ This tutorial aims to illustrate the process of **setting up a simulation** syst
 
 ### Conda Installation
 
-
 ```console
 conda env create -f binder/environment.yml
 ```

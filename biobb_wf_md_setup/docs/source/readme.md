@@ -30,7 +30,7 @@ This tutorial aims to illustrate the process of **setting up a simulation** syst
 ### Conda Installation
 
 ```console
-conda install -c bioconda biobb_MD_setup //// NOTE: this is not yet available ////
+conda env create -f binder/environment.yml
 ```
 
 ***
