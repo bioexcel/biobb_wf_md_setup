@@ -22,7 +22,7 @@ This tutorial aims to illustrate the process of **setting up a simulation system
  - [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
  - [simpletraj](https://github.com/arose/simpletraj): Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
 
-### Conda Installation
+### Conda Installation and Launch
 
   ```console
   git clone https://github.com/bioexcel/biobb_wf_md_setup.git
