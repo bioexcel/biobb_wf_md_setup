@@ -10,6 +10,6 @@ dependencies:
   - biobb_model==2.0.0
   - biobb_md==2.0.0
   - plotly
-  - nglview
+  - nglview==1.1.7
   - simpletraj
   - conda

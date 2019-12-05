@@ -10,7 +10,7 @@ guidelines.md
 *.xvg
 *.offsets
 *.cpt
-log.*
+log*.*
 .ipynb_checkpoints/
 biobb_wf_md_setup/notebooks/*.png
 biobb_wf_md_setup/notebooks/*.gif
