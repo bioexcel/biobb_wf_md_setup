@@ -8,6 +8,7 @@ guidelines.md
 *.trr
 *.swp
 *.xvg
+*.xtc
 *.offsets
 *.cpt
 log*.*
