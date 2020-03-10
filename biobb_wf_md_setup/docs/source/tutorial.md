@@ -29,6 +29,8 @@ This tutorial aims to illustrate the process of **setting up a simulation system
   cd biobb_wf_md_setup
   conda env create -f conda_env/environment.yml
   conda activate biobb_MDsetup_tutorial
+  jupyter-nbextension enable --py --user widgetsnbextension
+  jupyter-nbextension enable --py --user nglview
   jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
   ```
 
