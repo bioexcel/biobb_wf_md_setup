@@ -12,6 +12,7 @@ guidelines.md
 *.offsets
 *.cpt
 log*.*
+!logo.png
 .ipynb_checkpoints/
 biobb_wf_md_setup/notebooks/*.png
 biobb_wf_md_setup/notebooks/*.gif
