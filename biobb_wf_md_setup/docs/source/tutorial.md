@@ -49,6 +49,7 @@ This tutorial aims to illustrate the process of **setting up a simulation system
  11. [Free Molecular Dynamics Simulation](#free)
  12. [Post-processing and Visualizing Resulting 3D Trajectory](#post)
  13. [Output Files](#output)
+ 14. [Questions & Comments](#questions)
  
 ***
 <img src="https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png" alt="Bioexcel2 logo"
@@ -1075,3 +1076,15 @@ Important **Output files** generated:
  - 1AKI_rms_exp.xvg: **Root Mean Square deviation (RMSd)** against **experimental structure** of the final **free MD run step**.
  - 1AKI_rgyr.xvg: **Radius of Gyration** of the final **free MD run step** of the **setup pipeline**.
  
+***
+<a id="questions"></a>
+
+## Questions & Comments
+
+Questions, issues, suggestions and comments are really welcome!
+
+* GitHub issues:
+    * [https://github.com/bioexcel/biobb](https://github.com/bioexcel/biobb)
+
+* BioExcel forum:
+    * [https://ask.bioexcel.eu/c/BioExcel-Building-Blocks-library](https://ask.bioexcel.eu/c/BioExcel-Building-Blocks-library)
