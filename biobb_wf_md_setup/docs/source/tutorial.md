@@ -300,9 +300,7 @@ from biobb_md.gromacs.grompp import Grompp
 # Create prop dict and inputs/outputs
 output_gppion_tpr = pdbCode+'_gppion.tpr'
 prop = {
-    'mdp':{
-        'type': 'minimization'
-    }
+    'simulation_type': 'minimization'
 }
 
 # Create and launch bb
@@ -388,10 +386,10 @@ from biobb_md.gromacs.grompp import Grompp
 output_gppmin_tpr = pdbCode+'_gppmin.tpr'
 prop = {
     'mdp':{
-        'type': 'minimization',
         'emtol':'500',
         'nsteps':'5000'
-    }
+    },
+    'simulation_type': 'minimization'
 }
 
 # Create and launch bb
@@ -518,12 +516,12 @@ from biobb_md.gromacs.grompp import Grompp
 output_gppnvt_tpr = pdbCode+'_gppnvt.tpr'
 prop = {
     'mdp':{
-        'type': 'nvt',
         'nsteps': 5000,
         'dt': 0.002,
         'define': '-DPOSRES',
         #'tc_grps': "DNA Water_and_ions" # NOTE: uncomment this line if working with DNA
-    }
+    },
+    'simulation_type': 'nvt'
 }
 
 # Create and launch bb
@@ -653,10 +651,10 @@ from biobb_md.gromacs.grompp import Grompp
 output_gppnpt_tpr = pdbCode+'_gppnpt.tpr'
 prop = {
     'mdp':{
-        'type': 'npt',
         'nsteps':'5000',
         #'tc_grps': "DNA Water_and_ions" # NOTE: uncomment this line if working with DNA
-    }
+    },
+    'simulation_type': 'npt'
 }
 
 # Create and launch bb
@@ -793,10 +791,10 @@ from biobb_md.gromacs.grompp import Grompp
 output_gppmd_tpr = pdbCode+'_gppmd.tpr'
 prop = {
     'mdp':{
-        'type': 'free',
         'nsteps':'50000',
         #'tc_grps': "DNA Water_and_ions" # NOTE: uncomment this line if working with DNA
-    }
+    },
+    'simulation_type': 'free'
 }
 
 # Create and launch bb

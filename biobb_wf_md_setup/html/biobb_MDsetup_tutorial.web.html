@@ -13658,9 +13658,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppion_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppion.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;mdp&#39;</span><span class="p">:{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span>
-    <span class="p">}</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;minimization&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
@@ -13814,10 +13812,10 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="n">output_gppmin_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmin.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;mdp&#39;</span><span class="p">:{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span><span class="p">,</span>
         <span class="s1">&#39;emtol&#39;</span><span class="p">:</span><span class="s1">&#39;500&#39;</span><span class="p">,</span>
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;5000&#39;</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;minimization&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
@@ -14085,12 +14083,12 @@ if (outputEl) {{
 <span class="n">output_gppnvt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnvt.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;mdp&#39;</span><span class="p">:{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;nvt&#39;</span><span class="p">,</span>
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>
         <span class="s1">&#39;dt&#39;</span><span class="p">:</span> <span class="mf">0.002</span><span class="p">,</span>
         <span class="s1">&#39;define&#39;</span><span class="p">:</span> <span class="s1">&#39;-DPOSRES&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;nvt&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
@@ -14361,10 +14359,10 @@ if (outputEl) {{
 <span class="n">output_gppnpt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnpt.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;mdp&#39;</span><span class="p">:{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;npt&#39;</span><span class="p">,</span>
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;5000&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;npt&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
@@ -14642,10 +14640,10 @@ if (outputEl) {{
 <span class="n">output_gppmd_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmd.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;mdp&#39;</span><span class="p">:{</span>
-        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;free&#39;</span><span class="p">,</span>
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;50000&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
-    <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;free&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
