@@ -518,7 +518,7 @@ prop = {
     'mdp':{
         'nsteps': 5000,
         'dt': 0.002,
-        'define': '-DPOSRES',
+        'Define': '-DPOSRES',
         #'tc_grps': "DNA Water_and_ions" # NOTE: uncomment this line if working with DNA
     },
     'simulation_type': 'nvt'
