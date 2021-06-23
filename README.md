@@ -51,7 +51,7 @@ Click here to [execute tutorial in Binder](https://gke.mybinder.org/v2/gh/bioexc
 ***
 
 ## Version
-2020.4 Release
+2021.2 Release
 
 ## Copyright & Licensing
 This software has been developed in the [MMB group](http://mmb.irbbarcelona.org) at the [BSC](http://www.bsc.es/) & [IRB](https://www.irbbarcelona.org/) for the [European BioExcel](http://bioexcel.eu/), funded by the European Commission (EU H2020 [823830](http://cordis.europa.eu/projects/823830), EU H2020 [675728](http://cordis.europa.eu/projects/675728)).
