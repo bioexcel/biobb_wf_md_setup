@@ -109,7 +109,7 @@ view._remote_call('setSize', target='Widget', args=['','600px'])
 view
 ```
 
-<img src='ngl1.png'></img>
+<img src='_static/ngl1.png'></img>
 
 <a id="fix"></a>
 ***
@@ -150,7 +150,7 @@ view.camera='orthographic'
 view
 ```
 
-<img src='ngl2.png'></img>
+<img src='_static/ngl2.png'></img>
 
 <a id="top"></a>
 ***
@@ -198,7 +198,7 @@ view.camera='orthographic'
 view
 ```
 
-<img src='ngl3.png'></img>
+<img src='_static/ngl3.png'></img>
 
 <a id="box"></a>
 ***
@@ -273,7 +273,7 @@ view.camera='orthographic'
 view
 ```
 
-<img src='ngl4.png'></img>
+<img src='_static/ngl4.png'></img>
 
 <a id="ions"></a>
 ***
@@ -349,7 +349,7 @@ view.camera='orthographic'
 view
 ```
 
-<img src='ngl5.png'></img>
+<img src='_static/ngl5.png'></img>
 
 <a id="min"></a>
 ***
@@ -472,7 +472,7 @@ fig = {
 plotly.offline.iplot(fig)
 ```
 
-<img src='plot1.png'></img>
+<img src='_static/plot1.png'></img>
 
 <a id="nvt"></a>
 ***
@@ -604,7 +604,7 @@ fig = {
 plotly.offline.iplot(fig)
 ```
 
-<img src='plot2.png'></img>
+<img src='_static/plot2.png'></img>
 
 <a id="npt"></a>
 ***
@@ -751,7 +751,7 @@ fig['layout'].update(showlegend=False)
 plotly.offline.iplot(fig)
 ```
 
-<img src='plot3.png'></img>
+<img src='_static/plot3.png'></img>
 
 <a id="free"></a>
 ***
@@ -929,7 +929,7 @@ plotly.offline.iplot(fig)
 
 ```
 
-<img src='plot4.png'></img>
+<img src='_static/plot4.png'></img>
 
 
 ```python
@@ -979,7 +979,7 @@ fig = {
 plotly.offline.iplot(fig)
 ```
 
-<img src='plot5.png'></img>
+<img src='_static/plot5.png'></img>
 
 <a id="post"></a>
 ***
@@ -1056,7 +1056,7 @@ view = nglview.show_simpletraj(nglview.SimpletrajTrajectory(output_imaged_traj, 
 view
 ```
 
-<img src='trajectory.gif'></img>
+<img src='_static/trajectory.gif'></img>
 
 <a id="output"></a>
 ## Output files
