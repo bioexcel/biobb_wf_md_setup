@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>biobb_MDsetup_tutorial.web</title>
+<title>biobb_MDsetup_tutorial.web2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13017,45 +13017,6 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
-<style type="text/css">
-    
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-
-    </style>
 
 
 <style type="text/css">
@@ -13133,22 +13094,14 @@ div#notebook {
 <li><a href="https://plot.ly/python/offline/">plotly</a>: Python interactive graphing library integrated in Jupyter notebooks.</li>
 <li><a href="https://github.com/arose/simpletraj">simpletraj</a>: Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.</li>
 </ul>
-<h3 id="Conda-Installation">Conda Installation and Launch<a class="anchor-link" href="#Conda-Installation">&#182;</a></h3>
-
-
-<div class="input_area">
-<pre>
-  git clone https://github.com/bioexcel/biobb_wf_md_setup.git
-  cd biobb_wf_md_setup
-  conda env create -f conda_env/environment.yml
-  conda activate biobb_MDsetup_tutorial
-  jupyter-nbextension enable --py --user widgetsnbextension
-  jupyter-nbextension enable --py --user nglview
-  jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
-</pre>
-</div>
-
-
+<h3 id="Conda-Installation-and-Launch">Conda Installation and Launch<a class="anchor-link" href="#Conda-Installation-and-Launch">&#182;</a></h3><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/bioexcel/biobb_wf_md_setup.git</span>
+<span class="go">cd biobb_wf_md_setup</span>
+<span class="go">conda env create -f conda_env/environment.yml</span>
+<span class="go">conda activate biobb_MDsetup_tutorial</span>
+<span class="go">jupyter-nbextension enable --py --user widgetsnbextension</span>
+<span class="go">jupyter-nbextension enable --py --user nglview</span>
+<span class="go">jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb</span>
+</pre></div>
 <hr>
 <h2 id="Pipeline-steps">Pipeline steps<a class="anchor-link" href="#Pipeline-steps">&#182;</a></h2><ol>
 <li><a href="#input">Input Parameters</a></li>
@@ -13164,7 +13117,7 @@ div#notebook {
 <li><a href="#free">Free Molecular Dynamics Simulation</a></li>
 <li><a href="#post">Post-processing and Visualizing Resulting 3D Trajectory</a></li>
 <li><a href="#output">Output Files</a></li>
-<li><a href="#questions">Questions & Comments</a></li>
+<li><a href="#questions">Questions &amp; Comments</a></li>
 </ol>
 <hr>
 <p><img src="https://bioexcel.eu/wp-content/uploads/2019/04/Bioexcell_logo_1080px_transp.png" alt="Bioexcel2 logo"
@@ -13188,7 +13141,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">nglview</span>
@@ -13226,7 +13179,7 @@ Alternatively, a <strong>PDB file</strong> can be used as starting structure. <b
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Downloading desired PDB file </span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_io.api.pdb</span> <span class="k">import</span> <span class="n">Pdb</span>
+<span class="kn">from</span> <span class="nn">biobb_io.api.pdb</span> <span class="kn">import</span> <span class="n">pdb</span>
 
 <span class="c1"># Create properties dict and inputs/outputs</span>
 <span class="n">downloaded_pdb</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;.pdb&#39;</span>
@@ -13235,8 +13188,8 @@ Alternatively, a <strong>PDB file</strong> can be used as starting structure. <b
 <span class="p">}</span>
 
 <span class="c1">#Create and launch bb</span>
-<span class="n">Pdb</span><span class="p">(</span><span class="n">output_pdb_path</span><span class="o">=</span><span class="n">downloaded_pdb</span><span class="p">,</span>
-    <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+<span class="n">pdb</span><span class="p">(</span><span class="n">output_pdb_path</span><span class="o">=</span><span class="n">downloaded_pdb</span><span class="p">,</span>
+    <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13263,20 +13216,6 @@ Alternatively, a <strong>PDB file</strong> can be used as starting structure. <b
 <span class="n">view</span><span class="o">.</span><span class="n">add_representation</span><span class="p">(</span><span class="n">repr_type</span><span class="o">=</span><span class="s1">&#39;ball+stick&#39;</span><span class="p">,</span> <span class="n">selection</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">])</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ngl1.png&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13319,14 +13258,14 @@ Alternatively, a <strong>PDB file</strong> can be used as starting structure. <b
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check &amp; Fix PDB</span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_model.model.fix_side_chain</span> <span class="k">import</span> <span class="n">FixSideChain</span>
+<span class="kn">from</span> <span class="nn">biobb_model.model.fix_side_chain</span> <span class="kn">import</span> <span class="n">fix_side_chain</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">fixed_pdb</span> <span class="o">=</span> <span class="n">pdbCode</span> <span class="o">+</span> <span class="s1">&#39;_fixed.pdb&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">FixSideChain</span><span class="p">(</span><span class="n">input_pdb_path</span><span class="o">=</span><span class="n">downloaded_pdb</span><span class="p">,</span> 
-             <span class="n">output_pdb_path</span><span class="o">=</span><span class="n">fixed_pdb</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+<span class="n">fix_side_chain</span><span class="p">(</span><span class="n">input_pdb_path</span><span class="o">=</span><span class="n">downloaded_pdb</span><span class="p">,</span> 
+             <span class="n">output_pdb_path</span><span class="o">=</span><span class="n">fixed_pdb</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13353,20 +13292,6 @@ Alternatively, a <strong>PDB file</strong> can be used as starting structure. <b
 <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">])</span>
 <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ngl2.png&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13416,16 +13341,16 @@ Adding <strong>hydrogen atoms</strong> if missing. Automatically identifying <st
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create system topology</span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.pdb2gmx</span> <span class="k">import</span> <span class="n">Pdb2gmx</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.pdb2gmx</span> <span class="kn">import</span> <span class="n">pdb2gmx</span>
 
 <span class="c1"># Create inputs/outputs</span>
 <span class="n">output_pdb2gmx_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_pdb2gmx.gro&#39;</span>
 <span class="n">output_pdb2gmx_top_zip</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_pdb2gmx_top.zip&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Pdb2gmx</span><span class="p">(</span><span class="n">input_pdb_path</span><span class="o">=</span><span class="n">fixed_pdb</span><span class="p">,</span> 
+<span class="n">pdb2gmx</span><span class="p">(</span><span class="n">input_pdb_path</span><span class="o">=</span><span class="n">fixed_pdb</span><span class="p">,</span> 
         <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_pdb2gmx_gro</span><span class="p">,</span> 
-        <span class="n">output_top_zip_path</span><span class="o">=</span><span class="n">output_pdb2gmx_top_zip</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+        <span class="n">output_top_zip_path</span><span class="o">=</span><span class="n">output_pdb2gmx_top_zip</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13452,20 +13377,6 @@ Adding <strong>hydrogen atoms</strong> if missing. Automatically identifying <st
 <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">])</span>
 <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ngl3.png&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13505,7 +13416,7 @@ A <strong>cubic box</strong> is used to define the unit cell, with a <strong>dis
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Editconf: Create solvent box</span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.editconf</span> <span class="k">import</span> <span class="n">Editconf</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.editconf</span> <span class="kn">import</span> <span class="n">editconf</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_editconf_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_editconf.gro&#39;</span>
@@ -13516,9 +13427,9 @@ A <strong>cubic box</strong> is used to define the unit cell, with a <strong>dis
 <span class="p">}</span>
 
 <span class="c1">#Create and launch bb</span>
-<span class="n">Editconf</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_pdb2gmx_gro</span><span class="p">,</span> 
+<span class="n">editconf</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_pdb2gmx_gro</span><span class="p">,</span> 
          <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_editconf_gro</span><span class="p">,</span>
-         <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+         <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13549,17 +13460,17 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solvate: Fill the box with water molecules</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.solvate</span> <span class="k">import</span> <span class="n">Solvate</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.solvate</span> <span class="kn">import</span> <span class="n">solvate</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_solvate_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_solvate.gro&#39;</span>
 <span class="n">output_solvate_top_zip</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_solvate_top.zip&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Solvate</span><span class="p">(</span><span class="n">input_solute_gro_path</span><span class="o">=</span><span class="n">output_editconf_gro</span><span class="p">,</span> 
+<span class="n">solvate</span><span class="p">(</span><span class="n">input_solute_gro_path</span><span class="o">=</span><span class="n">output_editconf_gro</span><span class="p">,</span> 
         <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_solvate_gro</span><span class="p">,</span> 
         <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_pdb2gmx_top_zip</span><span class="p">,</span> 
-        <span class="n">output_top_zip_path</span><span class="o">=</span><span class="n">output_solvate_top_zip</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+        <span class="n">output_top_zip_path</span><span class="o">=</span><span class="n">output_solvate_top_zip</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13588,20 +13499,6 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">])</span>
 <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ngl4.png&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13653,19 +13550,19 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for ion generation</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="k">import</span> <span class="n">Grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppion_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppion.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;minimization&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_solvate_gro</span><span class="p">,</span> 
+<span class="n">grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_solvate_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_solvate_top_zip</span><span class="p">,</span> 
        <span class="n">output_tpr_path</span><span class="o">=</span><span class="n">output_gppion_tpr</span><span class="p">,</span>  
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13688,7 +13585,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Genion: Adding ions to neutralize the system</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.genion</span> <span class="k">import</span> <span class="n">Genion</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.genion</span> <span class="kn">import</span> <span class="n">genion</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_genion_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_genion.gro&#39;</span>
@@ -13698,11 +13595,11 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Genion</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppion_tpr</span><span class="p">,</span> 
+<span class="n">genion</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppion_tpr</span><span class="p">,</span> 
        <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_genion_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_solvate_top_zip</span><span class="p">,</span> 
        <span class="n">output_top_zip_path</span><span class="o">=</span><span class="n">output_genion_top_zip</span><span class="p">,</span> 
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13732,20 +13629,6 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="n">view</span><span class="o">.</span><span class="n">_remote_call</span><span class="p">(</span><span class="s1">&#39;setSize&#39;</span><span class="p">,</span> <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Widget&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">])</span>
 <span class="n">view</span><span class="o">.</span><span class="n">camera</span><span class="o">=</span><span class="s1">&#39;orthographic&#39;</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">view</span><span class="o">.</span><span class="n">render_image</span><span class="p">()</span>
-<span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ngl5.png&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13806,7 +13689,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for mdrun</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="k">import</span> <span class="n">Grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppmin_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmin.tpr&#39;</span>
@@ -13815,14 +13698,14 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
         <span class="s1">&#39;emtol&#39;</span><span class="p">:</span><span class="s1">&#39;500&#39;</span><span class="p">,</span>
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;5000&#39;</span>
     <span class="p">},</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;minimization&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_genion_gro</span><span class="p">,</span> 
+<span class="n">grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_genion_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_genion_top_zip</span><span class="p">,</span> 
        <span class="n">output_tpr_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span>  
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13845,7 +13728,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running minimization</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="k">import</span> <span class="n">Mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_min_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_min.trr&#39;</span>
@@ -13854,11 +13737,11 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="n">output_min_log</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_min.log&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span> 
+<span class="n">mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span> 
       <span class="n">output_trr_path</span><span class="o">=</span><span class="n">output_min_trr</span><span class="p">,</span> 
       <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_min_gro</span><span class="p">,</span> 
       <span class="n">output_edr_path</span><span class="o">=</span><span class="n">output_min_edr</span><span class="p">,</span> 
-      <span class="n">output_log_path</span><span class="o">=</span><span class="n">output_min_log</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+      <span class="n">output_log_path</span><span class="o">=</span><span class="n">output_min_log</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13881,7 +13764,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXEnergy: Getting system energy by time  </span>
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="k">import</span> <span class="n">GMXEnergy</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="kn">import</span> <span class="n">gmx_energy</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_min_ene_xvg</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_min_ene.xvg&#39;</span>
@@ -13890,9 +13773,9 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXEnergy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_min_edr</span><span class="p">,</span> 
+<span class="n">gmx_energy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_min_edr</span><span class="p">,</span> 
           <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_min_ene_xvg</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13902,7 +13785,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly</span>
@@ -13978,21 +13861,20 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div>
         
         
-            <div id="4ffce790-e8dc-4206-8037-ca9ba75e9a94" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="8c71dd6d-d922-4186-904a-ad83c16c0e73" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plot.ly';
                     
-                if (document.getElementById("4ffce790-e8dc-4206-8037-ca9ba75e9a94")) {
+                if (document.getElementById("8c71dd6d-d922-4186-904a-ad83c16c0e73")) {
                     Plotly.newPlot(
-                        '4ffce790-e8dc-4206-8037-ca9ba75e9a94',
-                        [{"type": "scatter", "uid": "30079cc3-571c-47f3-8657-3cc4bbe6dfe1", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 11.0, 12.0, 13.0, 15.0, 16.0, 17.0, 18.0, 19.0, 21.0, 22.0, 23.0, 25.0, 26.0, 27.0, 28.0, 29.0, 31.0, 33.0, 34.0, 35.0, 36.0, 38.0, 39.0, 40.0, 42.0, 43.0, 44.0, 45.0, 46.0, 48.0, 49.0, 50.0, 52.0, 53.0, 54.0, 55.0, 56.0, 58.0, 59.0, 60.0, 62.0, 63.0, 64.0, 65.0, 67.0, 68.0, 69.0, 71.0, 72.0, 73.0, 74.0, 75.0, 77.0, 78.0, 79.0, 81.0, 82.0, 83.0, 84.0, 86.0, 87.0, 88.0, 90.0, 91.0, 92.0, 93.0, 95.0, 96.0, 97.0, 99.0, 100.0, 101.0, 102.0, 104.0, 105.0, 106.0, 108.0, 109.0, 110.0, 111.0, 112.0, 114.0, 115.0, 116.0, 118.0, 119.0, 120.0, 121.0, 123.0, 124.0, 125.0, 127.0, 128.0, 129.0, 130.0, 132.0, 133.0, 134.0, 136.0, 137.0, 138.0, 139.0, 140.0, 141.0, 143.0, 144.0, 145.0, 147.0, 148.0, 149.0, 150.0, 152.0, 153.0, 154.0, 156.0, 157.0, 158.0, 159.0, 160.0, 162.0, 163.0, 164.0, 166.0, 167.0, 168.0, 169.0, 171.0, 172.0, 173.0, 175.0, 176.0, 177.0, 178.0, 180.0, 181.0, 182.0, 184.0, 185.0, 186.0, 187.0, 189.0, 190.0, 191.0, 193.0, 194.0, 195.0, 196.0, 197.0, 198.0, 200.0, 202.0, 203.0, 204.0, 205.0, 207.0, 208.0, 209.0, 211.0, 212.0, 213.0, 215.0, 216.0, 217.0, 218.0, 219.0, 221.0, 222.0, 223.0, 225.0, 226.0, 227.0, 228.0, 229.0, 231.0, 232.0, 233.0, 235.0, 236.0, 237.0, 238.0, 239.0, 241.0, 242.0, 243.0, 245.0, 246.0, 247.0, 248.0, 249.0, 251.0, 252.0, 253.0, 255.0, 256.0, 257.0, 258.0, 259.0, 261.0, 262.0, 263.0, 265.0, 266.0, 267.0, 268.0, 269.0, 271.0, 272.0, 273.0, 275.0, 276.0, 277.0, 278.0, 280.0, 281.0, 282.0, 284.0, 285.0, 286.0, 287.0, 289.0, 290.0, 291.0, 293.0, 294.0, 295.0, 296.0, 297.0, 299.0, 300.0, 301.0, 303.0, 304.0, 305.0, 306.0, 307.0, 309.0, 310.0, 311.0, 313.0, 314.0, 315.0, 316.0, 317.0, 319.0, 320.0, 321.0, 323.0, 324.0, 325.0, 326.0, 328.0, 329.0, 330.0, 332.0, 333.0, 334.0, 335.0, 337.0, 338.0, 339.0, 341.0, 342.0, 343.0, 344.0, 345.0, 347.0, 348.0, 349.0, 351.0, 352.0, 353.0, 354.0, 355.0, 357.0, 358.0, 359.0, 361.0, 362.0, 363.0, 364.0, 366.0, 367.0, 368.0, 370.0, 371.0, 372.0, 373.0, 375.0, 376.0, 377.0, 379.0, 380.0, 381.0, 382.0, 383.0, 384.0, 386.0, 387.0, 388.0, 390.0, 391.0, 392.0, 393.0, 395.0, 396.0, 397.0, 399.0, 400.0, 401.0, 402.0, 403.0, 405.0, 406.0, 407.0, 409.0, 410.0, 411.0, 412.0, 414.0, 415.0, 416.0, 418.0, 419.0, 420.0, 421.0, 422.0, 423.0, 425.0, 427.0, 428.0, 429.0, 430.0, 432.0, 433.0, 434.0, 436.0, 437.0, 438.0, 440.0, 441.0, 442.0, 443.0, 444.0, 446.0, 447.0, 448.0, 450.0, 451.0, 452.0, 453.0, 454.0, 455.0, 456.0, 458.0, 459.0, 460.0, 462.0, 463.0, 464.0, 465.0, 467.0, 468.0, 469.0, 471.0, 472.0, 473.0, 474.0, 475.0, 477.0, 478.0, 479.0, 481.0, 482.0, 483.0, 484.0, 486.0, 487.0, 488.0, 490.0, 491.0, 492.0, 493.0, 495.0, 496.0, 497.0, 499.0, 500.0, 501.0, 502.0, 503.0, 505.0, 506.0, 507.0, 509.0, 510.0, 511.0, 512.0, 513.0, 515.0, 516.0, 517.0, 519.0, 520.0, 521.0, 522.0, 524.0, 525.0, 526.0, 528.0, 529.0, 530.0, 531.0, 533.0, 534.0, 535.0, 537.0, 538.0, 539.0, 540.0, 541.0, 543.0, 544.0, 545.0, 547.0, 548.0, 549.0, 550.0, 551.0, 553.0, 554.0, 555.0, 557.0, 558.0, 559.0, 560.0, 561.0, 563.0, 564.0, 565.0, 567.0, 568.0, 569.0, 570.0, 572.0, 573.0, 574.0, 576.0, 577.0, 578.0, 579.0, 581.0, 582.0, 583.0, 585.0, 586.0, 587.0, 588.0, 589.0, 591.0, 592.0, 593.0, 595.0, 596.0, 597.0, 598.0, 599.0, 601.0, 602.0, 603.0, 605.0, 606.0, 607.0, 608.0, 610.0, 611.0, 612.0, 614.0, 615.0, 616.0, 617.0, 619.0, 620.0, 621.0, 623.0, 624.0, 625.0, 626.0, 627.0, 629.0, 630.0, 631.0, 633.0, 634.0, 635.0, 636.0, 637.0, 639.0, 640.0, 641.0, 643.0, 644.0, 645.0, 646.0, 648.0, 649.0, 650.0, 652.0, 653.0, 654.0, 655.0, 657.0, 658.0, 659.0, 661.0, 662.0, 663.0, 664.0, 665.0, 666.0, 668.0, 669.0, 670.0, 672.0, 673.0, 675.0, 676.0, 677.0, 679.0, 680.0, 681.0, 682.0, 683.0, 685.0, 686.0, 687.0, 689.0, 690.0, 691.0, 692.0, 693.0, 694.0, 695.0, 697.0, 699.0, 700.0, 701.0, 702.0, 704.0, 705.0, 706.0, 708.0, 709.0, 710.0, 711.0, 712.0, 714.0, 715.0, 716.0, 718.0, 719.0, 720.0, 721.0, 722.0, 724.0, 725.0, 726.0, 728.0, 729.0, 730.0, 731.0, 732.0, 733.0, 735.0, 736.0, 737.0, 739.0, 740.0, 741.0, 742.0, 744.0, 745.0, 746.0, 748.0, 749.0, 750.0, 751.0, 753.0, 754.0, 755.0, 757.0, 758.0, 759.0, 760.0, 761.0, 763.0, 764.0, 765.0, 767.0, 768.0, 769.0, 770.0, 772.0, 773.0, 774.0, 776.0, 777.0, 778.0, 779.0, 781.0, 782.0, 783.0, 785.0, 786.0, 787.0, 788.0, 789.0, 790.0, 792.0, 793.0, 794.0, 796.0, 797.0, 798.0, 799.0, 801.0, 802.0, 803.0, 805.0, 806.0, 807.0, 808.0, 809.0, 811.0, 812.0, 813.0, 815.0, 816.0, 817.0, 818.0, 820.0, 821.0, 822.0, 824.0, 825.0, 826.0, 827.0, 829.0, 830.0, 831.0, 833.0, 834.0, 835.0, 836.0, 837.0, 839.0, 840.0, 841.0, 843.0, 844.0, 845.0, 846.0, 847.0, 849.0, 850.0, 851.0, 853.0, 854.0, 855.0, 856.0, 858.0, 859.0, 860.0, 862.0, 863.0, 864.0, 865.0, 867.0, 868.0, 869.0, 871.0, 872.0, 873.0, 874.0, 875.0, 876.0, 878.0, 879.0, 880.0, 882.0, 883.0, 885.0, 886.0, 887.0, 889.0, 890.0, 891.0, 892.0, 893.0, 895.0, 896.0, 897.0, 899.0, 900.0, 901.0, 902.0, 903.0, 905.0, 906.0, 907.0, 909.0, 910.0, 911.0, 912.0, 913.0, 914.0, 915.0, 917.0, 919.0, 920.0, 921.0, 922.0, 924.0, 925.0, 926.0, 928.0, 929.0, 930.0, 931.0, 932.0, 934.0, 935.0, 936.0, 938.0, 939.0, 940.0, 941.0, 942.0, 944.0, 945.0, 946.0, 948.0, 949.0, 950.0, 951.0, 952.0, 953.0, 955.0, 956.0, 957.0, 959.0, 960.0, 961.0, 962.0, 964.0, 965.0, 966.0, 968.0, 969.0, 970.0, 971.0, 973.0, 974.0, 975.0, 977.0, 978.0, 979.0, 980.0, 981.0, 983.0, 984.0, 985.0, 987.0, 988.0, 989.0, 990.0, 992.0, 993.0, 994.0, 996.0, 997.0, 998.0, 999.0, 1001.0, 1002.0, 1003.0, 1005.0, 1006.0, 1007.0, 1008.0, 1009.0, 1011.0, 1012.0, 1013.0, 1015.0, 1016.0, 1017.0, 1018.0, 1019.0, 1021.0, 1022.0, 1023.0, 1025.0, 1026.0, 1027.0, 1028.0, 1030.0, 1031.0, 1032.0, 1034.0, 1035.0, 1036.0, 1037.0, 1039.0, 1040.0, 1041.0, 1043.0, 1044.0, 1045.0, 1046.0, 1047.0, 1048.0, 1049.0, 1051.0, 1053.0, 1054.0, 1055.0, 1056.0, 1058.0, 1059.0, 1060.0, 1062.0, 1063.0, 1064.0, 1065.0, 1066.0, 1068.0, 1069.0, 1070.0, 1072.0, 1073.0, 1074.0, 1075.0, 1076.0, 1078.0, 1079.0, 1080.0, 1082.0, 1083.0, 1084.0, 1085.0, 1086.0, 1087.0, 1089.0, 1091.0, 1092.0, 1093.0, 1094.0, 1096.0, 1097.0, 1098.0, 1100.0, 1101.0, 1102.0, 1103.0, 1104.0, 1106.0, 1107.0, 1108.0, 1110.0, 1111.0, 1112.0, 1113.0, 1114.0, 1115.0, 1116.0, 1118.0, 1120.0, 1121.0, 1122.0, 1123.0, 1125.0, 1126.0, 1127.0, 1129.0, 1130.0, 1131.0, 1133.0, 1134.0, 1135.0, 1136.0, 1137.0, 1138.0, 1139.0, 1141.0, 1142.0, 1143.0, 1145.0, 1146.0, 1147.0, 1148.0, 1150.0, 1151.0, 1152.0, 1154.0, 1155.0, 1156.0, 1157.0, 1158.0, 1159.0, 1161.0, 1162.0, 1163.0, 1165.0, 1166.0, 1168.0, 1169.0, 1170.0, 1172.0, 1173.0, 1174.0, 1175.0, 1176.0, 1178.0, 1179.0, 1180.0, 1182.0, 1183.0, 1184.0, 1185.0, 1186.0, 1188.0, 1189.0, 1190.0, 1192.0, 1193.0, 1194.0, 1195.0, 1196.0, 1198.0, 1199.0, 1200.0, 1202.0, 1203.0, 1204.0, 1205.0, 1206.0, 1207.0, 1209.0, 1211.0, 1212.0, 1213.0, 1214.0, 1216.0, 1217.0, 1218.0, 1220.0, 1221.0, 1222.0, 1224.0, 1225.0, 1226.0, 1227.0, 1228.0, 1229.0, 1230.0, 1232.0, 1233.0, 1234.0, 1236.0, 1237.0, 1238.0, 1239.0, 1241.0, 1242.0, 1243.0, 1245.0, 1246.0, 1247.0, 1248.0, 1249.0, 1251.0, 1252.0, 1253.0, 1255.0, 1256.0, 1257.0, 1258.0, 1260.0, 1261.0, 1262.0, 1264.0, 1265.0, 1266.0, 1267.0, 1269.0, 1270.0, 1271.0, 1273.0, 1274.0, 1275.0, 1276.0, 1277.0, 1279.0, 1280.0, 1281.0, 1283.0, 1284.0, 1285.0, 1286.0, 1287.0, 1288.0, 1290.0, 1291.0, 1292.0, 1294.0, 1295.0, 1297.0, 1298.0, 1299.0, 1301.0, 1302.0, 1303.0, 1304.0, 1305.0, 1307.0, 1308.0, 1309.0, 1311.0, 1312.0, 1313.0, 1314.0, 1315.0, 1317.0, 1318.0, 1319.0, 1321.0, 1322.0, 1323.0, 1324.0, 1325.0, 1326.0, 1328.0, 1329.0, 1330.0, 1332.0, 1333.0, 1335.0, 1336.0, 1337.0, 1339.0, 1340.0, 1341.0, 1342.0, 1343.0, 1345.0, 1346.0, 1347.0, 1349.0, 1350.0, 1351.0, 1352.0, 1353.0, 1355.0, 1356.0, 1357.0, 1359.0, 1360.0, 1361.0, 1362.0, 1363.0, 1365.0, 1366.0, 1367.0, 1369.0, 1370.0, 1371.0, 1372.0, 1373.0, 1375.0, 1376.0, 1377.0, 1379.0, 1380.0, 1381.0, 1382.0, 1383.0, 1384.0, 1386.0, 1387.0, 1388.0, 1390.0, 1391.0, 1393.0, 1394.0, 1395.0, 1397.0, 1398.0, 1399.0, 1400.0, 1401.0, 1403.0, 1404.0, 1405.0, 1407.0, 1408.0, 1409.0, 1410.0, 1411.0, 1413.0, 1414.0, 1415.0, 1417.0, 1418.0, 1419.0, 1420.0, 1421.0, 1422.0, 1424.0, 1425.0, 1426.0, 1428.0, 1429.0, 1431.0, 1432.0, 1433.0, 1435.0, 1436.0, 1437.0, 1438.0, 1439.0, 1441.0, 1442.0, 1443.0, 1445.0, 1446.0, 1447.0, 1448.0, 1449.0, 1451.0, 1452.0, 1453.0, 1455.0, 1456.0, 1457.0, 1458.0, 1459.0, 1461.0, 1462.0, 1463.0, 1465.0, 1466.0, 1467.0, 1468.0, 1469.0, 1470.0, 1472.0, 1473.0, 1474.0, 1476.0, 1477.0, 1479.0, 1480.0, 1481.0, 1483.0, 1484.0, 1485.0, 1486.0, 1487.0, 1489.0, 1490.0, 1491.0, 1493.0, 1494.0, 1495.0, 1496.0, 1497.0, 1499.0, 1500.0, 1501.0, 1503.0, 1504.0, 1505.0, 1506.0, 1507.0, 1509.0, 1510.0, 1511.0, 1513.0, 1514.0, 1515.0, 1516.0, 1517.0, 1518.0, 1520.0, 1521.0, 1522.0, 1524.0, 1525.0, 1527.0, 1528.0, 1529.0, 1531.0, 1532.0, 1533.0, 1534.0, 1535.0, 1537.0, 1538.0, 1539.0, 1541.0, 1542.0, 1543.0, 1544.0, 1545.0, 1547.0, 1548.0, 1549.0, 1551.0, 1552.0, 1553.0, 1554.0, 1555.0, 1557.0, 1558.0, 1559.0, 1561.0, 1562.0, 1563.0, 1564.0, 1565.0, 1566.0, 1568.0, 1569.0, 1570.0, 1572.0, 1573.0, 1575.0, 1576.0, 1577.0, 1579.0, 1580.0, 1581.0, 1582.0, 1583.0, 1585.0, 1586.0, 1587.0, 1589.0, 1590.0, 1591.0, 1592.0, 1593.0, 1595.0, 1596.0, 1597.0, 1599.0, 1600.0, 1601.0, 1602.0, 1603.0, 1605.0, 1606.0, 1607.0, 1609.0, 1610.0, 1611.0, 1612.0, 1613.0, 1614.0, 1616.0, 1617.0, 1618.0, 1620.0, 1621.0, 1623.0, 1624.0, 1625.0, 1627.0, 1628.0, 1629.0, 1630.0, 1631.0, 1633.0, 1634.0, 1635.0, 1637.0, 1638.0, 1639.0, 1640.0, 1641.0, 1643.0, 1644.0, 1645.0, 1647.0, 1648.0, 1649.0, 1650.0, 1651.0, 1653.0, 1654.0, 1655.0, 1657.0, 1658.0, 1659.0, 1660.0, 1661.0, 1662.0, 1664.0, 1666.0, 1667.0, 1668.0, 1669.0, 1671.0, 1672.0, 1673.0, 1675.0, 1676.0, 1677.0, 1679.0, 1680.0, 1681.0, 1682.0, 1683.0, 1684.0, 1685.0, 1687.0, 1688.0, 1689.0, 1691.0, 1692.0, 1693.0, 1694.0, 1696.0, 1697.0, 1698.0, 1700.0, 1701.0, 1702.0, 1703.0, 1704.0, 1706.0, 1707.0, 1708.0, 1710.0, 1711.0, 1712.0, 1713.0, 1715.0, 1716.0, 1717.0, 1719.0, 1720.0, 1721.0, 1722.0, 1724.0, 1725.0, 1726.0, 1728.0, 1729.0, 1730.0, 1731.0, 1732.0, 1733.0, 1734.0, 1736.0, 1738.0, 1739.0, 1740.0, 1741.0, 1743.0, 1744.0, 1745.0, 1747.0, 1748.0, 1749.0, 1750.0, 1751.0, 1753.0, 1754.0, 1755.0, 1757.0, 1758.0, 1759.0, 1760.0, 1761.0, 1763.0, 1764.0, 1765.0, 1767.0, 1768.0, 1769.0, 1770.0, 1772.0, 1773.0, 1774.0, 1776.0, 1777.0, 1778.0, 1779.0, 1780.0, 1781.0, 1783.0, 1784.0, 1785.0, 1787.0, 1788.0, 1789.0, 1790.0, 1792.0, 1793.0, 1794.0, 1796.0, 1797.0, 1798.0, 1799.0, 1800.0, 1802.0, 1803.0, 1804.0, 1806.0, 1807.0, 1808.0, 1809.0, 1810.0, 1812.0, 1813.0, 1814.0, 1816.0, 1817.0, 1818.0, 1819.0, 1821.0, 1822.0, 1823.0, 1825.0, 1826.0, 1827.0, 1828.0, 1830.0, 1831.0, 1832.0, 1834.0, 1835.0, 1836.0, 1837.0, 1838.0, 1840.0, 1841.0, 1842.0, 1844.0, 1845.0, 1846.0, 1847.0, 1848.0, 1850.0, 1851.0, 1852.0, 1854.0, 1855.0, 1856.0, 1857.0, 1859.0, 1860.0, 1861.0, 1863.0, 1864.0, 1865.0, 1866.0, 1867.0, 1868.0, 1870.0, 1872.0, 1873.0, 1874.0, 1875.0, 1877.0, 1878.0, 1879.0, 1881.0, 1882.0, 1883.0, 1884.0, 1885.0, 1887.0, 1888.0, 1889.0, 1891.0, 1892.0, 1893.0, 1894.0, 1895.0, 1897.0, 1898.0, 1899.0, 1901.0, 1902.0, 1903.0, 1904.0, 1905.0, 1906.0, 1908.0, 1909.0, 1910.0, 1912.0, 1913.0, 1914.0, 1915.0, 1917.0, 1918.0, 1919.0, 1921.0, 1922.0, 1923.0, 1924.0, 1926.0, 1927.0, 1928.0, 1930.0, 1931.0, 1932.0, 1933.0, 1934.0, 1936.0, 1937.0, 1938.0, 1940.0, 1941.0, 1942.0, 1943.0, 1944.0, 1946.0, 1947.0, 1948.0, 1950.0, 1951.0, 1952.0, 1953.0, 1955.0, 1956.0, 1957.0, 1959.0, 1960.0, 1961.0, 1962.0, 1963.0, 1964.0, 1966.0, 1968.0, 1969.0, 1970.0, 1971.0, 1973.0, 1974.0, 1975.0, 1977.0, 1978.0, 1979.0, 1980.0, 1981.0, 1983.0, 1984.0, 1985.0, 1987.0, 1988.0, 1989.0, 1990.0, 1991.0, 1993.0, 1994.0, 1995.0, 1997.0, 1998.0, 1999.0, 2000.0, 2001.0, 2002.0, 2004.0, 2005.0, 2006.0, 2008.0, 2009.0, 2010.0, 2011.0, 2013.0, 2014.0, 2015.0, 2017.0, 2018.0, 2019.0, 2020.0, 2022.0, 2023.0, 2024.0, 2026.0, 2027.0, 2028.0, 2029.0, 2030.0, 2032.0, 2033.0, 2034.0, 2036.0, 2037.0, 2038.0, 2039.0, 2041.0, 2042.0, 2043.0, 2045.0, 2046.0, 2047.0, 2048.0, 2049.0, 2050.0, 2052.0, 2054.0, 2055.0, 2056.0, 2057.0, 2059.0, 2060.0, 2061.0, 2063.0, 2064.0, 2065.0, 2066.0, 2067.0, 2069.0, 2070.0, 2071.0, 2073.0, 2074.0, 2075.0, 2076.0, 2077.0, 2079.0, 2080.0, 2081.0, 2083.0, 2084.0, 2085.0, 2086.0, 2087.0, 2088.0, 2090.0, 2091.0, 2092.0, 2094.0, 2095.0, 2096.0, 2097.0, 2099.0, 2100.0, 2101.0, 2103.0, 2104.0, 2105.0, 2106.0, 2108.0, 2109.0, 2110.0, 2112.0, 2113.0, 2114.0, 2115.0, 2116.0, 2118.0, 2119.0, 2120.0, 2122.0, 2123.0, 2124.0, 2125.0, 2127.0, 2128.0, 2129.0, 2131.0, 2132.0, 2133.0, 2134.0, 2135.0, 2136.0, 2138.0, 2139.0, 2140.0, 2142.0, 2143.0, 2144.0, 2145.0, 2147.0, 2148.0, 2149.0, 2151.0, 2152.0, 2153.0, 2154.0, 2156.0, 2157.0, 2158.0, 2160.0, 2161.0, 2162.0, 2163.0, 2164.0, 2166.0, 2167.0, 2168.0, 2170.0, 2171.0, 2172.0, 2173.0, 2175.0, 2176.0, 2177.0, 2179.0, 2180.0, 2181.0, 2182.0, 2183.0, 2184.0, 2186.0, 2188.0, 2189.0, 2190.0, 2191.0, 2193.0, 2194.0, 2195.0, 2197.0, 2198.0, 2199.0, 2200.0, 2201.0, 2203.0, 2204.0, 2205.0, 2207.0, 2208.0, 2209.0, 2210.0, 2211.0, 2213.0, 2214.0, 2215.0, 2217.0, 2218.0, 2219.0, 2220.0, 2221.0, 2222.0, 2224.0, 2225.0, 2226.0, 2228.0, 2229.0, 2230.0, 2231.0, 2233.0, 2234.0, 2235.0, 2237.0, 2238.0, 2239.0, 2240.0, 2242.0, 2243.0, 2244.0, 2246.0, 2247.0, 2248.0, 2249.0, 2250.0, 2251.0, 2253.0, 2254.0, 2255.0, 2257.0, 2258.0, 2260.0, 2261.0, 2262.0, 2264.0, 2265.0, 2266.0, 2267.0, 2268.0, 2269.0, 2270.0, 2272.0, 2274.0, 2275.0, 2276.0, 2277.0, 2279.0, 2280.0, 2281.0, 2283.0, 2284.0, 2285.0, 2286.0, 2287.0, 2289.0, 2290.0, 2291.0, 2293.0, 2294.0, 2295.0, 2296.0, 2297.0, 2298.0, 2299.0, 2301.0, 2302.0, 2303.0, 2305.0, 2306.0, 2308.0, 2309.0, 2310.0, 2312.0, 2313.0, 2314.0, 2315.0, 2316.0, 2317.0, 2318.0, 2320.0, 2321.0, 2322.0, 2324.0, 2325.0, 2326.0, 2327.0, 2329.0, 2330.0, 2331.0, 2333.0, 2334.0, 2335.0, 2336.0, 2338.0, 2339.0, 2340.0, 2342.0, 2343.0, 2344.0, 2345.0, 2346.0, 2348.0, 2349.0, 2350.0, 2352.0, 2353.0, 2354.0, 2355.0, 2357.0, 2358.0, 2359.0, 2361.0, 2362.0, 2363.0, 2364.0, 2365.0, 2366.0, 2368.0, 2369.0, 2370.0, 2372.0, 2373.0, 2374.0, 2375.0, 2377.0, 2378.0, 2379.0, 2381.0, 2382.0, 2383.0, 2384.0, 2386.0, 2387.0, 2388.0, 2390.0, 2391.0, 2392.0, 2393.0, 2394.0, 2396.0, 2397.0, 2398.0, 2400.0, 2401.0, 2402.0, 2403.0, 2405.0, 2406.0, 2407.0, 2409.0, 2410.0, 2411.0, 2412.0, 2413.0, 2414.0, 2416.0, 2417.0, 2418.0, 2420.0, 2421.0, 2422.0, 2423.0, 2425.0, 2426.0, 2427.0, 2429.0, 2430.0, 2431.0, 2432.0, 2434.0, 2435.0, 2436.0, 2438.0, 2439.0, 2440.0, 2441.0, 2442.0, 2444.0], "y": [-327612.125, -347306.34375, -371487.59375, -400072.09375, -427773.65625, -452044.46875, -457291.3125, -461900.9375, -463964.3125, -467419.9375, -472346.71875, -473178.34375, -479740.125, -482194.53125, -483604.3125, -485770.1875, -486202.71875, -487950.90625, -491239.875, -491569.5625, -496080.125, -497212.78125, -497915.5, -498762.71875, -498798.75, -499045.03125, -503261.78125, -504591.0, -505914.09375, -506153.46875, -507574.375, -508784.0625, -509316.59375, -510723.625, -511569.40625, -512162.09375, -513047.5625, -513196.84375, -514057.53125, -515344.90625, -515769.3125, -517365.96875, -517970.5625, -518392.59375, -518939.875, -519113.40625, -519502.3125, -520976.65625, -521471.53125, -523378.21875, -523769.9375, -524162.1875, -524394.125, -524644.4375, -525843.625, -526626.375, -528134.125, -528466.3125, -528804.1875, -529019.0, -529233.4375, -529242.4375, -530580.3125, -531358.25, -533035.4375, -533256.1875, -533527.3125, -533613.625, -533751.5, -534757.1875, -534980.75, -536369.5, -536553.8125, -536811.75, -536875.4375, -537043.625, -537864.375, -538097.8125, -539173.5625, -539361.875, -539595.9375, -539682.1875, -539869.125, -540481.375, -540768.5, -541524.0625, -541727.6875, -541907.8125, -542069.0625, -542175.625, -542255.125, -542921.875, -543344.125, -544164.375, -544323.25, -544502.0625, -544596.0625, -544720.9375, -545209.6875, -545589.0, -546230.625, -546383.5625, -546559.75, -546650.25, -546800.75, -547169.9375, -547469.8125, -547933.1875, -548090.8125, -548234.625, -548365.375, -548466.375, -548545.625, -548559.625, -549138.6875, -549492.6875, -550260.875, -550352.0625, -550512.4375, -550522.0, -550657.8125, -551056.1875, -551097.6875, -551613.6875, -551739.875, -551838.1875, -551935.375, -551975.8125, -552010.9375, -552502.6875, -552619.4375, -553261.875, -553348.5, -553464.4375, -553493.0, -553570.125, -553953.625, -554042.1875, -554555.0625, -554648.0, -554752.0625, -554801.125, -554869.5, -555197.8125, -555379.0625, -555810.75, -555902.75, -556005.9375, -556059.5, -556136.0625, -556407.1875, -556605.8125, -556964.75, -557057.75, -557153.875, -557216.4375, -557288.6875, -557297.0, -557313.8125, -557747.375, -557914.75, -558078.0625, -558093.9375, -558289.875, -558423.25, -558476.5625, -558631.1875, -558754.8125, -558838.9375, -558985.5, -559090.9375, -559186.25, -559304.625, -559339.4375, -559465.625, -559616.75, -559699.3125, -559889.9375, -559986.0, -560059.5, -560158.8125, -560189.9375, -560289.125, -560469.25, -560559.5, -560778.375, -560868.5625, -560934.5, -561025.125, -561049.875, -561134.625, -561332.0, -561411.25, -561653.375, -561736.9375, -561797.0625, -561876.8125, -561898.5625, -561966.1875, -562185.0625, -562255.25, -562525.4375, -562601.3125, -562658.5625, -562725.4375, -562746.375, -562793.25, -563037.625, -563103.25, -563406.5, -563473.125, -563529.75, -563581.625, -563604.3125, -563627.0, -563901.0625, -563967.375, -564307.5625, -564364.25, -564421.5625, -564456.625, -564482.375, -564707.0625, -564893.25, -565195.6875, -565246.875, -565328.0625, -565341.625, -565422.5, -565571.25, -565619.3125, -565802.25, -565872.6875, -565920.0625, -565990.125, -566004.4375, -566066.6875, -566236.4375, -566285.9375, -566498.4375, -566561.5625, -566608.625, -566664.75, -566682.6875, -566722.6875, -566918.0625, -566978.0625, -567223.125, -567277.875, -567326.875, -567368.0625, -567392.0, -567406.4375, -567630.4375, -567716.6875, -567997.5, -568042.6875, -568095.375, -568119.0625, -568150.25, -568326.6875, -568435.5625, -568671.8125, -568717.375, -568777.875, -568798.0625, -568853.1875, -568983.5625, -569048.0, -569211.25, -569266.4375, -569311.125, -569360.3125, -569384.3125, -569420.0625, -569571.3125, -569659.1875, -569850.5625, -569898.6875, -569945.25, -569981.375, -570011.375, -570024.1875, -570200.75, -570339.0625, -570562.0, -570602.3125, -570652.0625, -570673.3125, -570710.375, -570843.875, -570927.75, -571104.875, -571148.9375, -571196.8125, -571225.25, -571265.25, -571375.0625, -571477.25, -571616.5, -571663.3125, -571707.3125, -571745.875, -571778.9375, -571800.4375, -571809.0625, -571982.3125, -572083.75, -572314.25, -572345.3125, -572396.4375, -572403.0625, -572447.9375, -572571.75, -572599.0625, -572759.0625, -572801.8125, -572837.0, -572871.625, -572888.875, -572905.1875, -573058.6875, -573128.1875, -573327.5, -573361.0, -573404.0625, -573418.75, -573451.3125, -573571.375, -573627.625, -573784.5625, -573822.8125, -573861.4375, -573887.375, -573915.125, -573919.1875, -573922.0625, -574113.6875, -574188.75, -574260.0625, -574266.875, -574353.0, -574409.5625, -574433.3125, -574497.875, -574552.0, -574591.3125, -574655.75, -574700.5625, -574743.5625, -574793.8125, -574813.0625, -574865.8125, -574930.75, -574978.0, -575059.5, -575101.3125, -575137.375, -575179.25, -575201.0, -575237.625, -575238.375, -575258.875, -575405.875, -575407.3125, -575603.6875, -575631.0, -575666.3125, -575675.625, -575700.25, -575821.0, -575850.9375, -576006.75, -576039.25, -576070.1875, -576092.9375, -576109.1875, -576112.875, -576258.625, -576318.6875, -576505.4375, -576531.25, -576565.6875, -576576.0, -576598.0625, -576711.0, -576753.625, -576907.0625, -576934.8125, -576971.875, -576983.5, -577015.625, -577104.625, -577141.875, -577254.3125, -577288.4375, -577315.625, -577346.25, -577358.75, -577379.625, -577484.25, -577525.375, -577657.9375, -577688.25, -577716.0625, -577739.5, -577753.0625, -577762.625, -577884.6875, -577929.375, -578083.625, -578109.9375, -578138.0, -578154.0625, -578168.4375, -578270.125, -578351.125, -578492.0, -578516.4375, -578555.25, -578561.0625, -578600.5625, -578671.5625, -578691.75, -578780.1875, -578814.5, -578836.9375, -578871.625, -578875.6875, -578908.0625, -578991.125, -579006.625, -579110.6875, -579142.375, -579163.0625, -579193.125, -579197.125, -579220.625, -579317.6875, -579328.3125, -579451.375, -579480.0625, -579500.5, -579523.8125, -579528.5625, -579541.0, -579655.375, -579663.0, -579809.0, -579833.0, -579855.125, -579870.0, -579877.1875, -579978.0625, -580058.1875, -580197.625, -580217.0625, -580253.625, -580254.3125, -580291.375, -580359.125, -580368.625, -580453.6875, -580484.5, -580502.4375, -580533.6875, -580534.8125, -580562.1875, -580643.5625, -580650.5, -580754.125, -580781.375, -580800.1875, -580823.6875, -580827.625, -580842.125, -580940.375, -580949.375, -581075.5625, -581097.9375, -581119.125, -581133.25, -581142.125, -581229.3125, -581303.1875, -581421.8125, -581441.0, -581472.375, -581477.125, -581507.1875, -581568.9375, -581586.9375, -581664.5625, -581691.4375, -581710.8125, -581735.875, -581742.5, -581762.4375, -581836.75, -581860.9375, -581956.3125, -581979.625, -582000.3125, -582018.0, -582029.375, -582035.5625, -582126.0, -582170.1875, -582287.25, -582305.4375, -582329.6875, -582338.25, -582355.0, -582426.25, -582459.3125, -582553.9375, -582574.5625, -582598.1875, -582610.125, -582629.5, -582688.1875, -582730.125, -582805.8125, -582828.4375, -582849.75, -582867.9375, -582882.6875, -582891.9375, -582892.875, -582989.25, -583030.6875, -583161.0625, -583173.8125, -583201.6875, -583240.0, -583271.875, -583319.5, -583343.625, -583364.4375, -583388.5, -583401.5, -583424.0, -583468.5625, -583509.6875, -583566.625, -583589.625, -583610.0, -583630.5, -583644.4375, -583659.4375, -583662.25, -583665.4375, -583763.25, -583800.8125, -583837.0625, -583842.25, -583885.0, -583915.6875, -583929.375, -583966.375, -583992.6875, -584013.125, -584044.375, -584047.375, -584080.375, -584120.0625, -584133.3125, -584183.125, -584207.1875, -584223.75, -584247.75, -584254.125, -584275.5625, -584326.5, -584348.25, -584415.5, -584435.375, -584454.0625, -584469.5625, -584482.5625, -584489.1875, -584491.0, -584577.8125, -584598.0, -584711.0, -584724.625, -584744.5, -584747.5, -584761.0625, -584828.0, -584840.8125, -584931.25, -584947.0625, -584966.25, -584974.0625, -584988.125, -585044.625, -585071.6875, -585144.625, -585162.4375, -585180.125, -585193.4375, -585204.625, -585209.1875, -585277.1875, -585328.25, -585415.9375, -585431.1875, -585450.8125, -585457.75, -585472.75, -585524.8125, -585551.8125, -585621.375, -585638.6875, -585656.9375, -585667.9375, -585682.875, -585727.25, -585768.0, -585824.9375, -585843.0, -585860.6875, -585875.1875, -585888.125, -585896.25, -585898.4375, -585970.25, -586009.0, -586106.1875, -586117.6875, -586139.8125, -586139.875, -586160.0, -586210.375, -586214.3125, -586278.4375, -586296.6875, -586309.0625, -586325.25, -586328.4375, -586339.3125, -586400.9375, -586409.3125, -586489.5625, -586504.4375, -586518.625, -586528.8125, -586535.8125, -586590.625, -586640.6875, -586714.5, -586728.375, -586748.625, -586753.375, -586772.875, -586812.6875, -586829.1875, -586879.9375, -586897.75, -586911.5625, -586928.0, -586934.5, -586947.125, -586995.125, -587019.0, -587080.5625, -587096.25, -587110.8125, -587122.875, -587132.0625, -587136.6875, -587194.5625, -587234.6875, -587309.6875, -587322.625, -587339.625, -587345.9375, -587358.5625, -587403.1875, -587430.0625, -587490.6875, -587505.625, -587522.0, -587530.75, -587544.875, -587582.3125, -587613.4375, -587661.25, -587677.3125, -587691.9375, -587705.5625, -587715.625, -587723.875, -587724.8125, -587787.5625, -587834.375, -587919.4375, -587928.875, -587949.1875, -587973.25, -587994.875, -588024.0, -588040.9375, -588056.5, -588074.125, -588082.9375, -588100.75, -588128.5625, -588153.125, -588188.0, -588204.375, -588218.5, -588234.9375, -588243.8125, -588257.4375, -588290.3125, -588320.875, -588362.125, -588377.75, -588391.9375, -588405.4375, -588415.1875, -588425.0625, -588425.875, -588427.5625, -588497.875, -588523.8125, -588549.625, -588552.1875, -588582.5625, -588604.3125, -588613.0625, -588639.1875, -588658.3125, -588671.9375, -588693.5, -588695.4375, -588718.3125, -588746.9375, -588755.5, -588792.125, -588808.625, -588820.25, -588836.3125, -588841.125, -588854.75, -588892.25, -588909.8125, -588959.8125, -588973.4375, -588986.625, -588996.9375, -589007.5625, -589009.625, -589013.3125, -589074.3125, -589077.0, -589156.625, -589166.875, -589179.375, -589183.4375, -589190.1875, -589240.4375, -589257.25, -589325.8125, -589335.9375, -589351.5, -589354.4375, -589367.8125, -589406.75, -589417.1875, -589467.0, -589481.0, -589491.875, -589503.375, -589508.875, -589515.6875, -589562.5625, -589580.25, -589641.0, -589652.75, -589665.25, -589672.625, -589680.0625, -589720.1875, -589755.375, -589809.8125, -589821.3125, -589837.125, -589842.4375, -589856.9375, -589886.875, -589904.4375, -589942.875, -589956.5, -589967.9375, -589981.375, -589987.375, -589997.9375, -590033.9375, -590056.875, -590102.75, -590115.9375, -590128.0, -590138.0625, -590145.875, -590150.6875, -590193.9375, -590229.25, -590283.8125, -590295.625, -590308.5625, -590315.25, -590324.9375, -590359.1875, -590388.0625, -590433.875, -590446.1875, -590459.875, -590467.4375, -590479.75, -590507.3125, -590532.0, -590567.1875, -590580.0625, -590592.4375, -590604.1875, -590612.25, -590621.3125, -590621.6875, -590624.375, -590683.4375, -590704.6875, -590726.375, -590728.9375, -590754.25, -590772.875, -590780.9375, -590803.8125, -590819.9375, -590831.5625, -590849.8125, -590851.625, -590870.625, -590895.5625, -590903.8125, -590936.0625, -590950.125, -590960.4375, -590974.0, -590978.6875, -590989.5, -591022.25, -591041.3125, -591084.9375, -591096.75, -591109.0, -591116.8125, -591127.375, -591128.0625, -591133.4375, -591184.0625, -591203.9375, -591222.875, -591228.0, -591250.0625, -591268.1875, -591277.6875, -591299.5, -591313.9375, -591326.125, -591342.125, -591346.6875, -591362.75, -591386.0, -591398.5625, -591428.0625, -591441.625, -591451.8125, -591464.625, -591471.125, -591480.6875, -591480.8125, -591483.1875, -591538.5625, -591559.875, -591581.0625, -591583.5625, -591609.625, -591625.875, -591633.6875, -591651.875, -591668.375, -591681.75, -591702.125, -591715.5625, -591727.9375, -591741.9375, -591749.5625, -591763.25, -591763.3125, -591774.4375, -591811.3125, -591815.25, -591864.75, -591875.375, -591885.625, -591892.125, -591899.375, -591932.75, -591959.125, -592001.5, -592012.75, -592024.1875, -592031.75, -592039.75, -592042.5, -592042.75, -592095.0625, -592103.1875, -592175.75, -592181.25, -592195.6875, -592216.25, -592231.125, -592256.75, -592269.375, -592280.0, -592292.3125, -592298.1875, -592310.0625, -592334.375, -592351.8125, -592382.625, -592394.375, -592404.125, -592415.25, -592421.375, -592430.0, -592458.9375, -592480.75, -592517.4375, -592528.5625, -592539.0, -592547.875, -592554.9375, -592559.875, -592593.6875, -592624.6875, -592668.375, -592678.4375, -592689.3125, -592695.6875, -592704.125, -592704.5625, -592705.9375, -592757.125, -592777.1875, -592797.0, -592798.875, -592823.375, -592837.8125, -592844.875, -592861.25, -592876.6875, -592889.0, -592908.3125, -592920.0, -592931.375, -592944.1875, -592951.0, -592962.8125, -592963.6875, -592972.75, -593007.375, -593012.375, -593057.875, -593067.75, -593077.625, -593082.75, -593090.125, -593120.3125, -593140.0, -593178.75, -593189.125, -593198.625, -593206.1875, -593212.875, -593215.8125, -593251.5625, -593281.6875, -593328.0625, -593336.8125, -593347.25, -593351.6875, -593360.125, -593387.875, -593407.75, -593445.5, -593455.5625, -593466.0625, -593471.6875, -593481.5625, -593504.25, -593523.6875, -593552.75, -593563.4375, -593573.0, -593582.125, -593588.6875, -593595.5625, -593622.375, -593647.625, -593682.1875, -593692.125, -593701.625, -593708.9375, -593715.9375, -593719.625, -593720.6875, -593762.875, -593777.75, -593835.8125, -593841.875, -593854.3125, -593871.0625, -593885.0, -593905.4375, -593916.5, -593926.0, -593937.75, -593942.9375, -593953.5625, -593973.5, -593988.625, -594013.375, -594023.625, -594032.5, -594042.875, -594048.4375, -594057.0, -594079.875, -594098.8125, -594127.625, -594137.8125, -594146.5625, -594155.375, -594161.1875, -594166.9375, -594167.0, -594205.4375, -594241.625, -594294.5, -594300.5625, -594313.5, -594328.0, -594339.9375, -594357.1875, -594367.8125, -594377.9375, -594389.4375, -594394.75, -594406.75, -594423.25, -594436.3125, -594456.1875, -594466.6875, -594475.125, -594485.875, -594491.0625, -594501.4375, -594520.1875, -594534.75, -594559.125, -594569.125, -594577.5625, -594587.0, -594592.125, -594600.125, -594622.625, -594640.6875, -594669.0625, -594678.75, -594687.1875, -594694.75, -594701.0625, -594705.875, -594732.375, -594756.875, -594790.9375, -594799.3125, -594808.1875, -594814.3125, -594820.875, -594822.875, -594823.75, -594864.6875, -594870.1875, -594925.9375, -594930.3125, -594942.0, -594958.1875, -594970.5625, -594990.875, -595000.875, -595008.8125, -595019.125, -595023.8125, -595032.75, -595052.0, -595066.625, -595090.4375, -595100.3125, -595108.1875, -595117.0625, -595121.9375, -595128.875, -595151.4375, -595169.8125, -595198.4375, -595207.25, -595215.5625, -595222.75, -595228.1875, -595232.3125, -595232.4375, -595269.3125, -595290.6875, -595341.5, -595346.25, -595357.9375, -595372.1875, -595383.375, -595400.25, -595409.9375, -595418.375, -595428.625, -595433.1875, -595443.5625, -595459.6875, -595471.875, -595492.1875, -595501.3125, -595508.9375, -595518.5, -595522.8125, -595531.25, -595550.375, -595564.6875, -595588.625, -595597.4375, -595605.0625, -595613.3125, -595618.4375, -595624.5, -595646.9375, -595664.6875, -595693.25, -595701.6875, -595709.5625, -595716.375, -595721.6875, -595724.9375, -595725.4375, -595761.75, -595777.25, -595826.9375, -595831.125, -595842.4375, -595856.3125, -595866.875, -595883.875, -595893.125, -595900.875, -595910.6875, -595915.125, -595924.875, -595940.625, -595952.4375, -595972.625, -595981.6875, -595988.875, -595997.6875, -596002.375, -596010.0, -596028.6875, -596043.0, -596066.5625, -596075.25, -596082.625, -596090.125, -596094.6875, -596100.4375, -596122.625, -596140.9375, -596169.3125, -596177.1875, -596185.125, -596191.125, -596196.25, -596199.25, -596199.375, -596234.4375, -596245.375, -596294.125, -596298.25, -596308.3125, -596322.5, -596332.625, -596349.375, -596358.4375, -596365.9375, -596375.0625, -596378.75, -596388.125, -596404.1875, -596415.375, -596435.4375, -596443.875, -596451.0625, -596459.375, -596463.125, -596470.5625, -596489.25, -596503.125, -596527.0, -596534.9375, -596542.625, -596549.25, -596553.75, -596558.5625, -596580.625, -596599.625, -596627.875, -596634.8125, -596642.75, -596647.875, -596653.125, -596654.75, -596655.3125, -596690.625, -596696.625, -596744.5625, -596748.3125, -596758.125, -596771.375, -596781.75, -596798.4375, -596806.75, -596814.0625, -596822.625, -596826.25, -596834.5, -596850.5625, -596862.0, -596881.875, -596889.75, -596896.6875, -596904.625, -596908.1875, -596914.6875, -596933.25, -596947.0, -596971.125, -596978.5, -596985.6875, -596991.9375, -596996.5, -597000.3125, -597022.0625, -597041.5625, -597070.25, -597076.875, -597084.1875, -597088.9375, -597094.1875, -597095.0, -597095.875, -597129.75, -597132.1875, -597179.0625, -597182.875, -597191.75, -597205.625, -597215.1875, -597232.0625, -597239.875, -597246.75, -597255.0, -597258.6875, -597266.125, -597281.75, -597293.0625, -597313.0625, -597320.6875, -597327.0625, -597334.3125, -597338.1875, -597343.625, -597362.5625, -597377.125, -597400.8125, -597408.0, -597414.75, -597420.5, -597425.0, -597428.0625, -597450.5, -597470.8125, -597499.1875, -597505.375, -597512.875, -597517.0625, -597522.4375, -597522.75, -597523.6875, -597557.0, -597570.1875, -597582.5625, -597584.0, -597600.1875, -597609.875, -597614.0625, -597624.75, -597635.125, -597643.3125, -597655.625, -597663.375, -597670.5625, -597678.875, -597683.5625, -597691.3125, -597692.1875, -597698.0, -597720.4375, -597724.1875, -597754.875, -597760.9375, -597767.3125, -597770.75, -597775.625, -597795.0, -597807.5, -597832.625, -597839.375, -597845.9375, -597850.875, -597854.9375, -597857.125, -597880.375, -597899.375, -597929.4375, -597935.3125, -597942.625, -597945.625, -597950.875, -597969.5, -597983.25, -598008.0, -598014.3125, -598021.6875, -598025.5625, -598032.125, -598047.375, -598059.8125, -598078.8125, -598086.0625, -598092.3125, -598098.375, -598102.8125, -598107.375, -598107.5625, -598108.5, -598140.875, -598151.9375, -598163.625, -598164.5625, -598178.75, -598188.875, -598192.625, -598205.125, -598213.875, -598220.3125, -598229.75, -598230.5, -598240.8125, -598254.625, -598258.5, -598275.75, -598283.3125, -598289.1875, -598296.3125, -598299.0, -598304.5625, -598322.3125, -598332.25, -598356.0625, -598362.5625, -598369.3125, -598373.25, -598379.0625, -598394.0, -598409.5, -598429.0, -598435.5, -598442.1875, -598447.875, -598452.25, -598456.125, -598456.8125, -598481.875, -598502.9375, -598537.0, -598541.625, -598550.0625, -598550.1875, -598559.0625, -598575.8125, -598577.4375, -598598.25, -598605.5625, -598609.9375, -598617.25, -598617.875, -598624.0625, -598644.3125, -598646.625, -598672.8125, -598679.4375, -598684.375, -598689.125, -598691.1875, -598693.5, -598718.3125, -598724.0, -598756.125, -598761.75, -598767.3125, -598769.6875, -598773.25, -598794.0625, -598806.125, -598834.3125, -598839.75, -598846.6875, -598848.9375, -598855.4375, -598871.375, -598878.8125, -598898.8125, -598905.5625, -598911.0625, -598916.6875, -598920.0, -598924.0625, -598943.4375, -598953.8125, -598978.5, -598984.6875, -598990.5625, -598994.5, -598998.75, -598999.625, -599022.875, -599042.75, -599072.4375, -599077.375, -599084.3125, -599086.4375, -599091.75, -599109.0625, -599117.5625, -599141.125, -599146.9375, -599152.9375, -599156.625, -599161.8125, -599161.9375, -599164.375, -599191.625, -599201.375, -599211.5, -599213.375, -599225.3125, -599234.75, -599238.75, -599250.1875, -599258.0625, -599264.125, -599272.75, -599274.1875, -599283.0, -599295.0, -599300.0625, -599315.5625, -599322.5, -599327.5, -599334.5, -599337.5625, -599342.5625, -599358.0, -599369.375, -599390.0625, -599395.5, -599401.8125, -599406.1875, -599411.375, -599412.0625, -599415.0, -599438.9375, -599440.5625, -599471.625, -599476.5, -599481.75, -599484.4375, -599487.25, -599507.5, -599519.375, -599547.0625, -599552.0625, -599559.0625, -599560.4375, -599566.9375, -599582.25, -599588.0, -599607.625, -599613.875, -599618.625, -599623.9375, -599626.375, -599630.125, -599648.8125, -599657.6875, -599681.625, -599687.25, -599692.9375, -599696.4375, -599700.25, -599700.6875, -599723.4375, -599741.4375, -599770.875, -599775.375, -599781.75, -599783.4375, -599788.625, -599805.3125, -599811.0, -599833.0625, -599838.4375, -599844.4375, -599848.0, -599852.0, -599852.3125, -599853.25, -599880.5625, -599890.3125, -599900.3125, -599901.75, -599913.125, -599921.6875, -599925.6875, -599936.0, -599943.125, -599948.5, -599957.0, -599957.875, -599967.0, -599978.25, -599981.9375, -599996.0625, -600002.625, -600007.0, -600013.8125, -600015.5625, -600021.375, -600035.8125, -600042.3125, -600061.8125, -600067.125, -600072.625, -600076.9375, -600080.875, -600082.4375, -600083.25, -600107.625, -600110.9375, -600143.0625, -600146.875, -600152.25, -600153.4375, -600156.9375, -600176.4375, -600180.9375, -600206.8125, -600211.375, -600216.875, -600218.9375, -600223.75, -600239.5, -600246.6875, -600266.9375, -600272.1875, -600277.1875, -600281.4375, -600284.3125, -600286.3125, -600305.4375, -600319.875, -600344.8125, -600349.0, -600355.25, -600357.25, -600361.9375, -600376.875, -600385.3125, -600405.0625, -600410.1875, -600415.625, -600419.1875, -600423.625, -600423.8125, -600425.875, -600448.8125, -600457.875, -600466.4375, -600468.1875, -600478.8125, -600486.5, -600490.5, -600500.125, -600506.75, -600511.8125, -600519.5625, -600521.0625, -600529.1875, -600539.0625, -600543.875, -600556.5625, -600562.6875, -600567.1875, -600573.125, -600575.5, -600580.6875, -600593.5625, -600602.0, -600619.125, -600624.25, -600629.375, -600633.625, -600637.4375, -600638.9375, -600641.0, -600661.8125, -600666.4375, -600693.5625, -600697.6875, -600702.8125, -600704.75, -600707.9375, -600724.6875, -600732.125, -600754.5625, -600758.875, -600764.1875, -600766.5, -600771.125, -600784.625, -600792.625, -600810.1875, -600815.1875, -600820.1875, -600824.0, -600827.375, -600829.6875, -600846.1875, -600860.0625, -600882.0, -600886.25, -600891.75, -600894.1875, -600898.375, -600911.6875, -600921.5625, -600939.0, -600943.875, -600949.125, -600952.5, -600957.0625, -600957.625, -600959.8125, -600980.1875, -600982.0, -601008.4375, -601012.125, -601016.8125, -601018.375, -601021.25, -601038.3125, -601046.6875, -601069.5625, -601073.6875, -601079.125, -601080.8125, -601085.3125, -601098.875, -601104.5625, -601121.625, -601126.875, -601131.125, -601135.5, -601137.75, -601140.4375, -601156.5, -601167.125, -601188.0625, -601192.625, -601197.1875, -601199.75, -601203.625, -601216.875, -601227.1875, -601244.8125, -601249.375, -601254.375, -601257.5, -601262.0625, -601262.4375, -601264.4375, -601284.4375, -601292.4375, -601299.75, -601302.0625, -601310.75, -601317.9375, -601321.9375, -601330.5, -601336.5, -601341.1875, -601347.75, -601349.9375, -601356.5625, -601365.5, -601370.4375, -601382.0625, -601387.375, -601391.5625, -601397.125, -601399.625, -601404.1875, -601415.5, -601424.75, -601439.5, -601444.3125, -601449.1875, -601452.8125, -601456.875, -601458.6875, -601460.6875, -601478.5, -601483.5625, -601506.75, -601510.625, -601515.625, -601517.125, -601520.625, -601534.9375, -601542.875, -601562.625, -601566.875, -601571.9375, -601574.125, -601578.75, -601590.3125, -601598.0, -601613.125, -601618.0625, -601622.5, -601626.375, -601629.5625, -601631.6875, -601632.0625, -601651.8125, -601662.4375, -601689.0625, -601692.125, -601697.875, -601705.6875, -601712.4375, -601721.8125, -601726.9375, -601731.5625, -601737.0625, -601739.8125, -601744.25, -601744.3125, -601748.0625, -601764.5625, -601771.1875, -601778.0625, -601780.75, -601787.8125, -601794.625, -601799.3125, -601807.5625, -601812.9375, -601817.8125, -601823.5, -601825.9375, -601831.8125, -601839.8125, -601847.0, -601857.5625, -601862.4375, -601866.9375, -601871.5, -601874.75, -601878.4375, -601879.375, -601880.6875, -601899.4375, -601903.125, -601928.5625, -601931.75, -601936.9375, -601945.125, -601953.1875, -601963.25, -601967.9375, -601972.6875, -601977.25, -601980.375, -601984.125, -601985.4375, -601987.6875, -602004.75, -602007.25, -602029.625, -602033.4375, -602037.5, -602039.0625, -602041.5625, -602056.125, -602064.125, -602083.6875, -602087.125, -602092.375, -602093.875, -602098.0, -602109.4375, -602115.6875, -602130.4375, -602134.5, -602138.5, -602142.375, -602145.25, -602146.875, -602160.625, -602172.3125, -602190.25, -602194.25, -602198.8125, -602201.0625, -602204.875, -602215.75, -602224.625, -602239.375, -602243.625, -602248.1875, -602251.125, -602255.0625, -602255.5, -602257.5625, -602274.75, -602276.6875, -602298.75, -602302.0625, -602306.0, -602307.75, -602309.9375, -602324.1875, -602331.25, -602350.5, -602353.6875, -602358.5, -602359.75, -602364.125, -602375.25, -602381.1875, -602395.8125, -602400.0625, -602403.8125, -602407.125, -602409.625, -602411.4375, -602425.5, -602436.875, -602455.25, -602458.5, -602463.25, -602465.1875, -602468.6875, -602479.75, -602487.4375, -602501.5, -602505.625, -602510.125, -602512.8125, -602516.1875, -602516.9375, -602518.3125, -602535.6875, -602537.3125, -602559.5625, -602563.25, -602567.0, -602568.25, -602570.6875, -602584.8125, -602589.625, -602608.1875, -602611.875, -602616.4375, -602617.9375, -602621.625, -602632.625, -602639.25, -602653.5, -602657.5, -602661.4375, -602664.5, -602667.0625, -602668.125, -602682.0]}],
-                        {"title": {"text": "Energy Minimization"}, "xaxis": {"title": {"text": "Energy Minimization Step"}}, "yaxis": {"title": {"text": "Potential Energy KJ/mol-1"}}},
-                        {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly", "responsive": true}
+                        '8c71dd6d-d922-4186-904a-ad83c16c0e73',
+                        [{"type": "scatter", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 11.0, 12.0, 13.0, 15.0, 16.0, 17.0, 18.0, 19.0, 21.0, 22.0, 23.0, 25.0, 26.0, 27.0, 28.0, 29.0, 31.0, 33.0, 34.0, 35.0, 36.0, 38.0, 39.0, 40.0, 42.0, 43.0, 44.0, 45.0, 46.0, 48.0, 49.0, 50.0, 52.0, 53.0, 54.0, 55.0, 56.0, 58.0, 59.0, 60.0, 62.0, 63.0, 64.0, 65.0, 67.0, 68.0, 69.0, 71.0, 72.0, 73.0, 74.0, 75.0, 77.0, 78.0, 79.0, 81.0, 82.0, 83.0, 84.0, 86.0, 87.0, 88.0, 90.0, 91.0, 92.0, 93.0, 95.0, 96.0, 97.0, 99.0, 100.0, 101.0, 102.0, 104.0, 105.0, 106.0, 108.0, 109.0, 110.0, 111.0, 112.0, 114.0, 115.0, 116.0, 118.0, 119.0, 120.0, 121.0, 123.0, 124.0, 125.0, 127.0, 128.0, 129.0, 130.0, 132.0, 133.0, 134.0, 136.0, 137.0, 138.0, 139.0, 140.0, 141.0, 143.0, 144.0, 145.0, 147.0, 148.0, 149.0, 150.0, 152.0, 153.0, 154.0, 156.0, 157.0, 158.0, 159.0, 160.0, 162.0, 163.0, 164.0, 166.0, 167.0, 168.0, 169.0, 171.0, 172.0, 173.0, 175.0, 176.0, 177.0, 178.0, 180.0, 181.0, 182.0, 184.0, 185.0, 186.0, 187.0, 189.0, 190.0, 191.0, 193.0, 194.0, 195.0, 196.0, 197.0, 198.0, 200.0, 202.0, 203.0, 204.0, 205.0, 207.0, 208.0, 209.0, 211.0, 212.0, 213.0, 215.0, 216.0, 217.0, 218.0, 219.0, 221.0, 222.0, 223.0, 225.0, 226.0, 227.0, 228.0, 229.0, 231.0, 232.0, 233.0, 235.0, 236.0, 237.0, 238.0, 239.0, 241.0, 242.0, 243.0, 245.0, 246.0, 247.0, 248.0, 249.0, 251.0, 252.0, 253.0, 255.0, 256.0, 257.0, 258.0, 259.0, 261.0, 262.0, 263.0, 265.0, 266.0, 267.0, 268.0, 269.0, 271.0, 272.0, 273.0, 275.0, 276.0, 277.0, 278.0, 280.0, 281.0, 282.0, 284.0, 285.0, 286.0, 287.0, 289.0, 290.0, 291.0, 293.0, 294.0, 295.0, 296.0, 297.0, 299.0, 300.0, 301.0, 303.0, 304.0, 305.0, 306.0, 307.0, 309.0, 310.0, 311.0, 313.0, 314.0, 315.0, 316.0, 317.0, 319.0, 320.0, 321.0, 323.0, 324.0, 325.0, 326.0, 328.0, 329.0, 330.0, 332.0, 333.0, 334.0, 335.0, 337.0, 338.0, 339.0, 341.0, 342.0, 343.0, 344.0, 345.0, 347.0, 348.0, 349.0, 351.0, 352.0, 353.0, 354.0, 355.0, 357.0, 358.0, 359.0, 361.0, 362.0, 363.0, 364.0, 366.0, 367.0, 368.0, 370.0, 371.0, 372.0, 373.0, 375.0, 376.0, 377.0, 379.0, 380.0, 381.0, 382.0, 383.0, 384.0, 386.0, 387.0, 388.0, 390.0, 391.0, 392.0, 393.0, 395.0, 396.0, 397.0, 399.0, 400.0, 401.0, 402.0, 403.0, 405.0, 406.0, 407.0, 409.0, 410.0, 411.0, 412.0, 414.0, 415.0, 416.0, 418.0, 419.0, 420.0, 421.0, 422.0, 423.0, 425.0, 427.0, 428.0, 429.0, 430.0, 432.0, 433.0, 434.0, 436.0, 437.0, 438.0, 440.0, 441.0, 442.0, 443.0, 444.0, 446.0, 447.0, 448.0, 450.0, 451.0, 452.0, 453.0, 454.0, 455.0, 456.0, 458.0, 459.0, 460.0, 462.0, 463.0, 464.0, 465.0, 467.0, 468.0, 469.0, 471.0, 472.0, 473.0, 474.0, 475.0, 477.0, 478.0, 479.0, 481.0, 482.0, 483.0, 484.0, 486.0, 487.0, 488.0, 490.0, 491.0, 492.0, 493.0, 495.0, 496.0, 497.0, 499.0, 500.0, 501.0, 502.0, 503.0, 505.0, 506.0, 507.0, 509.0, 510.0, 511.0, 512.0, 513.0, 515.0, 516.0, 517.0, 519.0, 520.0, 521.0, 522.0, 524.0, 525.0, 526.0, 528.0, 529.0, 530.0, 531.0, 533.0, 534.0, 535.0, 537.0, 538.0, 539.0, 540.0, 541.0, 543.0, 544.0, 545.0, 547.0, 548.0, 549.0, 550.0, 551.0, 553.0, 554.0, 555.0, 557.0, 558.0, 559.0, 560.0, 561.0, 563.0, 564.0, 565.0, 567.0, 568.0, 569.0, 570.0, 572.0, 573.0, 574.0, 576.0, 577.0, 578.0, 579.0, 581.0, 582.0, 583.0, 585.0, 586.0, 587.0, 588.0, 589.0, 591.0, 592.0, 593.0, 595.0, 596.0, 597.0, 598.0, 599.0, 601.0, 602.0, 603.0, 605.0, 606.0, 607.0, 608.0, 610.0, 611.0, 612.0, 614.0, 615.0, 616.0, 617.0, 619.0, 620.0, 621.0, 623.0, 624.0, 625.0, 626.0, 627.0, 629.0, 630.0, 631.0, 633.0, 634.0, 635.0, 636.0, 637.0, 639.0, 640.0, 641.0, 643.0, 644.0, 645.0, 646.0, 648.0, 649.0, 650.0, 652.0, 653.0, 654.0, 655.0, 657.0, 658.0, 659.0, 661.0, 662.0, 663.0, 664.0, 665.0, 666.0, 668.0, 669.0, 670.0, 672.0, 673.0, 675.0, 676.0, 677.0, 679.0, 680.0, 681.0, 682.0, 683.0, 685.0, 686.0, 687.0, 689.0, 690.0, 691.0, 692.0, 693.0, 694.0, 695.0, 697.0, 699.0, 700.0, 701.0, 702.0, 704.0, 705.0, 706.0, 708.0, 709.0, 710.0, 711.0, 712.0, 714.0, 715.0, 716.0, 718.0, 719.0, 720.0, 721.0, 722.0, 724.0, 725.0, 726.0, 728.0, 729.0, 730.0, 731.0, 732.0, 733.0, 735.0, 736.0, 737.0, 739.0, 740.0, 741.0, 742.0, 744.0, 745.0, 746.0, 748.0, 749.0, 750.0, 751.0, 753.0, 754.0, 755.0, 757.0, 758.0, 759.0, 760.0, 761.0, 763.0, 764.0, 765.0, 767.0, 768.0, 769.0, 770.0, 772.0, 773.0, 774.0, 776.0, 777.0, 778.0, 779.0, 781.0, 782.0, 783.0, 785.0, 786.0, 787.0, 788.0, 789.0, 790.0, 792.0, 793.0, 794.0, 796.0, 797.0, 798.0, 799.0, 801.0, 802.0, 803.0, 805.0, 806.0, 807.0, 808.0, 809.0, 811.0, 812.0, 813.0, 815.0, 816.0, 817.0, 818.0, 820.0, 821.0, 822.0, 824.0, 825.0, 826.0, 827.0, 829.0, 830.0, 831.0, 833.0, 834.0, 835.0, 836.0, 837.0, 839.0, 840.0, 841.0, 843.0, 844.0, 845.0, 846.0, 847.0, 849.0, 850.0, 851.0, 853.0, 854.0, 855.0, 856.0, 858.0, 859.0, 860.0, 862.0, 863.0, 864.0, 865.0, 867.0, 868.0, 869.0, 871.0, 872.0, 873.0, 874.0, 875.0, 876.0, 878.0, 879.0, 880.0, 882.0, 883.0, 885.0, 886.0, 887.0, 889.0, 890.0, 891.0, 892.0, 893.0, 895.0, 896.0, 897.0, 899.0, 900.0, 901.0, 902.0, 903.0, 905.0, 906.0, 907.0, 909.0, 910.0, 911.0, 912.0, 913.0, 914.0, 915.0, 917.0, 919.0, 920.0, 921.0, 922.0, 924.0, 925.0, 926.0, 928.0, 929.0, 930.0, 931.0, 932.0, 934.0, 935.0, 936.0, 938.0, 939.0, 940.0, 941.0, 942.0, 944.0, 945.0, 946.0, 948.0, 949.0, 950.0, 951.0, 952.0, 953.0, 955.0, 956.0, 957.0, 959.0, 960.0, 961.0, 962.0, 964.0, 965.0, 966.0, 968.0, 969.0, 970.0, 971.0, 973.0, 974.0, 975.0, 977.0, 978.0, 979.0, 980.0, 981.0, 983.0, 984.0, 985.0, 987.0, 988.0, 989.0, 990.0, 992.0, 993.0, 994.0, 996.0, 997.0, 998.0, 999.0, 1001.0, 1002.0, 1003.0, 1005.0, 1006.0, 1007.0, 1008.0, 1009.0, 1011.0, 1012.0, 1013.0, 1015.0, 1016.0, 1017.0, 1018.0, 1019.0, 1021.0, 1022.0, 1023.0, 1025.0, 1026.0, 1027.0, 1028.0, 1030.0, 1031.0, 1032.0, 1034.0, 1035.0, 1036.0, 1037.0, 1039.0, 1040.0, 1041.0, 1043.0, 1044.0, 1045.0, 1046.0, 1047.0, 1048.0, 1049.0, 1051.0, 1053.0, 1054.0, 1055.0, 1056.0, 1058.0, 1059.0, 1060.0, 1062.0, 1063.0, 1064.0, 1065.0, 1066.0, 1068.0, 1069.0, 1070.0, 1072.0, 1073.0, 1074.0, 1075.0, 1076.0, 1078.0, 1079.0, 1080.0, 1082.0, 1083.0, 1084.0, 1085.0, 1086.0, 1087.0, 1089.0, 1091.0, 1092.0, 1093.0, 1094.0, 1096.0, 1097.0, 1098.0, 1100.0, 1101.0, 1102.0, 1103.0, 1104.0, 1106.0, 1107.0, 1108.0, 1110.0, 1111.0, 1112.0, 1113.0, 1114.0, 1116.0, 1117.0, 1118.0, 1120.0, 1121.0, 1122.0, 1123.0, 1124.0, 1125.0, 1127.0, 1128.0, 1129.0, 1131.0, 1132.0, 1133.0, 1134.0, 1135.0, 1137.0, 1138.0, 1139.0, 1141.0, 1142.0, 1143.0, 1144.0, 1146.0, 1147.0, 1148.0, 1150.0, 1151.0, 1152.0, 1153.0, 1155.0, 1156.0, 1157.0, 1159.0, 1160.0, 1161.0, 1162.0, 1163.0, 1165.0, 1166.0, 1167.0, 1169.0, 1170.0, 1171.0, 1172.0, 1174.0, 1175.0, 1176.0, 1178.0, 1179.0, 1180.0, 1181.0, 1183.0, 1184.0, 1185.0, 1187.0, 1188.0, 1189.0, 1190.0, 1191.0, 1193.0, 1194.0, 1195.0, 1197.0, 1198.0, 1199.0, 1200.0, 1201.0, 1203.0, 1204.0, 1205.0, 1207.0, 1208.0, 1209.0, 1210.0, 1212.0, 1213.0, 1214.0, 1216.0, 1217.0, 1218.0, 1219.0, 1221.0, 1222.0, 1223.0, 1225.0, 1226.0, 1227.0, 1228.0, 1229.0, 1231.0, 1232.0, 1233.0, 1235.0, 1236.0, 1237.0, 1238.0, 1239.0, 1240.0, 1242.0, 1243.0, 1244.0, 1246.0, 1247.0, 1249.0, 1250.0, 1251.0, 1253.0, 1254.0, 1255.0, 1256.0, 1257.0, 1259.0, 1260.0, 1261.0, 1263.0, 1264.0, 1265.0, 1266.0, 1267.0, 1269.0, 1270.0, 1271.0, 1273.0, 1274.0, 1275.0, 1276.0, 1277.0, 1279.0, 1280.0, 1281.0, 1283.0, 1284.0, 1285.0, 1286.0, 1287.0, 1288.0, 1290.0, 1291.0, 1292.0, 1294.0, 1295.0, 1297.0, 1298.0, 1299.0, 1301.0, 1302.0, 1303.0, 1304.0, 1305.0, 1307.0, 1308.0, 1309.0, 1311.0, 1312.0, 1313.0, 1314.0, 1315.0, 1317.0, 1318.0, 1319.0, 1321.0, 1322.0, 1323.0, 1324.0, 1325.0, 1327.0, 1328.0, 1329.0, 1331.0, 1332.0, 1333.0, 1334.0, 1335.0, 1336.0, 1338.0, 1339.0, 1340.0, 1342.0, 1343.0, 1345.0, 1346.0, 1347.0, 1349.0, 1350.0, 1351.0, 1352.0, 1353.0, 1355.0, 1356.0, 1357.0, 1359.0, 1360.0, 1361.0, 1362.0, 1363.0, 1365.0, 1366.0, 1367.0, 1369.0, 1370.0, 1371.0, 1372.0, 1373.0, 1375.0, 1376.0, 1377.0, 1379.0, 1380.0, 1381.0, 1382.0, 1383.0, 1384.0, 1386.0, 1387.0, 1388.0, 1390.0, 1391.0, 1393.0, 1394.0, 1395.0, 1397.0, 1398.0, 1399.0, 1400.0, 1401.0, 1403.0, 1404.0, 1405.0, 1407.0, 1408.0, 1409.0, 1410.0, 1411.0, 1413.0, 1414.0, 1415.0, 1417.0, 1418.0, 1419.0, 1420.0, 1421.0, 1422.0, 1424.0, 1425.0, 1426.0, 1428.0, 1429.0, 1431.0, 1432.0, 1433.0, 1435.0, 1436.0, 1437.0, 1438.0, 1439.0, 1441.0, 1442.0, 1443.0, 1445.0, 1446.0, 1447.0, 1448.0, 1449.0, 1451.0, 1452.0, 1453.0, 1455.0, 1456.0, 1457.0, 1458.0, 1459.0, 1461.0, 1462.0, 1463.0, 1465.0, 1466.0, 1467.0, 1468.0, 1469.0, 1470.0, 1472.0, 1473.0, 1474.0, 1476.0, 1477.0, 1479.0, 1480.0, 1481.0, 1483.0, 1484.0, 1485.0, 1486.0, 1487.0, 1489.0, 1490.0, 1491.0, 1493.0, 1494.0, 1495.0, 1496.0, 1497.0, 1499.0, 1500.0, 1501.0, 1503.0, 1504.0, 1505.0, 1506.0, 1507.0, 1509.0, 1510.0, 1511.0, 1513.0, 1514.0, 1515.0, 1516.0, 1517.0, 1518.0, 1520.0, 1521.0, 1522.0, 1524.0, 1525.0, 1527.0, 1528.0, 1529.0, 1531.0, 1532.0, 1533.0, 1534.0, 1535.0, 1537.0, 1538.0, 1539.0, 1541.0, 1542.0, 1543.0, 1544.0, 1545.0, 1547.0, 1548.0, 1549.0, 1551.0, 1552.0, 1553.0, 1554.0, 1555.0, 1557.0, 1558.0, 1559.0, 1561.0, 1562.0, 1563.0, 1564.0, 1565.0, 1566.0, 1568.0, 1569.0, 1570.0, 1572.0, 1573.0, 1575.0, 1576.0, 1577.0, 1579.0, 1580.0, 1581.0, 1582.0, 1583.0, 1585.0, 1586.0, 1587.0, 1589.0, 1590.0, 1591.0, 1592.0, 1593.0, 1595.0, 1596.0, 1597.0, 1599.0, 1600.0, 1601.0, 1602.0, 1603.0, 1605.0, 1606.0, 1607.0, 1609.0, 1610.0, 1611.0, 1612.0, 1613.0, 1614.0, 1616.0, 1617.0, 1618.0, 1620.0, 1621.0, 1623.0, 1624.0, 1625.0, 1627.0, 1628.0, 1629.0, 1630.0, 1631.0, 1633.0, 1634.0, 1635.0, 1637.0, 1638.0, 1639.0, 1640.0, 1641.0, 1643.0, 1644.0, 1645.0, 1647.0, 1648.0, 1649.0, 1650.0, 1651.0, 1653.0, 1654.0, 1655.0, 1657.0, 1658.0, 1659.0, 1660.0, 1661.0, 1662.0, 1664.0, 1666.0, 1667.0, 1668.0, 1669.0, 1671.0, 1672.0, 1673.0, 1675.0, 1676.0, 1677.0, 1679.0, 1680.0, 1681.0, 1682.0, 1683.0, 1684.0, 1685.0, 1687.0, 1688.0, 1689.0, 1691.0, 1692.0, 1693.0, 1694.0, 1696.0, 1697.0, 1698.0, 1700.0, 1701.0, 1702.0, 1703.0, 1704.0, 1706.0, 1707.0, 1708.0, 1710.0, 1711.0, 1712.0, 1713.0, 1715.0, 1716.0, 1717.0, 1719.0, 1720.0, 1721.0, 1722.0, 1724.0, 1725.0, 1726.0, 1728.0, 1729.0, 1730.0, 1731.0, 1732.0, 1733.0, 1734.0, 1736.0, 1738.0, 1739.0, 1740.0, 1741.0, 1743.0, 1744.0, 1745.0, 1747.0, 1748.0, 1749.0, 1750.0, 1751.0, 1753.0, 1754.0, 1755.0, 1757.0, 1758.0, 1759.0, 1760.0, 1761.0, 1763.0, 1764.0, 1765.0, 1767.0, 1768.0, 1769.0, 1770.0, 1771.0, 1772.0, 1774.0, 1776.0, 1777.0, 1778.0, 1779.0, 1781.0, 1782.0, 1783.0, 1785.0, 1786.0, 1787.0, 1788.0, 1789.0, 1791.0, 1792.0, 1793.0, 1795.0, 1796.0, 1797.0, 1798.0, 1799.0, 1801.0, 1802.0, 1803.0, 1805.0, 1806.0, 1807.0, 1808.0, 1809.0, 1810.0, 1812.0, 1813.0, 1814.0, 1816.0, 1817.0, 1818.0, 1819.0, 1821.0, 1822.0, 1823.0, 1825.0, 1826.0, 1827.0, 1828.0, 1830.0, 1831.0, 1832.0, 1834.0, 1835.0, 1836.0, 1837.0, 1838.0, 1840.0, 1841.0, 1842.0, 1844.0, 1845.0, 1846.0, 1847.0, 1848.0, 1850.0, 1851.0, 1852.0, 1854.0, 1855.0, 1856.0, 1857.0, 1859.0, 1860.0, 1861.0, 1863.0, 1864.0, 1865.0, 1866.0, 1868.0, 1869.0, 1870.0, 1872.0, 1873.0, 1874.0, 1875.0, 1876.0, 1877.0, 1879.0, 1880.0, 1881.0, 1883.0, 1884.0, 1886.0, 1887.0, 1888.0, 1890.0, 1891.0, 1892.0, 1893.0, 1894.0, 1896.0, 1897.0, 1898.0, 1900.0, 1901.0, 1902.0, 1903.0, 1904.0, 1906.0, 1907.0, 1908.0, 1910.0, 1911.0, 1912.0, 1913.0, 1914.0, 1915.0, 1916.0, 1918.0, 1920.0, 1921.0, 1922.0, 1923.0, 1925.0, 1926.0, 1927.0, 1929.0, 1930.0, 1931.0, 1932.0, 1933.0, 1935.0, 1936.0, 1937.0, 1939.0, 1940.0, 1941.0, 1942.0, 1943.0, 1945.0, 1946.0, 1947.0, 1949.0, 1950.0, 1951.0, 1952.0, 1953.0, 1954.0, 1956.0, 1957.0, 1958.0, 1960.0, 1961.0, 1962.0, 1963.0, 1965.0, 1966.0, 1967.0, 1969.0, 1970.0, 1971.0, 1972.0, 1974.0, 1975.0, 1976.0, 1978.0, 1979.0, 1980.0, 1981.0, 1982.0, 1984.0, 1985.0, 1986.0, 1988.0, 1989.0, 1990.0, 1991.0, 1993.0, 1994.0, 1995.0, 1997.0, 1998.0, 1999.0, 2000.0, 2002.0, 2003.0, 2004.0, 2006.0, 2007.0, 2008.0, 2009.0, 2010.0, 2011.0, 2012.0, 2014.0, 2016.0, 2017.0, 2018.0, 2019.0, 2021.0, 2022.0, 2023.0, 2025.0, 2026.0, 2027.0, 2028.0, 2029.0, 2031.0, 2032.0, 2033.0, 2035.0, 2036.0, 2037.0, 2038.0, 2039.0, 2041.0, 2042.0, 2043.0, 2045.0, 2046.0, 2047.0, 2048.0, 2049.0, 2051.0, 2052.0, 2053.0, 2055.0, 2056.0, 2057.0, 2058.0, 2060.0, 2061.0, 2062.0, 2064.0, 2065.0, 2066.0, 2067.0, 2068.0, 2070.0, 2071.0, 2072.0, 2074.0, 2075.0, 2076.0, 2077.0, 2078.0, 2080.0, 2081.0, 2082.0, 2084.0, 2085.0, 2086.0, 2087.0, 2089.0, 2090.0, 2091.0, 2093.0, 2094.0, 2095.0, 2096.0, 2097.0, 2098.0, 2100.0, 2101.0, 2102.0, 2104.0, 2105.0, 2106.0, 2107.0, 2109.0, 2110.0, 2111.0, 2113.0, 2114.0, 2115.0, 2116.0, 2118.0, 2119.0, 2120.0, 2122.0, 2123.0, 2124.0, 2125.0, 2126.0, 2128.0, 2129.0, 2130.0, 2132.0, 2133.0, 2134.0, 2135.0, 2137.0, 2138.0, 2139.0, 2141.0, 2142.0, 2143.0, 2144.0, 2146.0, 2147.0, 2148.0, 2150.0, 2151.0, 2152.0, 2153.0, 2154.0, 2155.0, 2157.0, 2158.0, 2159.0, 2161.0, 2162.0, 2163.0, 2164.0, 2166.0, 2167.0, 2168.0, 2170.0, 2171.0, 2172.0, 2173.0, 2174.0, 2176.0, 2177.0, 2178.0, 2180.0, 2181.0, 2182.0, 2183.0, 2185.0, 2186.0, 2187.0, 2189.0, 2190.0, 2191.0, 2192.0, 2194.0, 2195.0, 2196.0, 2198.0, 2199.0, 2200.0, 2201.0, 2202.0, 2203.0, 2205.0, 2206.0, 2207.0, 2209.0, 2210.0, 2212.0, 2213.0, 2214.0, 2216.0, 2217.0, 2218.0, 2219.0, 2220.0, 2222.0, 2223.0, 2224.0, 2226.0, 2227.0, 2228.0, 2229.0, 2230.0, 2231.0, 2232.0, 2234.0, 2235.0, 2236.0, 2238.0, 2239.0, 2240.0, 2241.0, 2243.0, 2244.0, 2245.0, 2247.0, 2248.0, 2249.0, 2250.0, 2252.0, 2253.0, 2254.0, 2256.0, 2257.0, 2258.0, 2259.0, 2260.0, 2262.0, 2263.0, 2264.0, 2266.0, 2267.0, 2268.0, 2269.0, 2271.0, 2272.0, 2273.0, 2275.0, 2276.0, 2277.0, 2278.0, 2279.0, 2280.0, 2282.0, 2284.0, 2285.0, 2286.0, 2287.0, 2289.0, 2290.0, 2291.0, 2293.0, 2294.0, 2295.0, 2296.0, 2297.0, 2299.0, 2300.0, 2301.0, 2303.0, 2304.0, 2305.0, 2306.0, 2307.0, 2309.0, 2310.0, 2311.0, 2313.0, 2314.0, 2315.0, 2316.0, 2317.0, 2318.0, 2320.0, 2321.0, 2322.0, 2324.0, 2325.0, 2326.0, 2327.0, 2329.0, 2330.0, 2331.0, 2333.0, 2334.0, 2335.0, 2336.0, 2338.0, 2339.0, 2340.0, 2342.0, 2343.0, 2344.0, 2345.0, 2346.0, 2347.0, 2349.0, 2350.0, 2351.0, 2353.0, 2354.0, 2356.0, 2357.0, 2358.0, 2360.0, 2361.0, 2362.0, 2363.0, 2364.0, 2365.0, 2366.0, 2368.0, 2369.0, 2370.0, 2372.0, 2373.0, 2374.0, 2375.0, 2377.0, 2378.0, 2379.0, 2381.0, 2382.0, 2383.0, 2384.0, 2386.0, 2387.0, 2388.0, 2390.0, 2391.0, 2392.0, 2393.0, 2394.0, 2396.0, 2397.0, 2398.0, 2400.0, 2401.0, 2402.0, 2403.0, 2405.0, 2406.0, 2407.0, 2409.0, 2410.0, 2411.0, 2412.0, 2413.0, 2414.0, 2416.0, 2417.0, 2418.0, 2420.0, 2421.0, 2422.0, 2423.0, 2425.0, 2426.0, 2427.0, 2429.0, 2430.0, 2431.0, 2432.0, 2434.0, 2435.0, 2436.0, 2438.0, 2439.0, 2440.0, 2441.0, 2442.0, 2444.0, 2445.0, 2446.0, 2448.0, 2449.0, 2450.0, 2451.0, 2453.0, 2454.0, 2455.0, 2457.0, 2458.0, 2459.0, 2460.0, 2461.0, 2462.0, 2464.0, 2465.0, 2466.0, 2468.0, 2469.0, 2470.0, 2471.0, 2473.0, 2474.0, 2475.0, 2477.0, 2478.0, 2479.0, 2480.0, 2482.0, 2483.0, 2484.0, 2486.0, 2487.0, 2488.0, 2489.0, 2490.0, 2492.0], "y": [-327613.5625, -347307.46875, -371488.8125, -400073.125, -427774.75, -452045.5, -457292.53125, -461901.71875, -463965.46875, -467420.90625, -472347.84375, -473179.625, -479741.0625, -482195.53125, -483605.3125, -485771.4375, -486203.875, -487951.90625, -491241.09375, -491570.78125, -496080.5625, -497213.21875, -497915.6875, -498763.46875, -498799.15625, -499046.28125, -503262.40625, -504593.0, -505915.8125, -506156.0, -507576.65625, -508785.875, -509318.46875, -510724.90625, -511570.375, -512163.8125, -513049.4375, -513198.59375, -514060.0625, -515346.625, -515770.25, -517365.96875, -517970.875, -518393.28125, -518940.53125, -519113.65625, -519503.0, -520976.96875, -521470.0625, -523376.15625, -523768.4375, -524160.4375, -524392.6875, -524642.6875, -525842.0625, -526627.125, -528135.0, -528466.625, -528805.0, -529019.625, -529234.625, -529243.1875, -530580.75, -531360.9375, -533037.75, -533258.375, -533530.25, -533616.0, -533754.125, -534759.5625, -534983.1875, -536371.75, -536556.0625, -536813.875, -536877.375, -537045.6875, -537866.625, -538099.625, -539175.625, -539363.5, -539598.0, -539684.0625, -539870.875, -540482.5625, -540770.0625, -541525.375, -541729.1875, -541909.6875, -542070.5, -542177.0, -542256.75, -542923.5, -543345.375, -544165.75, -544324.4375, -544503.0625, -544597.5625, -544722.6875, -545211.0625, -545590.1875, -546232.5, -546385.0625, -546561.0, -546651.1875, -546802.125, -547171.5, -547471.0625, -547934.6875, -548092.375, -548235.625, -548367.125, -548467.25, -548547.0, -548560.375, -549139.4375, -549493.6875, -550262.25, -550353.1875, -550513.4375, -550523.125, -550658.75, -551057.25, -551099.3125, -551615.0, -551741.3125, -551839.625, -551936.9375, -551977.1875, -552012.1875, -552503.8125, -552620.625, -553263.125, -553349.6875, -553466.0, -553494.625, -553571.5, -553955.125, -554043.75, -554556.1875, -554649.5, -554753.1875, -554801.9375, -554870.6875, -555199.1875, -555380.0625, -555812.0, -555904.1875, -556006.9375, -556060.6875, -556137.375, -556408.6875, -556606.875, -556966.0625, -557058.8125, -557155.125, -557217.4375, -557289.875, -557298.6875, -557315.3125, -557748.6875, -557915.6875, -558079.0625, -558094.8125, -558290.625, -558424.4375, -558477.5, -558632.4375, -558756.1875, -558840.0, -558987.125, -559092.125, -559187.6875, -559306.1875, -559340.5, -559466.625, -559618.5625, -559700.625, -559890.8125, -559987.0, -560060.8125, -560160.4375, -560190.875, -560290.125, -560470.0625, -560560.0625, -560778.5, -560868.25, -560934.0, -561024.625, -561048.9375, -561135.0, -561331.8125, -561410.25, -561651.75, -561735.4375, -561795.125, -561875.625, -561897.0625, -561965.4375, -562183.875, -562253.25, -562523.0, -562599.0625, -562655.75, -562723.5625, -562743.6875, -562791.3125, -563035.5, -563099.4375, -563402.375, -563469.375, -563525.625, -563578.0, -563600.1875, -563623.3125, -563897.0, -563962.125, -564302.25, -564359.0625, -564415.875, -564451.5, -564476.9375, -564701.625, -564889.9375, -565192.625, -565244.0625, -565325.5625, -565338.375, -565419.75, -565568.375, -565615.375, -565799.25, -565869.5625, -565916.75, -565987.0, -566001.125, -566063.0625, -566233.125, -566282.5, -566494.75, -566557.8125, -566604.625, -566661.0625, -566679.0, -566719.375, -566914.1875, -566973.9375, -567219.0625, -567274.0, -567322.4375, -567363.5, -567387.5, -567402.4375, -567625.9375, -567711.375, -567992.6875, -568037.75, -568089.8125, -568114.375, -568144.9375, -568321.625, -568430.75, -568667.5625, -568712.6875, -568774.125, -568793.5, -568849.0, -568979.1875, -569043.6875, -569206.625, -569261.875, -569306.3125, -569356.1875, -569379.3125, -569415.5, -569566.75, -569654.0625, -569846.0625, -569894.125, -569940.9375, -569976.875, -570006.4375, -570019.625, -570196.375, -570334.0, -570556.875, -570597.0, -570647.25, -570668.3125, -570705.25, -570838.6875, -570923.0625, -571100.1875, -571144.25, -571192.5625, -571220.625, -571260.75, -571370.4375, -571472.375, -571611.8125, -571658.6875, -571702.9375, -571741.0625, -571774.0, -571795.875, -571804.5, -571977.9375, -572079.5625, -572310.0, -572341.25, -572392.6875, -572399.125, -572443.625, -572567.5625, -572594.9375, -572754.8125, -572798.0, -572832.9375, -572867.75, -572885.0, -572901.625, -573054.75, -573124.1875, -573323.5625, -573357.125, -573399.5, -573415.0, -573447.125, -573566.875, -573623.875, -573780.9375, -573818.875, -573857.625, -573883.75, -573911.8125, -573915.375, -573918.1875, -574109.8125, -574185.3125, -574256.375, -574263.0, -574349.125, -574405.8125, -574429.75, -574494.6875, -574548.625, -574587.875, -574652.3125, -574697.3125, -574739.875, -574790.25, -574809.625, -574862.375, -574927.1875, -574974.5625, -575056.0, -575098.0, -575134.0625, -575175.875, -575198.125, -575234.0, -575234.9375, -575255.4375, -575402.4375, -575403.9375, -575600.0625, -575627.125, -575662.8125, -575671.8125, -575696.75, -575817.375, -575847.6875, -576003.5625, -576035.8125, -576067.1875, -576089.5625, -576106.0625, -576109.625, -576255.3125, -576316.0, -576502.625, -576528.5, -576562.9375, -576573.1875, -576595.4375, -576708.5, -576750.875, -576904.0, -576931.9375, -576968.875, -576980.25, -577012.8125, -577101.5, -577138.9375, -577251.375, -577285.6875, -577313.25, -577343.6875, -577356.0625, -577377.5, -577482.0625, -577523.0625, -577655.625, -577686.0625, -577713.75, -577736.9375, -577750.6875, -577760.6875, -577882.3125, -577927.125, -578081.25, -578107.625, -578136.125, -578152.0625, -578166.375, -578268.1875, -578349.4375, -578490.125, -578514.5625, -578553.375, -578559.25, -578598.75, -578669.6875, -578690.3125, -578778.75, -578813.1875, -578835.0, -578870.125, -578874.25, -578906.4375, -578989.375, -579005.0625, -579108.875, -579140.75, -579161.6875, -579191.375, -579195.375, -579218.9375, -579316.125, -579327.0625, -579450.375, -579478.5625, -579499.3125, -579522.625, -579527.5, -579539.125, -579654.625, -579661.9375, -579808.0, -579831.75, -579854.25, -579868.75, -579876.5625, -579976.875, -580057.1875, -580196.625, -580216.4375, -580252.5625, -580253.4375, -580290.4375, -580358.0625, -580367.875, -580452.5625, -580483.5625, -580501.5, -580532.875, -580533.9375, -580561.1875, -580642.625, -580649.625, -580753.0625, -580780.5, -580798.9375, -580822.4375, -580826.4375, -580841.375, -580939.375, -580948.4375, -581074.625, -581097.1875, -581118.25, -581132.5, -581141.3125, -581228.4375, -581302.1875, -581420.75, -581440.625, -581471.9375, -581477.0, -581506.75, -581568.0625, -581586.1875, -581663.75, -581690.5625, -581709.625, -581734.6875, -581741.9375, -581761.5625, -581836.125, -581859.625, -581955.375, -581978.8125, -581999.4375, -582016.6875, -582028.0625, -582034.6875, -582125.125, -582168.9375, -582285.9375, -582304.375, -582328.375, -582337.0, -582353.5, -582424.6875, -582458.0, -582552.8125, -582573.8125, -582597.25, -582609.125, -582628.25, -582687.375, -582729.125, -582804.3125, -582827.6875, -582849.0, -582866.8125, -582881.625, -582890.875, -582891.375, -582988.0, -583030.3125, -583159.9375, -583173.5625, -583200.75, -583238.9375, -583271.1875, -583318.5, -583342.75, -583363.8125, -583387.6875, -583400.5625, -583422.875, -583467.75, -583509.0625, -583566.4375, -583588.5625, -583608.9375, -583629.8125, -583643.75, -583658.75, -583661.1875, -583664.75, -583762.25, -583800.125, -583836.125, -583841.125, -583884.0, -583914.9375, -583928.6875, -583965.25, -583992.1875, -584012.5625, -584043.5, -584046.875, -584080.0625, -584119.1875, -584132.375, -584182.3125, -584206.5, -584223.0625, -584246.9375, -584253.0625, -584274.6875, -584325.75, -584347.6875, -584414.875, -584435.3125, -584453.125, -584469.25, -584482.25, -584488.5, -584490.625, -584577.5, -584597.0625, -584710.375, -584723.8125, -584743.875, -584747.0625, -584760.0, -584827.25, -584840.375, -584930.5625, -584946.75, -584965.75, -584973.375, -584987.375, -585043.8125, -585071.1875, -585144.375, -585162.3125, -585179.4375, -585193.125, -585204.1875, -585208.25, -585276.5625, -585327.3125, -585415.5625, -585430.5625, -585450.3125, -585457.125, -585472.375, -585524.0625, -585551.0625, -585620.9375, -585637.8125, -585655.8125, -585667.125, -585682.0625, -585726.5, -585767.125, -585824.3125, -585842.4375, -585859.6875, -585874.375, -585887.5625, -585895.5625, -585898.125, -585969.1875, -586008.5625, -586105.5625, -586116.625, -586138.75, -586138.9375, -586159.25, -586209.4375, -586213.1875, -586277.5625, -586295.9375, -586308.0625, -586324.6875, -586327.375, -586338.6875, -586400.375, -586408.75, -586488.5625, -586503.875, -586518.3125, -586527.8125, -586535.25, -586589.9375, -586639.5, -586713.5625, -586728.0, -586748.0625, -586753.125, -586772.0, -586811.875, -586828.75, -586879.0625, -586897.125, -586911.0, -586927.125, -586933.875, -586946.5, -586994.375, -587018.0, -587080.0, -587095.4375, -587110.6875, -587122.25, -587131.75, -587136.25, -587194.125, -587234.1875, -587308.8125, -587322.1875, -587339.125, -587345.4375, -587357.625, -587403.125, -587429.625, -587490.25, -587504.625, -587521.3125, -587529.9375, -587544.3125, -587581.8125, -587613.0625, -587660.5, -587676.875, -587691.5, -587704.5625, -587714.75, -587723.375, -587723.5, -587786.0625, -587833.5625, -587918.625, -587928.25, -587948.875, -587972.9375, -587994.0625, -588023.5625, -588040.5, -588056.0, -588073.375, -588082.5625, -588099.6875, -588128.0, -588152.25, -588187.5, -588203.8125, -588217.625, -588233.875, -588242.875, -588257.125, -588290.0, -588320.0, -588361.5625, -588377.1875, -588391.0, -588404.75, -588414.8125, -588424.1875, -588425.375, -588426.8125, -588497.375, -588523.25, -588549.0, -588551.5625, -588582.1875, -588603.9375, -588612.5, -588638.6875, -588658.1875, -588671.5, -588693.1875, -588694.75, -588717.875, -588746.3125, -588754.5, -588791.625, -588808.125, -588819.375, -588835.5, -588840.8125, -588854.5, -588891.5625, -588909.3125, -588959.1875, -588972.75, -588986.375, -588996.5625, -589007.125, -589009.3125, -589012.375, -589073.875, -589077.0, -589156.375, -589166.25, -589179.125, -589183.0625, -589189.625, -589240.1875, -589256.625, -589325.4375, -589335.5625, -589350.8125, -589353.8125, -589367.3125, -589406.3125, -589417.1875, -589466.625, -589480.625, -589491.5625, -589503.4375, -589508.25, -589515.1875, -589562.0625, -589579.8125, -589640.4375, -589652.3125, -589664.625, -589672.375, -589679.625, -589719.875, -589755.125, -589809.0, -589820.8125, -589836.125, -589841.5625, -589856.4375, -589886.5625, -589903.875, -589942.0, -589956.375, -589967.875, -589980.875, -589987.0625, -589997.5, -590033.5625, -590056.5, -590102.5625, -590115.5, -590127.6875, -590137.9375, -590145.8125, -590150.4375, -590193.0625, -590228.625, -590283.5, -590294.625, -590308.0625, -590314.75, -590324.375, -590358.875, -590387.75, -590433.4375, -590445.75, -590459.5625, -590466.9375, -590479.25, -590507.0625, -590531.5, -590566.25, -590579.8125, -590591.75, -590603.875, -590611.75, -590620.9375, -590621.4375, -590623.5, -590682.75, -590704.125, -590725.875, -590728.375, -590753.6875, -590772.5, -590780.625, -590803.5, -590819.5625, -590830.9375, -590849.0, -590851.1875, -590870.0625, -590894.875, -590903.5625, -590935.5, -590949.5, -590959.5625, -590973.4375, -590977.9375, -590988.9375, -591021.5625, -591040.5625, -591084.4375, -591096.0, -591108.125, -591116.3125, -591126.375, -591127.5, -591132.125, -591183.375, -591203.25, -591222.625, -591227.1875, -591249.3125, -591267.0, -591276.8125, -591298.5, -591313.375, -591325.1875, -591341.1875, -591345.6875, -591362.3125, -591385.25, -591397.875, -591427.625, -591440.5, -591451.5, -591463.875, -591470.6875, -591480.5, -591509.625, -591538.375, -591578.5, -591589.875, -591602.8125, -591610.125, -591622.0, -591622.4375, -591630.5625, -591674.0625, -591674.875, -591730.875, -591741.375, -591750.5625, -591757.625, -591761.0, -591761.5, -591814.3125, -591822.4375, -591890.9375, -591898.6875, -591910.0625, -591911.8125, -591918.8125, -591960.3125, -591968.3125, -592024.5625, -592033.875, -592045.75, -592048.875, -592058.5625, -592092.25, -592102.75, -592145.25, -592156.875, -592166.25, -592175.3125, -592180.125, -592184.875, -592224.875, -592242.1875, -592293.6875, -592303.375, -592313.5, -592319.6875, -592326.625, -592359.625, -592385.3125, -592430.4375, -592440.1875, -592452.6875, -592457.6875, -592469.125, -592494.6875, -592509.8125, -592542.25, -592554.0, -592563.5625, -592573.9375, -592579.5, -592587.75, -592618.0, -592638.0, -592676.8125, -592687.1875, -592697.125, -592705.8125, -592712.3125, -592715.9375, -592752.3125, -592781.375, -592827.375, -592836.9375, -592848.0, -592853.5, -592861.6875, -592890.1875, -592913.6875, -592952.5, -592962.5625, -592974.1875, -592980.3125, -592990.875, -593013.9375, -593033.3125, -593062.6875, -593073.5625, -593083.125, -593093.375, -593100.0625, -593107.625, -593135.0625, -593159.5625, -593194.125, -593204.6875, -593214.9375, -593222.875, -593230.0, -593234.25, -593235.25, -593278.375, -593299.1875, -593358.625, -593364.6875, -593378.125, -593395.25, -593409.25, -593429.9375, -593441.1875, -593451.5, -593463.25, -593468.75, -593480.8125, -593500.625, -593516.25, -593540.375, -593551.6875, -593561.0625, -593572.0, -593577.5, -593587.0, -593609.9375, -593628.9375, -593657.5625, -593668.4375, -593677.625, -593687.0625, -593693.0, -593699.875, -593726.875, -593751.6875, -593785.9375, -593795.625, -593804.9375, -593812.75, -593819.625, -593823.1875, -593823.6875, -593866.0625, -593880.6875, -593939.0, -593944.1875, -593956.875, -593973.625, -593987.1875, -594007.75, -594018.5625, -594027.8125, -594038.75, -594044.5, -594055.0625, -594074.375, -594090.0, -594114.125, -594124.6875, -594133.8125, -594143.625, -594148.875, -594157.375, -594180.0625, -594198.6875, -594227.5625, -594237.375, -594246.6875, -594254.75, -594260.625, -594266.4375, -594293.0625, -594317.875, -594352.3125, -594361.625, -594370.875, -594377.375, -594384.25, -594386.4375, -594387.5, -594428.9375, -594437.5625, -594494.25, -594499.8125, -594511.375, -594528.0, -594541.0, -594561.3125, -594571.625, -594580.3125, -594591.125, -594595.8125, -594605.75, -594625.0, -594639.75, -594664.0625, -594673.875, -594682.3125, -594691.875, -594696.8125, -594704.5625, -594727.0625, -594745.875, -594774.625, -594783.6875, -594792.5625, -594800.125, -594805.75, -594810.8125, -594837.1875, -594863.125, -594897.3125, -594905.6875, -594914.875, -594920.5, -594927.375, -594928.5625, -594929.875, -594970.5625, -594973.8125, -595029.625, -595034.4375, -595045.1875, -595061.375, -595074.0625, -595094.5625, -595104.4375, -595112.625, -595122.5625, -595126.75, -595136.125, -595155.5, -595169.8125, -595194.125, -595203.5625, -595211.6875, -595220.3125, -595225.5, -595232.1875, -595254.4375, -595273.5625, -595301.9375, -595311.0, -595319.25, -595326.25, -595331.875, -595335.6875, -595336.125, -595372.75, -595391.1875, -595441.8125, -595446.625, -595458.125, -595472.0, -595483.1875, -595500.5625, -595510.25, -595518.25, -595528.4375, -595532.8125, -595543.0625, -595559.25, -595571.6875, -595592.0625, -595601.25, -595608.6875, -595618.125, -595622.8125, -595631.0625, -595650.125, -595664.4375, -595688.25, -595697.0625, -595705.0, -595713.0, -595717.875, -595723.875, -595746.0625, -595765.25, -595793.8125, -595801.8125, -595809.75, -595816.1875, -595821.875, -595824.9375, -595825.4375, -595860.9375, -595874.5625, -595924.0, -595928.5, -595939.375, -595953.25, -595963.9375, -595981.25, -595990.625, -595998.3125, -596007.8125, -596011.9375, -596021.5, -596037.5625, -596049.375, -596069.8125, -596078.4375, -596085.9375, -596094.6875, -596099.0, -596106.5, -596125.625, -596139.8125, -596163.6875, -596172.125, -596179.4375, -596187.0, -596191.625, -596196.6875, -596218.875, -596238.0625, -596266.5625, -596274.5, -596282.0625, -596288.0, -596293.25, -596295.6875, -596296.0, -596331.375, -596340.0, -596388.5625, -596392.8125, -596403.5625, -596416.9375, -596427.75, -596444.3125, -596452.9375, -596460.6875, -596469.3125, -596473.5, -596482.3125, -596498.4375, -596509.875, -596529.9375, -596538.25, -596545.625, -596553.8125, -596557.875, -596564.4375, -596583.3125, -596597.25, -596620.875, -596629.1875, -596636.25, -596642.9375, -596647.6875, -596652.0, -596674.0, -596693.5, -596721.5, -596729.0, -596736.625, -596741.875, -596746.8125, -596748.8125, -596749.5625, -596784.0625, -596788.5, -596836.5625, -596840.1875, -596849.6875, -596863.5625, -596873.375, -596890.375, -596898.625, -596905.4375, -596914.1875, -596917.6875, -596926.1875, -596942.0, -596953.3125, -596973.25, -596981.5, -596988.3125, -596995.75, -596999.875, -597005.75, -597024.5, -597038.25, -597062.625, -597069.9375, -597077.0625, -597082.9375, -597087.75, -597091.25, -597113.625, -597133.0, -597161.5, -597168.25, -597175.4375, -597180.125, -597185.4375, -597186.875, -597187.3125, -597220.75, -597222.375, -597269.1875, -597272.625, -597281.75, -597295.3125, -597305.1875, -597321.75, -597329.375, -597336.4375, -597344.375, -597347.9375, -597355.4375, -597371.5625, -597382.5, -597402.6875, -597410.5625, -597416.625, -597423.4375, -597427.6875, -597433.25, -597451.8125, -597466.3125, -597490.5, -597497.1875, -597503.6875, -597509.5, -597514.0625, -597517.0, -597539.25, -597560.5, -597588.4375, -597595.1875, -597602.3125, -597606.0625, -597611.4375, -597611.875, -597612.8125, -597646.375, -597658.625, -597671.5, -597672.75, -597688.5, -597698.1875, -597702.4375, -597713.125, -597723.1875, -597731.375, -597744.0, -597751.5625, -597758.9375, -597766.6875, -597771.375, -597779.4375, -597779.625, -597785.5625, -597808.0625, -597811.125, -597841.6875, -597847.6875, -597854.125, -597857.8125, -597862.1875, -597882.0, -597894.3125, -597919.5, -597926.1875, -597932.5625, -597937.6875, -597942.0, -597943.6875, -597967.4375, -597987.3125, -598017.625, -598023.3125, -598030.375, -598033.5625, -598038.75, -598057.4375, -598069.9375, -598094.5625, -598100.875, -598108.0625, -598111.8125, -598118.3125, -598133.3125, -598146.125, -598165.4375, -598172.1875, -598178.75, -598185.125, -598189.25, -598193.375, -598193.75, -598194.1875, -598226.8125, -598238.1875, -598250.3125, -598251.3125, -598265.125, -598274.75, -598278.9375, -598291.1875, -598299.625, -598305.9375, -598315.625, -598316.5625, -598327.125, -598340.1875, -598344.4375, -598361.4375, -598369.125, -598374.3125, -598381.9375, -598384.0625, -598390.0625, -598407.9375, -598416.375, -598440.0, -598446.4375, -598452.9375, -598457.125, -598462.375, -598463.0, -598465.5, -598493.1875, -598504.3125, -598514.9375, -598516.9375, -598529.8125, -598539.0, -598544.25, -598555.6875, -598563.875, -598570.3125, -598578.875, -598581.25, -598590.25, -598602.6875, -598609.125, -598625.125, -598631.875, -598638.25, -598644.75, -598648.1875, -598653.6875, -598669.8125, -598683.8125, -598705.3125, -598711.3125, -598718.375, -598722.25, -598728.6875, -598729.125, -598733.0625, -598757.25, -598758.75, -598789.625, -598795.3125, -598800.375, -598803.8125, -598806.25, -598827.8125, -598846.0625, -598875.625, -598880.75, -598888.5, -598890.125, -598897.375, -598912.625, -598917.9375, -598936.8125, -598943.875, -598948.875, -598955.625, -598957.4375, -598963.0, -598981.5625, -598988.125, -599011.5, -599017.6875, -599023.375, -599028.375, -599031.0625, -599033.5625, -599055.875, -599067.875, -599096.75, -599102.0625, -599108.5, -599111.25, -599115.5625, -599133.5, -599145.1875, -599169.4375, -599175.0625, -599181.625, -599184.5, -599190.5, -599205.3125, -599216.125, -599234.5, -599241.0625, -599246.6875, -599252.125, -599256.0, -599259.75, -599259.9375, -599284.4375, -599307.25, -599341.5, -599345.25, -599354.1875, -599363.1875, -599371.1875, -599382.125, -599389.25, -599395.25, -599402.8125, -599406.0, -599413.875, -599424.5625, -599433.375, -599446.875, -599453.25, -599459.5, -599466.0625, -599469.0625, -599475.75, -599488.3125, -599499.125, -599515.125, -599521.4375, -599527.0625, -599532.75, -599536.8125, -599541.1875, -599541.3125, -599542.875, -599570.375, -599580.0, -599590.4375, -599591.875, -599603.8125, -599612.5, -599616.5, -599627.25, -599635.0, -599640.8125, -599649.1875, -599650.375, -599659.25, -599670.9375, -599675.125, -599689.75, -599696.6875, -599701.3125, -599707.75, -599710.125, -599715.875, -599730.75, -599739.125, -599759.125, -599764.9375, -599770.375, -599774.5, -599778.875, -599780.375, -599782.0, -599806.3125, -599809.3125, -599840.9375, -599844.9375, -599850.875, -599852.3125, -599855.5625, -599875.5625, -599882.375, -599908.8125, -599913.625, -599919.8125, -599921.75, -599927.125, -599942.5, -599949.0625, -599969.5, -599975.125, -599980.0, -599984.6875, -599987.8125, -599990.375, -600009.375, -600021.375, -600046.0625, -600050.625, -600056.6875, -600059.375, -600063.5625, -600078.8125, -600090.0, -600111.0, -600116.375, -600122.3125, -600125.375, -600130.75, -600143.375, -600154.375, -600170.5, -600176.6875, -600181.875, -600186.8125, -600190.875, -600194.0625, -600194.375, -600194.6875, -600222.0625, -600232.3125, -600242.5625, -600243.5625, -600255.625, -600263.8125, -600267.0, -600276.3125, -600283.875, -600289.0625, -600297.9375, -600298.125, -600307.4375, -600318.1875, -600320.875, -600334.375, -600340.75, -600344.625, -600351.5625, -600352.75, -600359.3125, -600373.0625, -600377.125, -600395.1875, -600400.875, -600405.6875, -600409.9375, -600413.1875, -600415.375, -600433.25, -600448.0625, -600472.375, -600476.9375, -600483.25, -600484.5625, -600490.6875, -600503.6875, -600508.75, -600525.25, -600531.0, -600535.4375, -600540.5625, -600542.75, -600546.625, -600562.5, -600570.6875, -600591.0625, -600596.125, -600601.25, -600604.8125, -600608.0, -600609.0, -600628.4375, -600644.75, -600669.75, -600673.9375, -600679.875, -600681.4375, -600686.4375, -600700.5625, -600706.9375, -600726.0, -600730.8125, -600736.3125, -600739.5625, -600743.375, -600743.75, -600744.875, -600768.4375, -600768.5625, -600799.1875, -600802.875, -600808.0, -600808.9375, -600811.4375, -600830.5625, -600833.875, -600859.5625, -600863.5, -600868.875, -600870.1875, -600874.25, -600889.8125, -600895.4375, -600915.1875, -600919.875, -600924.4375, -600928.25, -600930.4375, -600932.375, -600951.0, -600962.75, -600987.5, -600991.25, -600996.8125, -600998.625, -601002.75, -601017.0625, -601023.4375, -601042.8125, -601047.5, -601052.5625, -601055.5625, -601059.0625, -601071.3125, -601084.0, -601100.3125, -601105.375, -601110.1875, -601114.0, -601118.0, -601119.5, -601121.3125, -601140.5625, -601148.4375, -601175.125, -601178.5, -601184.1875, -601184.875, -601189.875, -601204.125, -601206.5625, -601224.875, -601229.8125, -601233.8125, -601237.75, -601239.125, -601241.875, -601259.25, -601264.5, -601288.0625, -601291.8125, -601296.625, -601298.8125, -601301.875, -601316.5625, -601326.1875, -601346.1875, -601350.1875, -601355.6875, -601357.875, -601362.6875, -601374.25, -601382.0625, -601397.0, -601401.8125, -601406.6875, -601410.6875, -601413.6875, -601416.0625, -601416.3125, -601436.4375, -601449.8125, -601477.25, -601480.1875, -601486.375, -601494.0625, -601500.6875, -601510.375, -601515.6875, -601520.1875, -601525.9375, -601528.5625, -601534.0, -601543.125, -601551.125, -601562.6875, -601567.875, -601572.375, -601577.25, -601580.25, -601584.5, -601584.5625, -601586.5, -601606.1875, -601606.5, -601632.4375, -601636.0625, -601640.125, -601641.8125, -601644.3125, -601660.875, -601666.625, -601688.75, -601692.625, -601697.375, -601699.0, -601703.0625, -601716.5625, -601721.625, -601738.0, -601742.75, -601746.5, -601750.4375, -601752.625, -601754.75, -601770.5, -601780.75, -601801.75, -601805.625, -601810.4375, -601812.6875, -601816.375, -601828.875, -601836.375, -601853.125, -601857.3125, -601862.0625, -601865.0, -601868.8125, -601869.125, -601870.625, -601890.3125, -601898.0, -601905.25, -601907.3125, -601915.8125, -601922.4375, -601925.75, -601933.5625, -601939.625, -601944.3125, -601950.3125, -601951.625, -601958.8125, -601966.9375, -601970.625, -601981.1875, -601986.4375, -601990.4375, -601995.5, -601997.5, -602001.875, -602012.625, -602018.8125, -602032.625, -602037.4375, -602041.5, -602045.625, -602048.5, -602050.3125, -602051.3125, -602069.0, -602075.8125, -602099.3125, -602102.4375, -602107.1875, -602108.4375, -602111.8125, -602125.6875, -602129.5625, -602148.1875, -602152.1875, -602156.6875, -602159.1875, -602162.5625, -602174.25, -602183.5, -602198.8125, -602203.125, -602207.4375, -602210.5625, -602213.875, -602215.1875, -602215.75, -602234.375, -602238.0, -602263.25, -602266.0625, -602271.1875, -602278.9375, -602286.625, -602296.1875, -602301.125, -602304.875, -602309.5, -602312.5625, -602316.25, -602316.9375, -602319.125, -602335.625, -602336.875, -602358.8125, -602362.5625, -602366.3125, -602367.9375, -602370.0, -602384.5, -602392.0, -602411.125, -602414.6875, -602419.5, -602421.0625, -602425.25, -602436.0625, -602441.3125, -602455.75, -602459.9375, -602463.5625, -602467.0, -602469.25, -602471.3125, -602484.8125, -602495.25, -602513.0, -602517.0, -602521.125, -602523.0625, -602526.375, -602537.4375, -602545.5, -602560.0, -602563.9375, -602568.375, -602571.25, -602574.75, -602574.9375, -602576.75, -602593.625, -602594.6875, -602617.125, -602619.8125, -602624.0625, -602625.4375, -602627.375, -602641.3125, -602647.3125, -602665.75, -602669.3125, -602673.875, -602675.5, -602679.0, -602690.0625, -602695.3125, -602710.0, -602714.0, -602717.75, -602720.75, -602722.9375, -602724.6875, -602737.875, -602749.375, -602767.1875, -602770.5, -602775.1875, -602776.6875, -602780.5625, -602791.0625, -602797.4375, -602811.75, -602815.25, -602819.1875, -602822.0, -602824.9375, -602825.6875, -602826.8125, -602843.875, -602845.4375, -602867.8125, -602870.875, -602874.4375, -602875.5625, -602878.0625, -602892.0625, -602895.375, -602913.5, -602916.875, -602920.75, -602922.625, -602925.3125, -602936.875, -602943.0625, -602957.375, -602961.375, -602964.8125, -602967.75, -602970.25, -602971.3125, -602985.25]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Energy Minimization"}, "xaxis": {"title": {"text": "Energy Minimization Step"}}, "yaxis": {"title": {"text": "Potential Energy KJ/mol-1"}}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('4ffce790-e8dc-4206-8037-ca9ba75e9a94');
+var gd = document.getElementById('8c71dd6d-d922-4186-904a-ad83c16c0e73');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -14077,7 +13959,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for NVT Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="k">import</span> <span class="n">Grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppnvt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnvt.tpr&#39;</span>
@@ -14088,14 +13970,14 @@ if (outputEl) {{
         <span class="s1">&#39;Define&#39;</span><span class="p">:</span> <span class="s1">&#39;-DPOSRES&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
     <span class="p">},</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;nvt&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;nvt&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_min_gro</span><span class="p">,</span> 
+<span class="n">grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_min_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_genion_top_zip</span><span class="p">,</span> 
        <span class="n">output_tpr_path</span><span class="o">=</span><span class="n">output_gppnvt_tpr</span><span class="p">,</span>  
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14117,7 +13999,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running Equilibration NVT</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="k">import</span> <span class="n">Mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_nvt_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_nvt.trr&#39;</span>
@@ -14127,12 +14009,12 @@ if (outputEl) {{
 <span class="n">output_nvt_cpt</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_nvt.cpt&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppnvt_tpr</span><span class="p">,</span> 
+<span class="n">mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppnvt_tpr</span><span class="p">,</span> 
       <span class="n">output_trr_path</span><span class="o">=</span><span class="n">output_nvt_trr</span><span class="p">,</span> 
       <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_nvt_gro</span><span class="p">,</span> 
       <span class="n">output_edr_path</span><span class="o">=</span><span class="n">output_nvt_edr</span><span class="p">,</span> 
       <span class="n">output_log_path</span><span class="o">=</span><span class="n">output_nvt_log</span><span class="p">,</span> 
-      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_nvt_cpt</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_nvt_cpt</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14155,7 +14037,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXEnergy: Getting system temperature by time during NVT Equilibration  </span>
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="k">import</span> <span class="n">GMXEnergy</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="kn">import</span> <span class="n">gmx_energy</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_nvt_temp_xvg</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_nvt_temp.xvg&#39;</span>
@@ -14164,9 +14046,9 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXEnergy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_nvt_edr</span><span class="p">,</span> 
+<span class="n">gmx_energy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_nvt_edr</span><span class="p">,</span> 
           <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_nvt_temp_xvg</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14176,7 +14058,7 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly</span>
@@ -14251,21 +14133,20 @@ if (outputEl) {{
 <div>
         
         
-            <div id="49ab46d7-1120-4903-bdc1-44a42d579abf" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="35ff4abf-a329-4703-9102-7affae0e75dd" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plot.ly';
                     
-                if (document.getElementById("49ab46d7-1120-4903-bdc1-44a42d579abf")) {
+                if (document.getElementById("35ff4abf-a329-4703-9102-7affae0e75dd")) {
                     Plotly.newPlot(
-                        '49ab46d7-1120-4903-bdc1-44a42d579abf',
-                        [{"type": "scatter", "uid": "199c68ac-4cd9-4ab6-a515-d83d532e9126", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "y": [299.310211, 297.499603, 302.195251, 301.627441, 301.639191, 299.121155, 299.657288, 301.340454, 300.789917, 301.960999, 301.622101]}],
-                        {"title": {"text": "Temperature during NVT Equilibration"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "Temperature (K)"}}},
-                        {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly", "responsive": true}
+                        '35ff4abf-a329-4703-9102-7affae0e75dd',
+                        [{"type": "scatter", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "y": [300.156525, 298.24118, 300.973663, 300.673187, 296.050934, 299.922974, 297.713898, 298.741425, 301.185577, 298.408447, 298.126953]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Temperature during NVT Equilibration"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "Temperature (K)"}}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('49ab46d7-1120-4903-bdc1-44a42d579abf');
+var gd = document.getElementById('35ff4abf-a329-4703-9102-7affae0e75dd');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -14353,7 +14234,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for NPT System Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="k">import</span> <span class="n">Grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppnpt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnpt.tpr&#39;</span>
@@ -14362,15 +14243,15 @@ if (outputEl) {{
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;5000&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
     <span class="p">},</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;npt&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;npt&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_nvt_gro</span><span class="p">,</span> 
+<span class="n">grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_nvt_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_genion_top_zip</span><span class="p">,</span> 
        <span class="n">output_tpr_path</span><span class="o">=</span><span class="n">output_gppnpt_tpr</span><span class="p">,</span> 
        <span class="n">input_cpt_path</span><span class="o">=</span><span class="n">output_nvt_cpt</span><span class="p">,</span>  
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14392,7 +14273,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running NPT System Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="k">import</span> <span class="n">Mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_npt_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_npt.trr&#39;</span>
@@ -14402,12 +14283,12 @@ if (outputEl) {{
 <span class="n">output_npt_cpt</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_npt.cpt&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppnpt_tpr</span><span class="p">,</span> 
+<span class="n">mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppnpt_tpr</span><span class="p">,</span> 
       <span class="n">output_trr_path</span><span class="o">=</span><span class="n">output_npt_trr</span><span class="p">,</span> 
       <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_npt_gro</span><span class="p">,</span> 
       <span class="n">output_edr_path</span><span class="o">=</span><span class="n">output_npt_edr</span><span class="p">,</span> 
       <span class="n">output_log_path</span><span class="o">=</span><span class="n">output_npt_log</span><span class="p">,</span> 
-      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_npt_cpt</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_npt_cpt</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14430,7 +14311,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXEnergy: Getting system pressure and density by time during NPT Equilibration  </span>
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="k">import</span> <span class="n">GMXEnergy</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_energy</span> <span class="kn">import</span> <span class="n">gmx_energy</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_npt_pd_xvg</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_npt_PD.xvg&#39;</span>
@@ -14439,9 +14320,9 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXEnergy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_npt_edr</span><span class="p">,</span> 
+<span class="n">gmx_energy</span><span class="p">(</span><span class="n">input_energy_path</span><span class="o">=</span><span class="n">output_npt_edr</span><span class="p">,</span> 
           <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_npt_pd_xvg</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14451,11 +14332,11 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly</span>
-<span class="kn">from</span> <span class="nn">plotly</span> <span class="k">import</span> <span class="n">subplots</span>
+<span class="kn">from</span> <span class="nn">plotly</span> <span class="kn">import</span> <span class="n">subplots</span>
 <span class="kn">import</span> <span class="nn">plotly.graph_objs</span> <span class="k">as</span> <span class="nn">go</span>
 
 <span class="c1"># Read pressure and density data from file </span>
@@ -14539,21 +14420,20 @@ if (outputEl) {{
 <div>
         
         
-            <div id="79bd0ae2-1170-450b-9740-e97b18ac4087" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="ae0cb9e8-64fd-4ed7-b9a0-5f50a499869c" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plot.ly';
                     
-                if (document.getElementById("79bd0ae2-1170-450b-9740-e97b18ac4087")) {
+                if (document.getElementById("ae0cb9e8-64fd-4ed7-b9a0-5f50a499869c")) {
                     Plotly.newPlot(
-                        '79bd0ae2-1170-450b-9740-e97b18ac4087',
-                        [{"type": "scatter", "uid": "8170fc84-9a69-4d2c-838e-df16bf7d1815", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "xaxis": "x", "y": [-651.217651, 94.669907, -97.136993, -6.424667, -133.198288, 265.066589, 293.469177, -32.136688, -59.893066, 143.336243, 55.37413], "yaxis": "y"}, {"type": "scatter", "uid": "a69ee225-48fd-4cbb-91a9-b6b301f3df2b", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "xaxis": "x2", "y": [995.082031, 1016.339417, 1020.150696, 1023.88446, 1019.741699, 1020.569214, 1019.93811, 1015.483826, 1019.69281, 1022.711975, 1021.84613], "yaxis": "y2"}],
-                        {"showlegend": false, "title": {"text": "Pressure and Density during NPT Equilibration"}, "xaxis": {"anchor": "y", "domain": [0.0, 0.45], "title": {"text": "Time (ps)"}}, "xaxis2": {"anchor": "y2", "domain": [0.55, 1.0], "title": {"text": "Time (ps)"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Pressure (bar)"}}, "yaxis2": {"anchor": "x2", "domain": [0.0, 1.0], "title": {"text": "Density (Kg*m^-3)"}}},
-                        {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly", "responsive": true}
+                        'ae0cb9e8-64fd-4ed7-b9a0-5f50a499869c',
+                        [{"type": "scatter", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "xaxis": "x", "y": [-692.971802, -20.755203, -10.210159, 365.691956, 41.220047, 69.346649, -91.022919, -4.442215, 235.844223, 84.643555, -80.066559], "yaxis": "y"}, {"type": "scatter", "x": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0], "xaxis": "x2", "y": [995.082031, 1016.164246, 1017.146301, 1022.868408, 1017.976379, 1022.015076, 1019.206909, 1020.156616, 1020.640808, 1019.637512, 1021.418518], "yaxis": "y2"}],
+                        {"showlegend": false, "template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Pressure and Density during NPT Equilibration"}, "xaxis": {"anchor": "y", "domain": [0.0, 0.45], "title": {"text": "Time (ps)"}}, "xaxis2": {"anchor": "y2", "domain": [0.55, 1.0], "title": {"text": "Time (ps)"}}, "yaxis": {"anchor": "x", "domain": [0.0, 1.0], "title": {"text": "Pressure (bar)"}}, "yaxis2": {"anchor": "x2", "domain": [0.0, 1.0], "title": {"text": "Density (Kg*m^-3)"}}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('79bd0ae2-1170-450b-9740-e97b18ac4087');
+var gd = document.getElementById('ae0cb9e8-64fd-4ed7-b9a0-5f50a499869c');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -14634,7 +14514,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for mdrun</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="k">import</span> <span class="n">Grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppmd_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmd.tpr&#39;</span>
@@ -14643,15 +14523,15 @@ if (outputEl) {{
         <span class="s1">&#39;nsteps&#39;</span><span class="p">:</span><span class="s1">&#39;50000&#39;</span><span class="p">,</span>
         <span class="c1">#&#39;tc_grps&#39;: &quot;DNA Water_and_ions&quot; # NOTE: uncomment this line if working with DNA</span>
     <span class="p">},</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span><span class="s1">&#39;free&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;free&#39;</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_npt_gro</span><span class="p">,</span> 
+<span class="n">grompp</span><span class="p">(</span><span class="n">input_gro_path</span><span class="o">=</span><span class="n">output_npt_gro</span><span class="p">,</span> 
        <span class="n">input_top_zip_path</span><span class="o">=</span><span class="n">output_genion_top_zip</span><span class="p">,</span> 
        <span class="n">output_tpr_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span> 
        <span class="n">input_cpt_path</span><span class="o">=</span><span class="n">output_npt_cpt</span><span class="p">,</span> 
-       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+       <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14673,7 +14553,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running free dynamics</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="k">import</span> <span class="n">Mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_md_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_md.trr&#39;</span>
@@ -14683,12 +14563,12 @@ if (outputEl) {{
 <span class="n">output_md_cpt</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_md.cpt&#39;</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">Mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span> 
+<span class="n">mdrun</span><span class="p">(</span><span class="n">input_tpr_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span> 
       <span class="n">output_trr_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span> 
       <span class="n">output_gro_path</span><span class="o">=</span><span class="n">output_md_gro</span><span class="p">,</span> 
       <span class="n">output_edr_path</span><span class="o">=</span><span class="n">output_md_edr</span><span class="p">,</span> 
       <span class="n">output_log_path</span><span class="o">=</span><span class="n">output_md_log</span><span class="p">,</span> 
-      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_md_cpt</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+      <span class="n">output_cpt_path</span><span class="o">=</span><span class="n">output_md_cpt</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14713,7 +14593,7 @@ if (outputEl) {{
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXRms: Computing Root Mean Square deviation to analyse structural stability </span>
 <span class="c1">#         RMSd against minimized and equilibrated snapshot (backbone atoms)   </span>
 
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rms</span> <span class="k">import</span> <span class="n">GMXRms</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rms</span> <span class="kn">import</span> <span class="n">gmx_rms</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_rms_first</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_rms_first.xvg&#39;</span>
@@ -14723,10 +14603,10 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXRms</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span>
+<span class="n">gmx_rms</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span>
          <span class="n">input_traj_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span>
          <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_rms_first</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14742,7 +14622,7 @@ if (outputEl) {{
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXRms: Computing Root Mean Square deviation to analyse structural stability </span>
 <span class="c1">#         RMSd against experimental structure (backbone atoms)   </span>
 
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rms</span> <span class="k">import</span> <span class="n">GMXRms</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rms</span> <span class="kn">import</span> <span class="n">gmx_rms</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_rms_exp</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_rms_exp.xvg&#39;</span>
@@ -14752,10 +14632,10 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXRms</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span>
+<span class="n">gmx_rms</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span>
          <span class="n">input_traj_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span>
          <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_rms_exp</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14765,7 +14645,7 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly</span>
@@ -14865,21 +14745,20 @@ if (outputEl) {{
 <div>
         
         
-            <div id="047c32ba-5fc0-4a62-84c0-822e09529c74" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="49973535-2ee7-48ff-9a5f-ef164697fe04" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plot.ly';
                     
-                if (document.getElementById("047c32ba-5fc0-4a62-84c0-822e09529c74")) {
+                if (document.getElementById("49973535-2ee7-48ff-9a5f-ef164697fe04")) {
                     Plotly.newPlot(
-                        '047c32ba-5fc0-4a62-84c0-822e09529c74',
-                        [{"name": "RMSd vs first", "type": "scatter", "uid": "ba373179-b218-4cd3-a0b1-bf4182ffde1c", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [0.0, 0.0524228, 0.0582075, 0.0699915, 0.0677358, 0.0804931, 0.0756024, 0.0713953, 0.092698, 0.0728146, 0.06834]}, {"name": "RMSd vs exp", "type": "scatter", "uid": "b71c5bc6-b4e6-48e8-8fe8-116e085bfc7b", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [0.0317907, 0.0507502, 0.062687, 0.0761145, 0.072102, 0.085005, 0.081358, 0.0741371, 0.0928009, 0.0775211, 0.0701018]}],
-                        {"title": {"text": "RMSd during free MD Simulation"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "RMSd (nm)"}}},
-                        {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly", "responsive": true}
+                        '49973535-2ee7-48ff-9a5f-ef164697fe04',
+                        [{"name": "RMSd vs first", "type": "scatter", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [1e-07, 0.0483676, 0.0615318, 0.0637303, 0.0834343, 0.0882521, 0.071654, 0.0766248, 0.0734936, 0.0807398, 0.0801162]}, {"name": "RMSd vs exp", "type": "scatter", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [0.0331952, 0.0525555, 0.0693061, 0.0714938, 0.090232, 0.0939353, 0.0784096, 0.0821851, 0.0777232, 0.0863895, 0.0829221]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "RMSd during free MD Simulation"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "RMSd (nm)"}}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('047c32ba-5fc0-4a62-84c0-822e09529c74');
+var gd = document.getElementById('49973535-2ee7-48ff-9a5f-ef164697fe04');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -14921,7 +14800,7 @@ if (outputEl) {{
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXRgyr: Computing Radius of Gyration to measure the protein compactness during the free MD simulation </span>
 
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rgyr</span> <span class="k">import</span> <span class="n">GMXRgyr</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_rgyr</span> <span class="kn">import</span> <span class="n">gmx_rgyr</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_rgyr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_rgyr.xvg&#39;</span>
@@ -14930,10 +14809,10 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXRgyr</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span>
+<span class="n">gmx_rgyr</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_gppmin_tpr</span><span class="p">,</span>
          <span class="n">input_traj_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span>
          <span class="n">output_xvg_path</span><span class="o">=</span><span class="n">output_rgyr</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14943,7 +14822,7 @@ if (outputEl) {{
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">plotly</span>
@@ -15018,21 +14897,20 @@ if (outputEl) {{
 <div>
         
         
-            <div id="27480272-6d6e-4942-850b-fb6145fea55f" class="plotly-graph-div" style="height:525px; width:100%;"></div>
+            <div id="e64b5051-8134-427f-9575-90f97041d7a8" class="plotly-graph-div" style="height:525px; width:100%;"></div>
             <script type="text/javascript">
                 require(["plotly"], function(Plotly) {
                     window.PLOTLYENV=window.PLOTLYENV || {};
-                    window.PLOTLYENV.BASE_URL='https://plot.ly';
                     
-                if (document.getElementById("27480272-6d6e-4942-850b-fb6145fea55f")) {
+                if (document.getElementById("e64b5051-8134-427f-9575-90f97041d7a8")) {
                     Plotly.newPlot(
-                        '27480272-6d6e-4942-850b-fb6145fea55f',
-                        [{"type": "scatter", "uid": "6bd57f9f-7a97-4f94-be44-9a8451e5a26c", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [0.0317907, 0.0507502, 0.062687, 0.0761145, 0.072102, 0.085005, 0.081358, 0.0741371, 0.0928009, 0.0775211, 0.0701018]}],
-                        {"title": {"text": "Radius of Gyration"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "Rgyr (nm)"}}},
-                        {"showLink": false, "linkText": "Export to plot.ly", "plotlyServerURL": "https://plot.ly", "responsive": true}
+                        'e64b5051-8134-427f-9575-90f97041d7a8',
+                        [{"type": "scatter", "x": [0.0, 10.0, 20.0, 30.0, 40.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0], "y": [1.37922, 1.38355, 1.38413, 1.3811, 1.38912, 1.38599, 1.3864, 1.3835, 1.38757, 1.39394, 1.38843]}],
+                        {"template": {"data": {"bar": [{"error_x": {"color": "#2a3f5f"}, "error_y": {"color": "#2a3f5f"}, "marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "bar"}], "barpolar": [{"marker": {"line": {"color": "#E5ECF6", "width": 0.5}}, "type": "barpolar"}], "carpet": [{"aaxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "baxis": {"endlinecolor": "#2a3f5f", "gridcolor": "white", "linecolor": "white", "minorgridcolor": "white", "startlinecolor": "#2a3f5f"}, "type": "carpet"}], "choropleth": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "choropleth"}], "contour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "contour"}], "contourcarpet": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "contourcarpet"}], "heatmap": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmap"}], "heatmapgl": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "heatmapgl"}], "histogram": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "histogram"}], "histogram2d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2d"}], "histogram2dcontour": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "histogram2dcontour"}], "mesh3d": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "type": "mesh3d"}], "parcoords": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "parcoords"}], "pie": [{"automargin": true, "type": "pie"}], "scatter": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter"}], "scatter3d": [{"line": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatter3d"}], "scattercarpet": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattercarpet"}], "scattergeo": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergeo"}], "scattergl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattergl"}], "scattermapbox": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scattermapbox"}], "scatterpolar": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolar"}], "scatterpolargl": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterpolargl"}], "scatterternary": [{"marker": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "type": "scatterternary"}], "surface": [{"colorbar": {"outlinewidth": 0, "ticks": ""}, "colorscale": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "type": "surface"}], "table": [{"cells": {"fill": {"color": "#EBF0F8"}, "line": {"color": "white"}}, "header": {"fill": {"color": "#C8D4E3"}, "line": {"color": "white"}}, "type": "table"}]}, "layout": {"annotationdefaults": {"arrowcolor": "#2a3f5f", "arrowhead": 0, "arrowwidth": 1}, "coloraxis": {"colorbar": {"outlinewidth": 0, "ticks": ""}}, "colorscale": {"diverging": [[0, "#8e0152"], [0.1, "#c51b7d"], [0.2, "#de77ae"], [0.3, "#f1b6da"], [0.4, "#fde0ef"], [0.5, "#f7f7f7"], [0.6, "#e6f5d0"], [0.7, "#b8e186"], [0.8, "#7fbc41"], [0.9, "#4d9221"], [1, "#276419"]], "sequential": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]], "sequentialminus": [[0.0, "#0d0887"], [0.1111111111111111, "#46039f"], [0.2222222222222222, "#7201a8"], [0.3333333333333333, "#9c179e"], [0.4444444444444444, "#bd3786"], [0.5555555555555556, "#d8576b"], [0.6666666666666666, "#ed7953"], [0.7777777777777778, "#fb9f3a"], [0.8888888888888888, "#fdca26"], [1.0, "#f0f921"]]}, "colorway": ["#636efa", "#EF553B", "#00cc96", "#ab63fa", "#FFA15A", "#19d3f3", "#FF6692", "#B6E880", "#FF97FF", "#FECB52"], "font": {"color": "#2a3f5f"}, "geo": {"bgcolor": "white", "lakecolor": "white", "landcolor": "#E5ECF6", "showlakes": true, "showland": true, "subunitcolor": "white"}, "hoverlabel": {"align": "left"}, "hovermode": "closest", "mapbox": {"style": "light"}, "paper_bgcolor": "white", "plot_bgcolor": "#E5ECF6", "polar": {"angularaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "radialaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "scene": {"xaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "yaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}, "zaxis": {"backgroundcolor": "#E5ECF6", "gridcolor": "white", "gridwidth": 2, "linecolor": "white", "showbackground": true, "ticks": "", "zerolinecolor": "white"}}, "shapedefaults": {"line": {"color": "#2a3f5f"}}, "ternary": {"aaxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "baxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}, "bgcolor": "#E5ECF6", "caxis": {"gridcolor": "white", "linecolor": "white", "ticks": ""}}, "title": {"x": 0.05}, "xaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}, "yaxis": {"automargin": true, "gridcolor": "white", "linecolor": "white", "ticks": "", "title": {"standoff": 15}, "zerolinecolor": "white", "zerolinewidth": 2}}}, "title": {"text": "Radius of Gyration"}, "xaxis": {"title": {"text": "Time (ps)"}}, "yaxis": {"title": {"text": "Rgyr (nm)"}}},
+                        {"responsive": true}
                     ).then(function(){
                             
-var gd = document.getElementById('27480272-6d6e-4942-850b-fb6145fea55f');
+var gd = document.getElementById('e64b5051-8134-427f-9575-90f97041d7a8');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -15105,7 +14983,7 @@ if (outputEl) {{
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># GMXImage: &quot;Imaging&quot; the resulting trajectory</span>
 <span class="c1">#           Removing water molecules and ions from the resulting structure</span>
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_image</span> <span class="k">import</span> <span class="n">GMXImage</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_image</span> <span class="kn">import</span> <span class="n">gmx_image</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_imaged_traj</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_imaged_traj.trr&#39;</span>
@@ -15117,10 +14995,10 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXImage</span><span class="p">(</span><span class="n">input_traj_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span>
+<span class="n">gmx_image</span><span class="p">(</span><span class="n">input_traj_path</span><span class="o">=</span><span class="n">output_md_trr</span><span class="p">,</span>
          <span class="n">input_top_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span>
          <span class="n">output_traj_path</span><span class="o">=</span><span class="n">output_imaged_traj</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15146,7 +15024,7 @@ if (outputEl) {{
 <span class="c1">#                Removing water molecules and ions from the resulting structure</span>
 <span class="c1">#                The &quot;dry&quot; structure will be used as a topology to visualize </span>
 <span class="c1">#                the &quot;imaged dry&quot; trajectory generated in the previous step.</span>
-<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_trjconv_str</span> <span class="k">import</span> <span class="n">GMXTrjConvStr</span>
+<span class="kn">from</span> <span class="nn">biobb_analysis.gromacs.gmx_trjconv_str</span> <span class="kn">import</span> <span class="n">gmx_trjconv_str</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_dry_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_md_dry.gro&#39;</span>
@@ -15155,10 +15033,10 @@ if (outputEl) {{
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
-<span class="n">GMXTrjConvStr</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_md_gro</span><span class="p">,</span>
+<span class="n">gmx_trjconv_str</span><span class="p">(</span><span class="n">input_structure_path</span><span class="o">=</span><span class="n">output_md_gro</span><span class="p">,</span>
          <span class="n">input_top_path</span><span class="o">=</span><span class="n">output_gppmd_tpr</span><span class="p">,</span>
          <span class="n">output_str_path</span><span class="o">=</span><span class="n">output_dry_gro</span><span class="p">,</span> 
-          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+          <span class="n">properties</span><span class="o">=</span><span class="n">prop</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15183,73 +15061,6 @@ if (outputEl) {{
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show trajectory</span>
 <span class="n">view</span> <span class="o">=</span> <span class="n">nglview</span><span class="o">.</span><span class="n">show_simpletraj</span><span class="p">(</span><span class="n">nglview</span><span class="o">.</span><span class="n">SimpletrajTrajectory</span><span class="p">(</span><span class="n">output_imaged_traj</span><span class="p">,</span> <span class="n">output_dry_gro</span><span class="p">),</span> <span class="n">gui</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">view</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
-<span class="c1"># range number of frames for the animated gif trajectory</span>
-<span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
-    <span class="c1"># set frame to update coordinates</span>
-    <span class="n">view</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">frame</span>
-    <span class="c1"># make sure to let NGL spending enough time to update coordinates</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">view</span><span class="o">.</span><span class="n">download_image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;trj_image</span><span class="si">{}</span><span class="s1">.png&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
-    <span class="c1"># make sure to let NGL spending enough time to render before going to next frame</span>
-    <span class="n">sleep</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">moviepy.editor</span> <span class="k">as</span> <span class="nn">mpy</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># go to folder where the images are stored</span>
-<span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;./trj_image</span><span class="si">{}</span><span class="s1">.png&#39;</span>
-<span class="c1"># get all (sorted) image files</span>
-<span class="n">imagefiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># make a gif file</span>
-<span class="n">frame_per_second</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">im</span> <span class="o">=</span> <span class="n">mpy</span><span class="o">.</span><span class="n">ImageSequenceClip</span><span class="p">(</span><span class="n">imagefiles</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">frame_per_second</span><span class="p">)</span>
-<span class="n">im</span><span class="o">.</span><span class="n">write_gif</span><span class="p">(</span><span class="s1">&#39;trajectory.gif&#39;</span><span class="p">,</span> <span class="n">fps</span><span class="o">=</span><span class="n">frame_per_second</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15287,7 +15098,6 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -15310,7 +15120,6 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-
     </div>
   </div>
 </body>
