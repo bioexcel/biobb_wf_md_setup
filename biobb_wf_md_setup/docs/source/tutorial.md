@@ -299,7 +299,8 @@ from biobb_md.gromacs.grompp import grompp
 # Create prop dict and inputs/outputs
 output_gppion_tpr = pdbCode+'_gppion.tpr'
 prop = {
-    'simulation_type': 'minimization'
+    'simulation_type': 'minimization',
+    'maxwarn': 1
 }
 
 # Create and launch bb

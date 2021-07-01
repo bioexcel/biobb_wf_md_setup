@@ -13555,7 +13555,8 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppion_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppion.tpr&#39;</span>
 <span class="n">prop</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span>
+    <span class="s1">&#39;simulation_type&#39;</span><span class="p">:</span> <span class="s1">&#39;minimization&#39;</span>,</span>
+    <span class="s1">&#39;maxwarn&#39;</span><span class="p">:</span> <span class="s1">1</span>
 <span class="p">}</span>
 
 <span class="c1"># Create and launch bb</span>
