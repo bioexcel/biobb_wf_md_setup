@@ -13084,7 +13084,7 @@ div#notebook {
 <h2 id="Settings">Settings<a class="anchor-link" href="#Settings">&#182;</a></h2><h3 id="Biobb-modules-used">Biobb modules used<a class="anchor-link" href="#Biobb-modules-used">&#182;</a></h3><ul>
 <li><a href="https://github.com/bioexcel/biobb_io">biobb_io</a>: Tools to fetch biomolecular data from public databases.</li>
 <li><a href="https://github.com/bioexcel/biobb_model">biobb_model</a>: Tools to model macromolecular structures.</li>
-<li><a href="https://github.com/bioexcel/biobb_md">biobb_md</a>: Tools to setup and run Molecular Dynamics simulations.</li>
+<li><a href="https://github.com/bioexcel/biobb_gromacs">biobb_gromacs</a>: Tools to setup and run Molecular Dynamics simulations.</li>
 <li><a href="https://github.com/bioexcel/biobb_analysis">biobb_analysis</a>: Tools to analyse Molecular Dynamics trajectories.</li>
 </ul>
 <h3 id="Auxiliar-libraries-used">Auxiliar libraries used<a class="anchor-link" href="#Auxiliar-libraries-used">&#182;</a></h3><ul>
@@ -13094,13 +13094,19 @@ div#notebook {
 <li><a href="https://plot.ly/python/offline/">plotly</a>: Python interactive graphing library integrated in Jupyter notebooks.</li>
 <li><a href="https://github.com/arose/simpletraj">simpletraj</a>: Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.</li>
 </ul>
-<h3 id="Conda-Installation-and-Launch">Conda Installation and Launch<a class="anchor-link" href="#Conda-Installation-and-Launch">&#182;</a></h3><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/bioexcel/biobb_wf_md_setup.git</span>
+<h3 id="Conda-Installation-and-Launch">Conda Installation and Launch<a class="anchor-link" href="#Conda-Installation-and-Launch">&#182;</a></h3>
+<div class="highlight"><pre><span></span>
+<span class="go">git clone https://github.com/bioexcel/biobb_wf_md_setup.git</span>
 <span class="go">cd biobb_wf_md_setup</span>
 <span class="go">conda env create -f conda_env/environment.yml</span>
-<span class="go">conda activate biobb_MDsetup_tutorial</span>
+<span class="go">conda activate biobb_GMX_MDsetup_tutorial</span>
+<span class="go">jjupyter nbextension enable python-markdown/main</span>
+<span class="go">jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb</span>
+</pre></div>
+<p>Please execute the following commands before launching the Jupyter Notebook if you experience some issues with widgets such as NGL View (3D molecular visualization):</p>
+<div class="highlight"><pre><span></span>
 <span class="go">jupyter-nbextension enable --py --user widgetsnbextension</span>
 <span class="go">jupyter-nbextension enable --py --user nglview</span>
-<span class="go">jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb</span>
 </pre></div>
 <hr>
 <h2 id="Pipeline-steps">Pipeline steps<a class="anchor-link" href="#Pipeline-steps">&#182;</a></h2><ol>
@@ -13327,7 +13333,7 @@ Adding <strong>hydrogen atoms</strong> if missing. Automatically identifying <st
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.pdb2gmx">Pdb2gmx</a> from <strong>biobb_md.gromacs.pdb2gmx</strong></li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.pdb2gmx">Pdb2gmx</a> from <strong>biobb_gromacs.gromacs.pdb2gmx</strong></li>
 </ul>
 <hr>
 
@@ -13341,7 +13347,7 @@ Adding <strong>hydrogen atoms</strong> if missing. Automatically identifying <st
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create system topology</span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.pdb2gmx</span> <span class="kn">import</span> <span class="n">pdb2gmx</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.pdb2gmx</span> <span class="kn">import</span> <span class="n">pdb2gmx</span>
 
 <span class="c1"># Create inputs/outputs</span>
 <span class="n">output_pdb2gmx_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_pdb2gmx.gro&#39;</span>
@@ -13402,7 +13408,7 @@ A <strong>cubic box</strong> is used to define the unit cell, with a <strong>dis
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.editconf">Editconf</a> from <strong>biobb_md.gromacs.editconf</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.editconf">Editconf</a> from <strong>biobb_gromacs.gromacs.editconf</strong> </li>
 </ul>
 <hr>
 
@@ -13416,7 +13422,7 @@ A <strong>cubic box</strong> is used to define the unit cell, with a <strong>dis
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Editconf: Create solvent box</span>
 <span class="c1"># Import module</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.editconf</span> <span class="kn">import</span> <span class="n">editconf</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.editconf</span> <span class="kn">import</span> <span class="n">editconf</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_editconf_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_editconf.gro&#39;</span>
@@ -13447,7 +13453,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.solvate">Solvate</a> from <strong>biobb_md.gromacs.solvate</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.solvate">Solvate</a> from <strong>biobb_gromacs.gromacs.solvate</strong> </li>
 </ul>
 <hr>
 
@@ -13460,7 +13466,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Solvate: Fill the box with water molecules</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.solvate</span> <span class="kn">import</span> <span class="n">solvate</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.solvate</span> <span class="kn">import</span> <span class="n">solvate</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_solvate_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_solvate.gro&#39;</span>
@@ -13527,8 +13533,8 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_md.gromacs.grompp</strong> </li>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.genion">Genion</a> from <strong>biobb_md.gromacs.genion</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_gromacs.gromacs.grompp</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.genion">Genion</a> from <strong>biobb_gromacs.gromacs.genion</strong> </li>
 </ul>
 <hr>
 
@@ -13550,7 +13556,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for ion generation</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppion_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppion.tpr&#39;</span>
@@ -13586,7 +13592,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Genion: Adding ions to neutralize the system</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.genion</span> <span class="kn">import</span> <span class="n">genion</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.genion</span> <span class="kn">import</span> <span class="n">genion</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_genion_gro</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_genion.gro&#39;</span>
@@ -13659,8 +13665,8 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_md.gromacs.grompp</strong> </li>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_md.gromacs.mdrun</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_gromacs.gromacs.grompp</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_gromacs.gromacs.mdrun</strong> </li>
 <li><a href="https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy">GMXEnergy</a> from <strong>biobb_analysis.gromacs.gmx_energy</strong> </li>
 </ul>
 <hr>
@@ -13690,7 +13696,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for mdrun</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppmin_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmin.tpr&#39;</span>
@@ -13729,7 +13735,7 @@ The solvent type used is the default <strong>Simple Point Charge water (SPC)</st
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running minimization</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_min_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_min.trr&#39;</span>
@@ -13924,8 +13930,8 @@ if (outputEl) {{
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_md.gromacs.grompp</strong> </li>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_md.gromacs.mdrun</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_gromacs.gromacs.grompp</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_gromacs.gromacs.mdrun</strong> </li>
 <li><a href="https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy">GMXEnergy</a> from <strong>biobb_analysis.gromacs.gmx_energy</strong> </li>
 </ul>
 <hr>
@@ -13960,7 +13966,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for NVT Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppnvt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnvt.tpr&#39;</span>
@@ -14000,7 +14006,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running Equilibration NVT</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_nvt_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_nvt.trr&#39;</span>
@@ -14196,8 +14202,8 @@ if (outputEl) {{
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_md.gromacs.grompp</strong> </li>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_md.gromacs.mdrun</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_gromacs.gromacs.grompp</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_gromacs.gromacs.mdrun</strong> </li>
 <li><a href="https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy">GMXEnergy</a> from <strong>biobb_analysis.gromacs.gmx_energy</strong> </li>
 </ul>
 <hr>
@@ -14235,7 +14241,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for NPT System Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppnpt_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppnpt.tpr&#39;</span>
@@ -14274,7 +14280,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running NPT System Equilibration</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_npt_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_npt.trr&#39;</span>
@@ -14483,8 +14489,8 @@ if (outputEl) {{
 <hr>
 <p><strong>Building Blocks</strong> used:</p>
 <ul>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_md.gromacs.grompp</strong> </li>
-<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_md.gromacs.mdrun</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp">Grompp</a> from <strong>biobb_gromacs.gromacs.grompp</strong> </li>
+<li><a href="https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun">Mdrun</a> from <strong>biobb_gromacs.gromacs.mdrun</strong> </li>
 <li><a href="https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_rms">GMXRms</a> from <strong>biobb_analysis.gromacs.gmx_rms</strong> </li>
 <li><a href="https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_rgyr">GMXRgyr</a> from <strong>biobb_analysis.gromacs.gmx_rgyr</strong> </li>
 </ul>
@@ -14515,7 +14521,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Grompp: Creating portable binary run file for mdrun</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.grompp</span> <span class="kn">import</span> <span class="n">grompp</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_gppmd_tpr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_gppmd.tpr&#39;</span>
@@ -14554,7 +14560,7 @@ if (outputEl) {{
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Mdrun: Running free dynamics</span>
-<span class="kn">from</span> <span class="nn">biobb_md.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
+<span class="kn">from</span> <span class="nn">biobb_gromacs.gromacs.mdrun</span> <span class="kn">import</span> <span class="n">mdrun</span>
 
 <span class="c1"># Create prop dict and inputs/outputs</span>
 <span class="n">output_md_trr</span> <span class="o">=</span> <span class="n">pdbCode</span><span class="o">+</span><span class="s1">&#39;_md.trr&#39;</span>

@@ -1,13 +1,15 @@
-name: biobb_MDsetup_tutorial
+name: biobb_GMX_MDsetup_tutorial
 channels:
   - conda-forge
   - bioconda
 dependencies:
-  - biobb_analysis==3.6.0
-  - biobb_io==3.6.0
-  - biobb_model==3.6.0
-  - biobb_md==3.6.0
+  - biobb_analysis==3.8.0
+  - biobb_io==3.8.0
+  - biobb_model==3.8.0
+  - biobb_gromacs==3.8.0
+  - ipywidgets==7.6.6
   - nb_conda_kernels
+  - jupyter_contrib_nbextensions
   - plotly
   - nglview
   - simpletraj

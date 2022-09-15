@@ -10,7 +10,7 @@ This tutorial aims to illustrate the process of **setting up a simulation system
 
  - [biobb_io](https://github.com/bioexcel/biobb_io): Tools to fetch biomolecular data from public databases.
  - [biobb_model](https://github.com/bioexcel/biobb_model): Tools to model macromolecular structures.
- - [biobb_md](https://github.com/bioexcel/biobb_md): Tools to setup and run Molecular Dynamics simulations.
+ - [biobb_gromacs](https://github.com/bioexcel/biobb_gromacs): Tools to setup and run Molecular Dynamics simulations.
  - [biobb_analysis](https://github.com/bioexcel/biobb_analysis): Tools to analyse Molecular Dynamics trajectories.
  
 ### Auxiliar libraries used
@@ -27,11 +27,17 @@ This tutorial aims to illustrate the process of **setting up a simulation system
 git clone https://github.com/bioexcel/biobb_wf_md_setup.git
 cd biobb_wf_md_setup
 conda env create -f conda_env/environment.yml
-conda activate biobb_MDsetup_tutorial
+conda activate biobb_GMX_MDsetup_tutorial
+jupyter nbextension enable python-markdown/main
+jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
+```
+
+Please execute the following commands before launching the Jupyter Notebook if you experience some issues with widgets such as NGL View (3D molecular visualization):
+
+```console
 jupyter-nbextension enable --py --user widgetsnbextension
 jupyter-nbextension enable --py --user nglview
-jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
-  ``` 
+```
 
 ***
 ## Pipeline steps
@@ -166,14 +172,14 @@ Generating two output files:
     - *GROMACS position restraint file/s* (itp file/s)
 ***
 **Building Blocks** used:
- - [Pdb2gmx](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.pdb2gmx) from **biobb_md.gromacs.pdb2gmx**
+ - [Pdb2gmx](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.pdb2gmx) from **biobb_gromacs.gromacs.pdb2gmx**
 ***
 
 
 ```python
 # Create system topology
 # Import module
-from biobb_md.gromacs.pdb2gmx import pdb2gmx
+from biobb_gromacs.gromacs.pdb2gmx import pdb2gmx
 
 # Create inputs/outputs
 output_pdb2gmx_gro = pdbCode+'_pdb2gmx.gro'
@@ -208,14 +214,14 @@ A **cubic box** is used to define the unit cell, with a **distance from the prot
 
 ***
 **Building Blocks** used:
- - [Editconf](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.editconf) from **biobb_md.gromacs.editconf** 
+ - [Editconf](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.editconf) from **biobb_gromacs.gromacs.editconf** 
 ***
 
 
 ```python
 # Editconf: Create solvent box
 # Import module
-from biobb_md.gromacs.editconf import editconf
+from biobb_gromacs.gromacs.editconf import editconf
 
 # Create prop dict and inputs/outputs
 output_editconf_gro = pdbCode+'_editconf.gro'
@@ -239,13 +245,13 @@ The solvent type used is the default **Simple Point Charge water (SPC)**, a gene
 
 ***
 **Building Blocks** used:
- - [Solvate](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.solvate) from **biobb_md.gromacs.solvate** 
+ - [Solvate](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.solvate) from **biobb_gromacs.gromacs.solvate** 
 ***
 
 
 ```python
 # Solvate: Fill the box with water molecules
-from biobb_md.gromacs.solvate import solvate
+from biobb_gromacs.gromacs.solvate import solvate
 
 # Create prop dict and inputs/outputs
 output_solvate_gro = pdbCode+'_solvate.gro'
@@ -283,8 +289,8 @@ Add ions to neutralize the **protein structure** charge
 - [Step 2](#ionsStep2): Adding ions to **neutralize** the system
 ***
 **Building Blocks** used:
- - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_md.gromacs.grompp** 
- - [Genion](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.genion) from **biobb_md.gromacs.genion** 
+ - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_gromacs.gromacs.grompp** 
+ - [Genion](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.genion) from **biobb_gromacs.gromacs.genion** 
 ***
 
 <a id="ionsStep1"></a>
@@ -294,7 +300,7 @@ A simple **energy minimization** molecular dynamics parameters (mdp) properties 
 
 ```python
 # Grompp: Creating portable binary run file for ion generation
-from biobb_md.gromacs.grompp import grompp
+from biobb_gromacs.gromacs.grompp import grompp
 
 # Create prop dict and inputs/outputs
 output_gppion_tpr = pdbCode+'_gppion.tpr'
@@ -317,7 +323,7 @@ Replace **solvent molecules** with **ions** to **neutralize** the system.
 
 ```python
 # Genion: Adding ions to neutralize the system
-from biobb_md.gromacs.genion import genion
+from biobb_gromacs.gromacs.genion import genion
 
 # Create prop dict and inputs/outputs
 output_genion_gro = pdbCode+'_genion.gro'
@@ -361,8 +367,8 @@ Energetically minimize the **protein system** till reaching a desired potential 
 - [Step 3](#emStep3): Checking **energy minimization** results. Plotting energy by time during the **minimization** process.
 ***
 **Building Blocks** used:
- - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_md.gromacs.grompp** 
- - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_md.gromacs.mdrun** 
+ - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_gromacs.gromacs.grompp** 
+ - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_gromacs.gromacs.mdrun** 
  - [GMXEnergy](https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy) from **biobb_analysis.gromacs.gmx_energy** 
 ***
 
@@ -380,7 +386,7 @@ In this particular example, the method used to run the **energy minimization** i
 
 ```python
 # Grompp: Creating portable binary run file for mdrun
-from biobb_md.gromacs.grompp import grompp
+from biobb_gromacs.gromacs.grompp import grompp
 
 # Create prop dict and inputs/outputs
 output_gppmin_tpr = pdbCode+'_gppmin.tpr'
@@ -406,7 +412,7 @@ Running **energy minimization** using the **tpr file** generated in the previous
 
 ```python
 # Mdrun: Running minimization
-from biobb_md.gromacs.mdrun import mdrun
+from biobb_gromacs.gromacs.mdrun import mdrun
 
 # Create prop dict and inputs/outputs
 output_min_trr = pdbCode+'_min.trr'
@@ -485,8 +491,8 @@ Equilibrate the **protein system** in **NVT ensemble** (constant Number of parti
 - [Step 3](#eqNVTStep3): Checking **NVT Equilibration** results. Plotting **system temperature** by time during the **NVT equilibration** process. 
 ***
 **Building Blocks** used:
-- [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_md.gromacs.grompp** 
-- [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_md.gromacs.mdrun** 
+- [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_gromacs.gromacs.grompp** 
+- [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_gromacs.gromacs.mdrun** 
 - [GMXEnergy](https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy) from **biobb_analysis.gromacs.gmx_energy** 
 ***
 
@@ -510,7 +516,7 @@ In this particular example, the default parameters will be used: **md** integrat
 
 ```python
 # Grompp: Creating portable binary run file for NVT Equilibration
-from biobb_md.gromacs.grompp import grompp
+from biobb_gromacs.gromacs.grompp import grompp
 
 # Create prop dict and inputs/outputs
 output_gppnvt_tpr = pdbCode+'_gppnvt.tpr'
@@ -537,7 +543,7 @@ grompp(input_gro_path=output_min_gro,
 
 ```python
 # Mdrun: Running Equilibration NVT
-from biobb_md.gromacs.mdrun import mdrun
+from biobb_gromacs.gromacs.mdrun import mdrun
 
 # Create prop dict and inputs/outputs
 output_nvt_trr = pdbCode+'_nvt.trr'
@@ -616,8 +622,8 @@ Equilibrate the **protein system** in **NPT** ensemble (constant Number of parti
 - [Step 3](#eqNPTStep3): Checking **NPT Equilibration** results. Plotting **system pressure and density** by time during the **NPT equilibration** process.
 ***
 **Building Blocks** used:
- - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_md.gromacs.grompp** 
- - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_md.gromacs.mdrun** 
+ - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_gromacs.gromacs.grompp** 
+ - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_gromacs.gromacs.mdrun** 
  - [GMXEnergy](https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_energy) from **biobb_analysis.gromacs.gmx_energy** 
 ***
 
@@ -645,7 +651,7 @@ In this particular example, the default parameters will be used: **md** integrat
 
 ```python
 # Grompp: Creating portable binary run file for NPT System Equilibration
-from biobb_md.gromacs.grompp import grompp
+from biobb_gromacs.gromacs.grompp import grompp
 
 # Create prop dict and inputs/outputs
 output_gppnpt_tpr = pdbCode+'_gppnpt.tpr'
@@ -671,7 +677,7 @@ grompp(input_gro_path=output_nvt_gro,
 
 ```python
 # Mdrun: Running NPT System Equilibration
-from biobb_md.gromacs.mdrun import mdrun
+from biobb_gromacs.gromacs.mdrun import mdrun
 
 # Create prop dict and inputs/outputs
 output_npt_trr = pdbCode+'_npt.trr'
@@ -763,8 +769,8 @@ Upon completion of the **two equilibration phases (NVT and NPT)**, the system is
 - [Step 3](#mdStep3): Checking results for the final step of the setup process, the **free MD run**. Plotting **Root Mean Square deviation (RMSd)** and **Radius of Gyration (Rgyr)** by time during the **free MD run** step. 
 ***
 **Building Blocks** used:
- - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_md.gromacs.grompp** 
- - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_md.gromacs.mdrun** 
+ - [Grompp](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.grompp) from **biobb_gromacs.gromacs.grompp** 
+ - [Mdrun](https://biobb-md.readthedocs.io/en/latest/gromacs.html#module-gromacs.mdrun) from **biobb_gromacs.gromacs.mdrun** 
  - [GMXRms](https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_rms) from **biobb_analysis.gromacs.gmx_rms** 
  - [GMXRgyr](https://biobb-analysis.readthedocs.io/en/latest/gromacs.html#module-gromacs.gmx_rgyr) from **biobb_analysis.gromacs.gmx_rgyr** 
 ***
@@ -785,7 +791,7 @@ In this particular example, the default parameters will be used: **md** integrat
 
 ```python
 # Grompp: Creating portable binary run file for mdrun
-from biobb_md.gromacs.grompp import grompp
+from biobb_gromacs.gromacs.grompp import grompp
 
 # Create prop dict and inputs/outputs
 output_gppmd_tpr = pdbCode+'_gppmd.tpr'
@@ -811,7 +817,7 @@ grompp(input_gro_path=output_npt_gro,
 
 ```python
 # Mdrun: Running free dynamics
-from biobb_md.gromacs.mdrun import mdrun
+from biobb_gromacs.gromacs.mdrun import mdrun
 
 # Create prop dict and inputs/outputs
 output_md_trr = pdbCode+'_md.trr'
