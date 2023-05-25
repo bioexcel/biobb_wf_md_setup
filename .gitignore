@@ -21,3 +21,4 @@ biobb_wf_md_setup/notebooks/*.docs.ipynb
 *.old.ipynb
 *.bk.ipynb
 \#*\#
+.DS_Store
