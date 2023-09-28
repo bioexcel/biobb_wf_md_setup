@@ -15,11 +15,10 @@ This tutorial aims to illustrate the process of **setting up a simulation system
  
 ### Auxiliar libraries used
 
- - [nb_conda_kernels](https://github.com/Anaconda-Platform/nb_conda_kernels): Enables a Jupyter Notebook or JupyterLab application in one conda environment to access kernels for Python, R, and other languages found in other environments.
- - [nglview](http://nglviewer.org/#nglview): Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
- - [ipywidgets](https://github.com/jupyter-widgets/ipywidgets): Interactive HTML widgets for Jupyter notebooks and the IPython kernel.
- - [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
- - [simpletraj](https://github.com/arose/simpletraj): Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
+* [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.
+* [nglview](http://nglviewer.org/#nglview): Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
+* [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
+* [simpletraj](https://github.com/arose/simpletraj): Lightweight coordinate-only trajectory reader based on code from GROMACS, MDAnalysis and VMD.
 
 ### Conda Installation and Launch
 
@@ -28,15 +27,7 @@ git clone https://github.com/bioexcel/biobb_wf_md_setup.git
 cd biobb_wf_md_setup
 conda env create -f conda_env/environment.yml
 conda activate biobb_GMX_MDsetup_tutorial
-jupyter nbextension enable python-markdown/main
 jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
-```
-
-Please execute the following commands before launching the Jupyter Notebook if you experience some issues with widgets such as NGL View (3D molecular visualization):
-
-```console
-jupyter-nbextension enable --py --user widgetsnbextension
-jupyter-nbextension enable --py --user nglview
 ```
 
 ***
