@@ -354,7 +354,7 @@ view
 ## Energetically minimize the system
 Energetically minimize the **protein system** till reaching a desired potential energy.
 - [Step 1](#emStep1): Creating portable binary run file for energy minimization
-- [Step 2](#emStep2): Energetically minimize the **system** till reaching a force of 500 kJ mol-1 nm-1.
+- [Step 2](#emStep2): Energetically minimize the **system** till reaching a force of 500 kJ/mol*nm.
 - [Step 3](#emStep3): Checking **energy minimization** results. Plotting energy by time during the **minimization** process.
 ***
 **Building Blocks** used:
@@ -445,7 +445,7 @@ gmx_energy(input_energy_path=output_min_edr,
 import plotly
 import plotly.graph_objs as go
 
-#Read data from file and filter energy values higher than 1000 Kj/mol^-1
+#Read data from file and filter energy values higher than 1000 kJ/mol
 with open(output_min_ene_xvg,'r') as energy_file:
     x,y = map(
         list,
@@ -463,7 +463,7 @@ fig = {
     "data": [go.Scatter(x=x, y=y)],
     "layout": go.Layout(title="Energy Minimization",
                         xaxis=dict(title = "Energy Minimization Step"),
-                        yaxis=dict(title = "Potential Energy KJ/mol-1")
+                        yaxis=dict(title = "Potential Energy kJ/mol")
                        )
 }
 
