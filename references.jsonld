@@ -1,8 +1,9 @@
 
 {
   "@context": "http://schema.org",
-  "name": "Protein MD Setup workflow",
+  "@id": "https://github.com/bioexcel/biobb_wf_md_setup",
   "@type": "ItemList",
+  "name": "Protein MD Setup workflow",
   "itemListElement": [
     {
       "@type": "SoftwareApplication",
