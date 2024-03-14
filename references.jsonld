@@ -1,0 +1,33 @@
+
+{
+  "@context": "http://schema.org",
+  "name": "Protein MD Setup workflow",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://raw.githubusercontent.com/bioexcel/biobb/master/references.jsonld",
+      "name": "biobb"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://raw.githubusercontent.com/bioexcel/biobb_io/master/references.jsonld",
+      "name": "biobb_io"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://raw.githubusercontent.com/bioexcel/biobb_model/master/references.jsonld",
+      "name": "biobb_model"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://raw.githubusercontent.com/bioexcel/biobb_gromacs/master/references.jsonld",
+      "name": "biobb_gromacs"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://raw.githubusercontent.com/bioexcel/biobb_analysis/master/references.jsonld",
+      "name": "biobb_analysis"
+    }
+  ]
+}
