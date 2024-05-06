@@ -46,6 +46,8 @@ Click here to [view tutorial in Read the Docs](https://biobb-wf-md-setup.readthe
 
 Click here to [execute tutorial in Binder](https://mybinder.org/v2/gh/bioexcel/biobb_wf_md_setup/HEAD?labpath=biobb_wf_md_setup%2Fnotebooks%2Fbiobb_MDsetup_tutorial.ipynb)
 
+Click here to [open tutorial in Google Colab](https://colab.research.google.com/github/bioexcel/biobb_wf_md_setup/blob/main/biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb)
+
 ***
 
 ## Version
