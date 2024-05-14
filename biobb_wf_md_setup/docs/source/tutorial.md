@@ -53,6 +53,50 @@ jupyter-notebook biobb_wf_md_setup/notebooks/biobb_MDsetup_tutorial.ipynb
 ***
 
 
+## Initializing colab
+The two cells below are used only in case this notebook is executed via **Google Colab**. Take into account that, for running conda on **Google Colab**, the **condacolab** library must be installed. As [explained here](https://pypi.org/project/condacolab/), the installation requires a **kernel restart**, so when running this notebook in **Google Colab**, don't run all cells until this **installation** is properly **finished** and the **kernel** has **restarted**.
+
+
+```python
+# Only executed when using google colab
+import sys
+if 'google.colab' in sys.modules:
+  import subprocess
+  from pathlib import Path
+  try:
+    subprocess.run(["conda", "-V"], check=True)
+  except FileNotFoundError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "condacolab"], check=True)
+    import condacolab
+    condacolab.install()
+    # Clone repository
+    repo_URL = "https://github.com/bioexcel/biobb_wf_md_setup.git"
+    repo_name = Path(repo_URL).name.split('.')[0]
+    if not Path(repo_name).exists():
+      subprocess.run(["mamba", "install", "-y", "git"], check=True)
+      subprocess.run(["git", "clone", repo_URL], check=True)
+      print("⏬ Repository properly cloned.")
+    # Install environment
+    print("⏳ Creating environment...")
+    env_file_path = f"{repo_name}/conda_env/environment.yml"
+    subprocess.run(["mamba", "env", "update", "-n", "base", "-f", env_file_path], check=True)
+    print("🎨 Install NGLView dependencies...")
+    subprocess.run(["mamba", "install", "-y", "-c", "conda-forge", "nglview==3.0.8", "ipywidgets=7.7.2"], check=True)
+    print("👍 Conda environment successfully created and updated.")
+```
+
+
+```python
+# Enable widgets for colab
+if 'google.colab' in sys.modules:
+  from google.colab import output
+  output.enable_custom_widget_manager()
+  # Change working dir
+  import os
+  os.chdir("biobb_wf_md_setup/biobb_wf_md_setup/notebooks")
+  print(f"📂 New working directory: {os.getcwd()}")
+```
+
 <a id="input"></a>
 ## Input parameters
 **Input parameters** needed:
@@ -372,7 +416,7 @@ The **minimization** type of the **molecular dynamics parameters (mdp) property*
 -  emstep      = 0.01 ; Minimization step size (nm)
 -  nsteps      = 50000 ; Maximum number of (minimization) steps to perform
 
-In this particular example, the method used to run the **energy minimization** is the default **steepest descent**, but the **maximum force** is placed at **500 KJ/mol\*nm^2**, and the **maximum number of steps** to perform (if the maximum force is not reached) to **5,000 steps**. 
+In this particular example, the method used to run the **energy minimization** is the default **steepest descent**, but the **maximum force** is placed at **500 kJ/mol\*nm^2**, and the **maximum number of steps** to perform (if the maximum force is not reached) to **5,000 steps**. 
 
 
 ```python
@@ -442,32 +486,29 @@ gmx_energy(input_energy_path=output_min_edr,
 
 
 ```python
-import plotly
 import plotly.graph_objs as go
 
-#Read data from file and filter energy values higher than 1000 kJ/mol
-with open(output_min_ene_xvg,'r') as energy_file:
-    x,y = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]))
-            for line in energy_file 
-            if not line.startswith(("#","@")) 
-            if float(line.split()[1]) < 1000 
-        ])
-    )
+# Read data from file and filter energy values higher than 1000 kJ/mol
+with open(output_min_ene_xvg, 'r') as energy_file:
+    x, y = zip(*[
+        (float(line.split()[0]), float(line.split()[1]))
+        for line in energy_file
+        if not line.startswith(("#", "@"))
+        if float(line.split()[1]) < 1000
+    ])
 
-plotly.offline.init_notebook_mode(connected=True)
+# Create a scatter plot
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines'))
 
-fig = {
-    "data": [go.Scatter(x=x, y=y)],
-    "layout": go.Layout(title="Energy Minimization",
-                        xaxis=dict(title = "Energy Minimization Step"),
-                        yaxis=dict(title = "Potential Energy kJ/mol")
-                       )
-}
+# Update layout
+fig.update_layout(title="Energy Minimization",
+                  xaxis_title="Energy Minimization Step",
+                  yaxis_title="Potential Energy kJ/mol",
+                  height=600)
 
-plotly.offline.iplot(fig)
+# Show the figure (renderer changes for colab and jupyter)
+rend = 'colab' if 'google.colab' in sys.modules else ''
+fig.show(renderer=rend)
 ```
 
 <img src='_static/plot1.png'></img>
@@ -575,31 +616,28 @@ gmx_energy(input_energy_path=output_nvt_edr,
 
 
 ```python
-import plotly
 import plotly.graph_objs as go
 
-# Read temperature data from file 
-with open(output_nvt_temp_xvg,'r') as temperature_file:
-    x,y = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]))
-            for line in temperature_file 
-            if not line.startswith(("#","@")) 
-        ])
-    )
+# Read temperature data from file
+with open(output_nvt_temp_xvg, 'r') as temperature_file:
+    x, y = zip(*[
+        (float(line.split()[0]), float(line.split()[1]))
+        for line in temperature_file
+        if not line.startswith(("#", "@"))
+    ])
 
-plotly.offline.init_notebook_mode(connected=True)
+# Create a scatter plot
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines+markers'))
 
-fig = {
-    "data": [go.Scatter(x=x, y=y)],
-    "layout": go.Layout(title="Temperature during NVT Equilibration",
-                        xaxis=dict(title = "Time (ps)"),
-                        yaxis=dict(title = "Temperature (K)")
-                       )
-}
+# Update layout
+fig.update_layout(title="Temperature during NVT Equilibration",
+                  xaxis_title="Time (ps)",
+                  yaxis_title="Temperature (K)",
+                  height=600)
 
-plotly.offline.iplot(fig)
+# Show the figure (renderer changes for colab and jupyter)
+rend = 'colab' if 'google.colab' in sys.modules else ''
+fig.show(renderer=rend)
 ```
 
 <img src='_static/plot2.png'></img>
@@ -709,22 +747,16 @@ gmx_energy(input_energy_path=output_npt_edr,
 
 
 ```python
-import plotly
-from plotly import subplots
 import plotly.graph_objs as go
+from plotly.subplots import make_subplots
 
 # Read pressure and density data from file 
 with open(output_npt_pd_xvg,'r') as pd_file:
-    x,y,z = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]),float(line.split()[2]))
-            for line in pd_file 
-            if not line.startswith(("#","@")) 
-        ])
-    )
-
-plotly.offline.init_notebook_mode(connected=True)
+    x, y, z = zip(*[
+        (float(line.split()[0]), float(line.split()[1]), float(line.split()[2]))
+        for line in pd_file
+        if not line.startswith(("#", "@"))
+    ])
 
 trace1 = go.Scatter(
     x=x,y=y
@@ -733,20 +765,23 @@ trace2 = go.Scatter(
     x=x,y=z
 )
 
-fig = subplots.make_subplots(rows=1, cols=2, print_grid=False)
-
+fig = make_subplots(rows=1, cols=2, print_grid=False)
 fig.append_trace(trace1, 1, 1)
 fig.append_trace(trace2, 1, 2)
 
-fig['layout']['xaxis1'].update(title='Time (ps)')
-fig['layout']['xaxis2'].update(title='Time (ps)')
-fig['layout']['yaxis1'].update(title='Pressure (bar)')
-fig['layout']['yaxis2'].update(title='Density (Kg*m^-3)')
+fig.update_layout(
+    height=500,
+    title='Pressure and Density during NPT Equilibration',
+    showlegend=False,
+    xaxis1_title='Time (ps)',
+    yaxis1_title='Pressure (bar)',
+    xaxis2_title='Time (ps)',
+    yaxis2_title='Density (Kg*m^-3)'
+)
 
-fig['layout'].update(title='Pressure and Density during NPT Equilibration')
-fig['layout'].update(showlegend=False)
-
-plotly.offline.iplot(fig)
+# Show the figure (renderer changes for colab and jupyter)
+rend = 'colab' if 'google.colab' in sys.modules else ''
+fig.show(renderer=rend)
 ```
 
 <img src='_static/plot3.png'></img>
@@ -874,57 +909,39 @@ gmx_rms(input_structure_path=output_gppmin_tpr,
 
 
 ```python
-import plotly
 import plotly.graph_objs as go
 
 # Read RMS vs first snapshot data from file 
 with open(output_rms_first,'r') as rms_first_file:
-    x,y = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]))
-            for line in rms_first_file 
-            if not line.startswith(("#","@")) 
-        ])
-    )
+    x, y = zip(*[
+        (float(line.split()[0]), float(line.split()[1]))
+        for line in rms_first_file
+        if not line.startswith(("#", "@"))
+    ])
 
 # Read RMS vs experimental structure data from file 
 with open(output_rms_exp,'r') as rms_exp_file:
-    x2,y2 = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]))
-            for line in rms_exp_file
-            if not line.startswith(("#","@")) 
-        ])
-    )
-    
-trace1 = go.Scatter(
-    x = x,
-    y = y,
-    name = 'RMSd vs first'
+    x2, y2 = zip(*[
+        (float(line.split()[0]), float(line.split()[1]))
+        for line in rms_exp_file
+        if not line.startswith(("#", "@"))
+    ])
+
+fig = make_subplots()
+fig.add_trace(go.Scatter(x=x, y=y, mode="lines+markers", name="RMSd vs first"))
+fig.add_trace(go.Scatter(x=x, y=y2, mode="lines+markers", name="RMSd vs exp"))
+
+# Set layout including height
+fig.update_layout(
+    title="RMSd during free MD Simulation",
+    xaxis=dict(title="Time (ps)"),
+    yaxis=dict(title="RMSd (nm)"),
+    height=600
 )
 
-trace2 = go.Scatter(
-    x = x,
-    y = y2,
-    name = 'RMSd vs exp'
-)
-
-data = [trace1, trace2]
-
-plotly.offline.init_notebook_mode(connected=True)
-
-fig = {
-    "data": data,
-    "layout": go.Layout(title="RMSd during free MD Simulation",
-                        xaxis=dict(title = "Time (ps)"),
-                        yaxis=dict(title = "RMSd (nm)")
-                       )
-}
-
-plotly.offline.iplot(fig)
-
+# Show the figure (renderer changes for colab and jupyter)
+rend = 'colab' if 'google.colab' in sys.modules else ''
+fig.show(renderer=rend)
 ```
 
 <img src='_static/plot4.png'></img>
@@ -950,31 +967,28 @@ gmx_rgyr(input_structure_path=output_gppmin_tpr,
 
 
 ```python
-import plotly
 import plotly.graph_objs as go
 
-# Read Rgyr data from file 
-with open(output_rgyr,'r') as rgyr_file:
-    x,y = map(
-        list,
-        zip(*[
-            (float(line.split()[0]),float(line.split()[1]))
-            for line in rgyr_file 
-            if not line.startswith(("#","@")) 
-        ])
-    )
+# Read Rgyr data from file
+with open(output_rgyr, 'r') as rgyr_file:
+    x, y = zip(*[
+        (float(line.split()[0]), float(line.split()[1]))
+        for line in rgyr_file
+        if not line.startswith(("#", "@"))
+    ])
 
-plotly.offline.init_notebook_mode(connected=True)
+# Create a scatter plot
+fig = go.Figure(data=go.Scatter(x=x, y=y, mode='lines+markers'))
 
-fig = {
-    "data": [go.Scatter(x=x, y=y)],
-    "layout": go.Layout(title="Radius of Gyration",
-                        xaxis=dict(title = "Time (ps)"),
-                        yaxis=dict(title = "Rgyr (nm)")
-                       )
-}
+# Update layout
+fig.update_layout(title="Radius of Gyration",
+                  xaxis_title="Time (ps)",
+                  yaxis_title="Rgyr (nm)",
+                  height=600)
 
-plotly.offline.iplot(fig)
+# Show the figure (renderer changes for colab and jupyter)
+rend = 'colab' if 'google.colab' in sys.modules else ''
+fig.show(renderer=rend)
 ```
 
 <img src='_static/plot5.png'></img>
@@ -1060,16 +1074,16 @@ view
 ## Output files
 
 Important **Output files** generated:
- - 1AKI_md.gro: **Final structure** (snapshot) of the MD setup protocol.
- - 1AKI_md.trr: **Final trajectory** of the MD setup protocol.
- - 1AKI_md.cpt: **Final checkpoint file**, with information about the state of the simulation. It can be used to **restart** or **continue** a MD simulation.
- - 1AKI_gppmd.tpr: **Final tpr file**, GROMACS portable binary run input file. This file contains the starting structure of the **MD setup free MD simulation step**, together with the molecular topology and all the simulation parameters. It can be used to **extend** the simulation.
- - 1AKI_genion_top.zip: **Final topology** of the MD system. It is a compressed zip file including a **topology file** (.top) and a set of auxiliary **include topology** files (.itp).
+ - {{output_md_gro}}: **Final structure** (snapshot) of the MD setup protocol.
+ - {{output_md_trr}}: **Final trajectory** of the MD setup protocol.
+ - {{output_md_cpt}}: **Final checkpoint file**, with information about the state of the simulation. It can be used to **restart** or **continue** a MD simulation.
+ - {{output_gppmd_tpr}}: **Final tpr file**, GROMACS portable binary run input file. This file contains the starting structure of the **MD setup free MD simulation step**, together with the molecular topology and all the simulation parameters. It can be used to **extend** the simulation.
+ - {{output_genion_top_zip}}: **Final topology** of the MD system. It is a compressed zip file including a **topology file** (.top) and a set of auxiliary **include topology** files (.itp).
 
 **Analysis** (MD setup check) output files generated:
- - 1AKI_rms_first.xvg: **Root Mean Square deviation (RMSd)** against **minimized and equilibrated structure** of the final **free MD run step**.
- - 1AKI_rms_exp.xvg: **Root Mean Square deviation (RMSd)** against **experimental structure** of the final **free MD run step**.
- - 1AKI_rgyr.xvg: **Radius of Gyration** of the final **free MD run step** of the **setup pipeline**.
+ - {{output_rms_first}}: **Root Mean Square deviation (RMSd)** against **minimized and equilibrated structure** of the final **free MD run step**.
+ - {{output_rms_exp}}: **Root Mean Square deviation (RMSd)** against **experimental structure** of the final **free MD run step**.
+ - {{output_rgyr}}: **Radius of Gyration** of the final **free MD run step** of the **setup pipeline**.
  
 
 ***
