@@ -106,6 +106,7 @@ if 'google.colab' in sys.modules:
 ```python
 import nglview
 import ipywidgets
+import sys
 
 pdbCode = "1AKI"
 ```
@@ -340,7 +341,7 @@ from biobb_gromacs.gromacs.grompp import grompp
 # Create prop dict and inputs/outputs
 output_gppion_tpr = pdbCode+'_gppion.tpr'
 prop = {
-    'simulation_type': 'minimization',
+    'simulation_type': 'ions',
     'maxwarn': 1
 }
 
@@ -1074,16 +1075,16 @@ view
 ## Output files
 
 Important **Output files** generated:
- - {{output_md_gro}}: **Final structure** (snapshot) of the MD setup protocol.
- - {{output_md_trr}}: **Final trajectory** of the MD setup protocol.
- - {{output_md_cpt}}: **Final checkpoint file**, with information about the state of the simulation. It can be used to **restart** or **continue** a MD simulation.
- - {{output_gppmd_tpr}}: **Final tpr file**, GROMACS portable binary run input file. This file contains the starting structure of the **MD setup free MD simulation step**, together with the molecular topology and all the simulation parameters. It can be used to **extend** the simulation.
- - {{output_genion_top_zip}}: **Final topology** of the MD system. It is a compressed zip file including a **topology file** (.top) and a set of auxiliary **include topology** files (.itp).
+ - **output_md_gro** (1aki_md.gro): **Final structure** (snapshot) of the MD setup protocol.
+ - **output_md_trr** (1aki_md.trr): **Final trajectory** of the MD setup protocol.
+ - **output_md_cpt** (1aki_md.cpt): **Final checkpoint file**, with information about the state of the simulation. It can be used to **restart** or **continue** a MD simulation.
+ - **output_gppmd_tpr** (1aki_gppmd.tpr): **Final tpr file**, GROMACS portable binary run input file. This file contains the starting structure of the **MD setup free MD simulation step**, together with the molecular topology and all the simulation parameters. It can be used to **extend** the simulation.
+ - **output_genion_top_zip** (1aki_genion_top.zip): **Final topology** of the MD system. It is a compressed zip file including a **topology file** (.top) and a set of auxiliary **include topology** files (.itp).
 
 **Analysis** (MD setup check) output files generated:
- - {{output_rms_first}}: **Root Mean Square deviation (RMSd)** against **minimized and equilibrated structure** of the final **free MD run step**.
- - {{output_rms_exp}}: **Root Mean Square deviation (RMSd)** against **experimental structure** of the final **free MD run step**.
- - {{output_rgyr}}: **Radius of Gyration** of the final **free MD run step** of the **setup pipeline**.
+ - **output_rms_first** (1aki_rms_first.xvg): **Root Mean Square deviation (RMSd)** against **minimized and equilibrated structure** of the final **free MD run step**.
+ - **output_rms_exp** (1aki_rms_exp.xvg): **Root Mean Square deviation (RMSd)** against **experimental structure** of the final **free MD run step**.
+ - **output_rgyr** (1aki_rgyr.xvg): **Radius of Gyration** of the final **free MD run step** of the **setup pipeline**.
  
 
 ***
