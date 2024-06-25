@@ -365,7 +365,8 @@ from biobb_gromacs.gromacs.genion import genion
 output_genion_gro = pdbCode+'_genion.gro'
 output_genion_top_zip = pdbCode+'_genion_top.zip'
 prop={
-    'neutral':True
+    'neutral':True,
+    'concentration':0
 }
 
 # Create and launch bb
