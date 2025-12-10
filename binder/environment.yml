@@ -10,7 +10,7 @@ dependencies:
   - biobb_model==5.1.0
   - biobb_gromacs==5.1.0
   - plotly
-  - python=3.10
+  # - python=3.10
   - jupyterlab=3.6
   - nodejs=16
   - ipywidgets=7
