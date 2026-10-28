@@ -15,4 +15,4 @@ dependencies:
   - nodejs=16
   - ipywidgets=7
   - nglview
-  - simpletraj
+  - mdanalysis
