@@ -23,9 +23,8 @@ This tutorial aims to illustrate the process of **setting up a simulation** syst
 ### Auxiliary libraries used
 
 * [jupyter](https://jupyter.org/): Free software, open standards, and web services for interactive computing across all programming languages.
-* [nglview](http://nglviewer.org/#nglview): Jupyter/IPython widget to interactively view molecular structures and trajectories in notebooks.
+* [molviewspec](https://molstar.org/mol-view-spec/): Python toolkit to describe molecular scenes and display them with the [Mol*](https://molstar.org/) viewer in notebooks.
 * [plotly](https://plot.ly/python/offline/): Python interactive graphing library integrated in Jupyter notebooks.
-* [mdanalysis](https://www.mdanalysis.org/): Open-source tool for the analysis of molecular simulation data.
 
 ### Conda Installation and Launch
 

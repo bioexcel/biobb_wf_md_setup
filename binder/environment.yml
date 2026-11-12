@@ -14,5 +14,4 @@ dependencies:
   - jupyterlab=3.6
   - nodejs=16
   - ipywidgets=7
-  - nglview
-  - mdanalysis
+  - molviewspec>=1.8
