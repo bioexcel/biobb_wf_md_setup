@@ -11,6 +11,8 @@ guidelines.md
 *.xtc
 *.offsets
 *.cpt
+*.lock
+*.npz
 log*.*
 !logo.png
 .ipynb_checkpoints/
