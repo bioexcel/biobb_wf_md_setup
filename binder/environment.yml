@@ -15,3 +15,4 @@ dependencies:
   - nodejs=16
   - ipywidgets=7
   - molviewspec>=1.8
+  - mdanalysis

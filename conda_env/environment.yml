@@ -13,3 +13,4 @@ dependencies:
   - jupyter
   - plotly
   - molviewspec>=1.8
+  - mdanalysis
