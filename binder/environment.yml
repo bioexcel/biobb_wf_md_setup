@@ -11,7 +11,7 @@ dependencies:
   - biobb_model==5.3.0
   - biobb_gromacs==5.3.2
   - plotly
-  - jupyterlab=3.6
-  - nodejs=16
-  - ipywidgets=7
+  # - jupyterlab=3.6
+  # - nodejs=16
+  # - ipywidgets=7
   - molviewspec>=1.8
