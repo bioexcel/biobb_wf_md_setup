@@ -11,6 +11,9 @@ dependencies:
   - biobb_model==5.3.0
   - biobb_gromacs==5.3.2
   - plotly
+  # ambertools 26 ships a dangling bin/amber.conda symlink that crashes
+  # `mamba clean` (run by repo2docker); see conda-forge/ambertools-feedstock#193
+  - ambertools<26
   # - jupyterlab=3.6
   # - nodejs=16
   # - ipywidgets=7
