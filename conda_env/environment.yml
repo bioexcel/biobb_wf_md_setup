@@ -11,5 +11,6 @@ dependencies:
   - biobb_model==5.3.0
   - biobb_gromacs==5.3.2
   - jupyter
+  - marimo
   - plotly
   - molviewspec>=1.8

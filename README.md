@@ -36,6 +36,16 @@ conda activate biobb_wf_md_setup
 jupyter-notebook biobb_wf_md_setup/notebooks/biobb_wf_md_setup.ipynb
 ```
 
+### Launch with marimo
+
+The tutorial is also available as a [marimo](https://marimo.io/) notebook, generated from the Jupyter one. With the same conda environment activated:
+
+```console
+marimo edit biobb_wf_md_setup/notebooks/biobb_wf_md_setup_marimo.py
+```
+
+Type a PDB code and click **Run setup**: the whole pipeline runs, and runs again every time you submit a new code. The marimo version also lets you explore any energy term of the minimization and equilibration steps, and change the representation, colours and speed of the trajectory viewer.
+
 ***
 
 ## Tutorial
